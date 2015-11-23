@@ -6,8 +6,17 @@
     <description>Recent content on leehack&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Nov 2015 12:56:25 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2015 13:39:02 -0500</lastBuildDate>
     <atom:link href="http://blog.leehack.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>license</title>
+      <link>http://blog.leehack.com/license/</link>
+      <pubDate>Mon, 23 Nov 2015 13:39:02 -0500</pubDate>
+      
+      <guid>http://blog.leehack.com/license/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Gradle NDK Build Script Example</title>
