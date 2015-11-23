@@ -1,4 +1,4 @@
-baseurl = "http://leehack.github.io/"
+baseurl = "http://blog.leehack.com/"
 languageCode = "en-us"
 title = "leehack's blog"
 theme = "material-design"
@@ -15,4 +15,7 @@ disqusShortname = "leehackgithubio" # optional
   linkedin = "leehack" # optional
 #  headerCover = "images/headerCover.png" # optional
 #  footerCover = "images/footerCover.png" # optional
-#  googleAnalyticsUserID = "Your Analytics User Id" # optional
+  googleAnalyticsUserID = "UA-70407585-1" # optional
+
+[permalinks]
+  post = "/:year/:month/:day/:title/" # optional
