@@ -50,13 +50,13 @@ disqusShortname = "leehackgithubio"
     gravatarHash = "0c3f880ef06e403dbe25dd7b7e9c5a3b"
 
     # Sidebar social links, these must be full URLs.
-    github = "leehack"
-    bitbucket = "leehack"
+    github = "https://github.com/leehack"
+    #bitbucket = "leehack"
     #stackOverflow = ""
-    linkedin = "leehack"
-    googleplus = "JhinseokLEE"
-    facebook = "jhinseok.lee"
-    twitter = "leehack"
+    linkedin = "https://www.linkedin.com/in/leehack"
+    googleplus = "https://plus.google.com/u/0/+JhinseokLEE"
+    facebook = "https://www.facebook.com/jhinseok.lee"
+    #twitter = "leehack"
     #youtube = ""
 
     # Other social-like sidebar links
