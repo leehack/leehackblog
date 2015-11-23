@@ -2,3 +2,17 @@ baseurl = "http://leehack.github.io/"
 languageCode = "en-us"
 title = "leehack's blog"
 theme = "material-design"
+paginate = 9 # To specify a multiple of 3
+disqusShortname = "leehackgithubio" # optional
+#copyright = "© 2015 Copyright Text"
+
+[params]
+#  description = "Your Site Description" # optional
+  twitter = "leehack" # optional
+  github = "leehack" # optional
+  facebook = "jhinseok.lee" # optional
+  gplus = "JhinseokLEE" # optional
+  linkedin = "leehack" # optional
+#  headerCover = "images/headerCover.png" # optional
+#  footerCover = "images/footerCover.png" # optional
+#  googleAnalyticsUserID = "Your Analytics User Id" # optional
