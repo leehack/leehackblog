@@ -1,5 +1,5 @@
 +++
-categories = ["Android"]
+categories = ["Android", "NDK", "Gradle"]
 date = "2015-11-23T12:56:25-05:00"
 description = "Example for gradle build script for Android library module with native code and prebuilt .so"
 keywords = ["Android", "NDK", "Gradle"]
