@@ -2,14 +2,14 @@ box: debian
 build:
   steps:
     - arjen/hugo-build:
-      version: "1.6.1"
+      version: "0.14"
       theme: material-design
       flags: --buildDrafts=true
 deploy:
   steps:
     - install-packages:
       packages: git ssh-client
-    - eyedol/deploy-gh-pages@0.2.1:
+    - lukevivier/gh-pages@0.2.1:
       token: $GIT_TOKEN
       domain: hugo-wercker.ig.nore.me
       basedir: public
