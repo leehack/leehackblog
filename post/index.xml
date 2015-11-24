@@ -6,8 +6,99 @@
     <description>Recent content in Posts on leehack&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Nov 2015 12:56:25 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2015 21:20:51 -0500</lastBuildDate>
     <atom:link href="http://blog.leehack.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Github static website 만들기</title>
+      <link>http://blog.leehack.com/blog/2015/11/23/github-static-website-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+      <pubDate>Mon, 23 Nov 2015 21:20:51 -0500</pubDate>
+      
+      <guid>http://blog.leehack.com/blog/2015/11/23/github-static-website-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+      <description>
+
+&lt;h1 id=&#34;github-page란:b47502d0fc5a05431ea07f4e2ccfb4a7&#34;&gt;Github Page란?&lt;/h1&gt;
+
+&lt;p&gt;PHP나 ASP 같은 서버스크립트 베이스의 웹사이트는 올리지 못하더라도 HTML과 Javscript등으로 이루어진 사이트를 호스팅 할 수 있는 서비스.
+Github에 repository를 만들고 해당 repository에 index.html을 비롯한 파일들을 올리면 &lt;code&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt; URL로 접속이 가능하다.
+물론 custom domain을 설정해서 사용할 수도 있다.&lt;/p&gt;
+
+&lt;h1 id=&#34;우선-automatic-generator를-이용해-페이지-만들어보기-user-or-organization-pages-sites:b47502d0fc5a05431ea07f4e2ccfb4a7&#34;&gt;우선 Automatic Generator를 이용해 페이지 만들어보기(User or Organization Pages sites)&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Github 가입하기: &lt;a href=&#34;https://github.com&#34;&gt;Github&lt;/a&gt;에서 가입하면 된다.&lt;/li&gt;
+&lt;li&gt;Repository 만들기
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com&#34;&gt;Github&lt;/a&gt;에 로그인 하면 나오는 메인페이지의 우측 상단 &lt;code&gt;+New repository&lt;/code&gt; 버튼을 눌러 새로운 repository만든다.&lt;/li&gt;
+&lt;li&gt;repository를 만들때 본인의 &lt;code&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt;를 repository 이름으로 설정한다.
+&lt;img src=&#34;https://lh3.googleusercontent.com/dS8Dmo1xhiZ-IoXm9VaxoSwxqDMW8o_B759yWUMnRvi3HLYPzxiUXeRNsvHrRhnw-iOtidqDoDxMUG793aj0iRoFFxFR-yL2DLiz0AEgpMGcCbiSMO9ui5IM06JuQaBjhcE-hQOGxWk7xxEqnA1ZUEiZftVC8Htb0O0fhhDfbOLCtg03l92B30dB9sCaWOiDIbT5CjK_1mwWjjezVGjLL1IDmR-2zSCqyHVKwFFFbGG2SKeJlntpBXWb9o6e7L857U0JmTUIyQBrqv5ajM4LIVBjaE8evJKyCStRRVIjYh8evVSsixWNUn3OnsEP8D7tXwp209a5ssWDtG4rscqdii_SZtp4TqWJP190Nbcc66MAcfSl_vgwUxcLBE_wUicjhWCqWhEzI1AFpdieIRxJFERvv6P9UOCh3_Pn5KGetwx47FG4CIwihpnmsK0b8csI-fcIPhMaEWZNLjs122QcMVVQnFavvHkwDdEiIdYQl0L-1qbg2UTFWEKvdiuFM_aVEMZnZsUzSkaDt48QHibAEx-gEorKLCqrsLnsgpvT9g0f=w770-h580-no&#34; alt=&#34;New Repository&#34; /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;repository가 만들어진 후 해당 repository의 세팅에 가보면 &lt;code&gt;Github Pages&lt;/code&gt; 옵션에서 &lt;code&gt;Launch automatic page generator&lt;/code&gt;를 클릭하여 웹페이지를 만들 수 있다.
+&lt;img src=&#34;https://lh3.googleusercontent.com/TMCslmHpI523-LYvK4utQlt6JlTK4bYiniNJ5UlJjcc0pHj1QL_cZCwQ-xQK_26W8ci9X9SajKIDdEFhy_yeqSZzqD7FKr_5cmvDa_dhHsc1n3FLf1og2XSv6Vs1Z3cBVwD98-sNmzpprRh1Fsy4Wqe0Z_hYOLrelDoMP79rdLGfxBxrtCm4XKW7OGxF8RVgOnqjQCbPfcHwLP-pbkcJAeZMSfkERRaSKJ9g_uuvi-JOiIjRqoByQf7MBz-Wr6O8Ol1VtP1_7rQ9z5hupg7zJ2nSb75QsWhOGeRF22Fh051zx_7p1zhGcnbFlBu4Y01sdvrfBegSkj9Wh3ER5mQV9MWuWKLY1mXWNm8nJM2UfIfDN37qdxrU4lGT6pZRC6PS0jR3F5fa2WfDnokN7zUG7JLmFUok-9_9AtBjzjy-ghNPRLeKwLPhDS214H52gfoi3E0_PSOl97EgoVqptlpo8lRP4wrnLIyLl2oG4yhtrK2BRSuyFLgu-MS-1Kz7jcHQcDJZgPKU2dnS_PqCuTXtrKzCHsVLnGkeNHT1rFRR9moH=w755-h289-no&#34; alt=&#34;Automatic Page Generaor&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;만들어진 웹페이지는 &lt;code&gt;userid.github.io&lt;/code&gt;주소로 접속 할 수 있다.
+&lt;img src=&#34;https://lh3.googleusercontent.com/3ARrtX1ijW469Ixp02fv9IcZBt77CaU6InqGNPmBF1iwhtR4DG5PnxVDQkXiUWT6DqxWdqJzoNCAfThrHPfLSuKadvIEt04Ue70aZtgGO9e0Rk93wrrNkM5KB9ipxjq0s7TDm3VBt1a3gnoVChtjFZLSVDxWdNdm9W_VarwYhBLyv0c77fKHxW7sMDDXIu2gkf-cvyrYjH5Ef6HxFMHgni5Gg2lEHrUhqXJWup5qSoiKy0a35UmaMEejr3HgzuEsFgi0YbUtvEyTXB5do86E-v5rEh_ggpepVW4R6RRYzTCEcA2jakYRvGUtr1cmjkZpTdr60Sxdd9QE6RPHrYNGJWPW4MkM3alQkorQnmbBPvD9-3ReT1wgcPzc-14C0DJHKDSBMIzcqbU-XEtLqreJ4HOALr5UvwaLZs7xTVlsXJPah7rFnqi_Gx3nMOGNPeKcurSBoYVUDv2i2im49SGaYUgjuLLUFiFUwhdlEaIpAniTeJpkkcOcOXgoAhZTacS1IgigsFi4owy5ix51BpRgTftSSUbl5fxLJz-jTZzgSFfp=w1124-h738-no&#34; alt=&#34;Generated page&#34; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이제부터는 Git만 사용할 줄 안다면 해당 repository를 clone 하고 마음대로 html을 수정하고 push 하면 된다. (git 사용법을 잘 모른다면 github web ui에서 파일을 수정할 수도 있다.)&lt;/p&gt;
+
+&lt;h1 id=&#34;이미-git-project-가-있는-상태에서-해당-repository에-대한-github-page를-만드는-법-gh-pages-branch:b47502d0fc5a05431ea07f4e2ccfb4a7&#34;&gt;이미 git project 가 있는 상태에서 해당 repository에 대한 github page를 만드는 법.(gh-pages branch)&lt;/h1&gt;
+
+&lt;p&gt;결론부터 미리 말하자면 각 project repository에 gh-pages라는 orphan branch(history가 없는 branch)를 만들고 해당 브랜치에 static pages들을 commit 하면 된다. 이렇게 하면 &lt;code&gt;http(s)://&amp;lt;username&amp;gt;.github.io/&amp;lt;projectname&amp;gt;&lt;/code&gt; 주소로 해당 static web page에 접속이 가능하다.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;이미 생성한 repository 있는 상태에서..&lt;/em&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;repository clone.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$git clone github.com/user/repository.git
+# Clone our repository
+# Cloning into &#39;repository&#39;...
+# remote: Counting objects: 2791, done.
+# remote: Compressing objects: 100% (1225/1225), done.
+# remote: Total 2791 (delta 1722), reused 2513 (delta 1493)
+# Receiving objects: 100% (2791/2791), 3.77 MiB | 969 KiB/s, done.
+# Resolving deltas: 100% (1722/1722), done.
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;gh-pages 브랜치 생성.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$cd repository
+
+
+$git checkout --orphan gh-pages
+# Creates our branch, without any parents (it&#39;s an orphan!)
+# Switched to a new branch &#39;gh-pages&#39;
+
+
+$git rm -rf .
+# Remove all files from the old working tree
+# rm &#39;.gitignore&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;페이지 추가 및 push.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$echo &amp;quot;My Page&amp;quot; &amp;gt; index.html
+$git add index.html정
+$git commit -a -m &amp;quot;First pages commit&amp;quot;
+$git push origin gh-pages
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://help.github.com/articles/creating-project-pages-manually/&#34;&gt;Creating Project Pages manually&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;custom-domain-설정하기:b47502d0fc5a05431ea07f4e2ccfb4a7&#34;&gt;Custom Domain 설정하기&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;본인의 domain 호스팅 서비스에서 CNAME record 설정. ex) &lt;code&gt;blog.example.com&lt;/code&gt; -&amp;gt; &lt;code&gt;username.github.io&lt;/code&gt; (&lt;code&gt;http://&lt;/code&gt; 나 &lt;code&gt;https://&lt;/code&gt;는 빼고 입력해야 함)&lt;/li&gt;
+&lt;li&gt;CNAME file 생성 : gh-pages branch에 CNAME이라는 파일을 만들고 blog.example.com 을 입력후 저장 &amp;amp; 커밋 &amp;amp; 푸시 (User page라면 master branch에)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://help.github.com/articles/adding-a-cname-file-to-your-repository/&#34;&gt;Adding a cname file to your repository&lt;/a&gt;.&lt;br /&gt;
+&lt;a href=&#34;https://help.github.com/articles/tips-for-configuring-a-cname-record-with-your-dns-provider/&#34;&gt;Tips for congiguring a CNAME record with your DNS provider&lt;/a&gt;.&lt;br /&gt;
+&lt;a href=&#34;https://help.github.com/articles/about-custom-domains-for-github-pages-sites/#subdomains&#34;&gt;About custom domains for Github Pages sites&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Gradle NDK Build Script Example</title>

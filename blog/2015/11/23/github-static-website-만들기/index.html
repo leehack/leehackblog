@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Github static website 만들기 &middot; Jhinseok Lee</title>
+
+  
+  <link rel="stylesheet" href="http://blog.leehack.com/css/poole.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/hyde.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/hyde-x.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/highlight/monokai.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://blog.leehack.com/touch-icon-144-precomposed.png">
+  <link href="http://blog.leehack.com/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="Blog,Github,Static,Pages">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+        <img src="https://www.gravatar.com/avatar/0c3f880ef06e403dbe25dd7b7e9c5a3b?s=200"
+             alt="gravatar" title="Jhinseok Lee">
+      
+      <h1>Jhinseok Lee</h1>
+      
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://blog.leehack.com/">Home</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/leehack"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/leehack"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://plus.google.com/u/0/&#43;JhinseokLEE"><i class="fa fa-google-plus-square fa-3x"></i></a>
+      <a href="https://www.facebook.com/jhinseok.lee"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      <a href="http://blog.leehack.com/index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+    <p><script id='flattr'>
+      (function(id){
+        var s = document.getElementById(id);
+        var f = document.createElement('iframe');
+        f.src = '//api.flattr.com/button/view/?uid=leehack&button=compact&url=http:\/\/blog.leehack.com\/&title=leehack\x27s blog';
+        f.title = 'Flattr';
+        f.height = 20;
+        f.width = 110;
+        f.style.borderWidth = 0;
+        s.parentNode.insertBefore(f, s);
+      })('flattr');
+    </script></p>
+    
+
+    <p>Copyright &copy; 2015 <a href="http://blog.leehack.com/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>Github static website 만들기</h1>
+    <span class="post-date">Nov 23, 2015 &middot; 2 minute read &middot; <a href="http://blog.leehack.com/blog/2015/11/23/github-static-website-%EB%A7%8C%EB%93%A4%EA%B8%B0/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="http://blog.leehack.com/categories/blog">Blog</a><a class="label" href="http://blog.leehack.com/categories/github">Github</a>
+    </span>
+    
+
+<h1 id="github-page란:b47502d0fc5a05431ea07f4e2ccfb4a7">Github Page란?</h1>
+
+<p>PHP나 ASP 같은 서버스크립트 베이스의 웹사이트는 올리지 못하더라도 HTML과 Javscript등으로 이루어진 사이트를 호스팅 할 수 있는 서비스.
+Github에 repository를 만들고 해당 repository에 index.html을 비롯한 파일들을 올리면 <code>&lt;username&gt;.github.io</code> URL로 접속이 가능하다.
+물론 custom domain을 설정해서 사용할 수도 있다.</p>
+
+<h1 id="우선-automatic-generator를-이용해-페이지-만들어보기-user-or-organization-pages-sites:b47502d0fc5a05431ea07f4e2ccfb4a7">우선 Automatic Generator를 이용해 페이지 만들어보기(User or Organization Pages sites)</h1>
+
+<ol>
+<li>Github 가입하기: <a href="https://github.com">Github</a>에서 가입하면 된다.</li>
+<li>Repository 만들기
+
+<ul>
+<li><a href="https://github.com">Github</a>에 로그인 하면 나오는 메인페이지의 우측 상단 <code>+New repository</code> 버튼을 눌러 새로운 repository만든다.</li>
+<li>repository를 만들때 본인의 <code>&lt;username&gt;.github.io</code>를 repository 이름으로 설정한다.
+<img src="https://lh3.googleusercontent.com/dS8Dmo1xhiZ-IoXm9VaxoSwxqDMW8o_B759yWUMnRvi3HLYPzxiUXeRNsvHrRhnw-iOtidqDoDxMUG793aj0iRoFFxFR-yL2DLiz0AEgpMGcCbiSMO9ui5IM06JuQaBjhcE-hQOGxWk7xxEqnA1ZUEiZftVC8Htb0O0fhhDfbOLCtg03l92B30dB9sCaWOiDIbT5CjK_1mwWjjezVGjLL1IDmR-2zSCqyHVKwFFFbGG2SKeJlntpBXWb9o6e7L857U0JmTUIyQBrqv5ajM4LIVBjaE8evJKyCStRRVIjYh8evVSsixWNUn3OnsEP8D7tXwp209a5ssWDtG4rscqdii_SZtp4TqWJP190Nbcc66MAcfSl_vgwUxcLBE_wUicjhWCqWhEzI1AFpdieIRxJFERvv6P9UOCh3_Pn5KGetwx47FG4CIwihpnmsK0b8csI-fcIPhMaEWZNLjs122QcMVVQnFavvHkwDdEiIdYQl0L-1qbg2UTFWEKvdiuFM_aVEMZnZsUzSkaDt48QHibAEx-gEorKLCqrsLnsgpvT9g0f=w770-h580-no" alt="New Repository" /></li>
+</ul></li>
+<li>repository가 만들어진 후 해당 repository의 세팅에 가보면 <code>Github Pages</code> 옵션에서 <code>Launch automatic page generator</code>를 클릭하여 웹페이지를 만들 수 있다.
+<img src="https://lh3.googleusercontent.com/TMCslmHpI523-LYvK4utQlt6JlTK4bYiniNJ5UlJjcc0pHj1QL_cZCwQ-xQK_26W8ci9X9SajKIDdEFhy_yeqSZzqD7FKr_5cmvDa_dhHsc1n3FLf1og2XSv6Vs1Z3cBVwD98-sNmzpprRh1Fsy4Wqe0Z_hYOLrelDoMP79rdLGfxBxrtCm4XKW7OGxF8RVgOnqjQCbPfcHwLP-pbkcJAeZMSfkERRaSKJ9g_uuvi-JOiIjRqoByQf7MBz-Wr6O8Ol1VtP1_7rQ9z5hupg7zJ2nSb75QsWhOGeRF22Fh051zx_7p1zhGcnbFlBu4Y01sdvrfBegSkj9Wh3ER5mQV9MWuWKLY1mXWNm8nJM2UfIfDN37qdxrU4lGT6pZRC6PS0jR3F5fa2WfDnokN7zUG7JLmFUok-9_9AtBjzjy-ghNPRLeKwLPhDS214H52gfoi3E0_PSOl97EgoVqptlpo8lRP4wrnLIyLl2oG4yhtrK2BRSuyFLgu-MS-1Kz7jcHQcDJZgPKU2dnS_PqCuTXtrKzCHsVLnGkeNHT1rFRR9moH=w755-h289-no" alt="Automatic Page Generaor" /></li>
+<li>만들어진 웹페이지는 <code>userid.github.io</code>주소로 접속 할 수 있다.
+<img src="https://lh3.googleusercontent.com/3ARrtX1ijW469Ixp02fv9IcZBt77CaU6InqGNPmBF1iwhtR4DG5PnxVDQkXiUWT6DqxWdqJzoNCAfThrHPfLSuKadvIEt04Ue70aZtgGO9e0Rk93wrrNkM5KB9ipxjq0s7TDm3VBt1a3gnoVChtjFZLSVDxWdNdm9W_VarwYhBLyv0c77fKHxW7sMDDXIu2gkf-cvyrYjH5Ef6HxFMHgni5Gg2lEHrUhqXJWup5qSoiKy0a35UmaMEejr3HgzuEsFgi0YbUtvEyTXB5do86E-v5rEh_ggpepVW4R6RRYzTCEcA2jakYRvGUtr1cmjkZpTdr60Sxdd9QE6RPHrYNGJWPW4MkM3alQkorQnmbBPvD9-3ReT1wgcPzc-14C0DJHKDSBMIzcqbU-XEtLqreJ4HOALr5UvwaLZs7xTVlsXJPah7rFnqi_Gx3nMOGNPeKcurSBoYVUDv2i2im49SGaYUgjuLLUFiFUwhdlEaIpAniTeJpkkcOcOXgoAhZTacS1IgigsFi4owy5ix51BpRgTftSSUbl5fxLJz-jTZzgSFfp=w1124-h738-no" alt="Generated page" /></li>
+</ol>
+
+<p>이제부터는 Git만 사용할 줄 안다면 해당 repository를 clone 하고 마음대로 html을 수정하고 push 하면 된다. (git 사용법을 잘 모른다면 github web ui에서 파일을 수정할 수도 있다.)</p>
+
+<h1 id="이미-git-project-가-있는-상태에서-해당-repository에-대한-github-page를-만드는-법-gh-pages-branch:b47502d0fc5a05431ea07f4e2ccfb4a7">이미 git project 가 있는 상태에서 해당 repository에 대한 github page를 만드는 법.(gh-pages branch)</h1>
+
+<p>결론부터 미리 말하자면 각 project repository에 gh-pages라는 orphan branch(history가 없는 branch)를 만들고 해당 브랜치에 static pages들을 commit 하면 된다. 이렇게 하면 <code>http(s)://&lt;username&gt;.github.io/&lt;projectname&gt;</code> 주소로 해당 static web page에 접속이 가능하다.</p>
+
+<p><em>이미 생성한 repository 있는 상태에서..</em></p>
+
+<ol>
+<li><p>repository clone.</p>
+
+<pre><code>$git clone github.com/user/repository.git
+# Clone our repository
+# Cloning into 'repository'...
+# remote: Counting objects: 2791, done.
+# remote: Compressing objects: 100% (1225/1225), done.
+# remote: Total 2791 (delta 1722), reused 2513 (delta 1493)
+# Receiving objects: 100% (2791/2791), 3.77 MiB | 969 KiB/s, done.
+# Resolving deltas: 100% (1722/1722), done.
+</code></pre></li>
+
+<li><p>gh-pages 브랜치 생성.</p>
+
+<pre><code>$cd repository
+
+
+$git checkout --orphan gh-pages
+# Creates our branch, without any parents (it's an orphan!)
+# Switched to a new branch 'gh-pages'
+
+
+$git rm -rf .
+# Remove all files from the old working tree
+# rm '.gitignore'
+</code></pre></li>
+
+<li><p>페이지 추가 및 push.</p>
+
+<pre><code>$echo &quot;My Page&quot; &gt; index.html
+$git add index.html정
+$git commit -a -m &quot;First pages commit&quot;
+$git push origin gh-pages
+</code></pre></li>
+</ol>
+
+<p><a href="https://help.github.com/articles/creating-project-pages-manually/">Creating Project Pages manually</a></p>
+
+<h1 id="custom-domain-설정하기:b47502d0fc5a05431ea07f4e2ccfb4a7">Custom Domain 설정하기</h1>
+
+<ol>
+<li>본인의 domain 호스팅 서비스에서 CNAME record 설정. ex) <code>blog.example.com</code> -&gt; <code>username.github.io</code> (<code>http://</code> 나 <code>https://</code>는 빼고 입력해야 함)</li>
+<li>CNAME file 생성 : gh-pages branch에 CNAME이라는 파일을 만들고 blog.example.com 을 입력후 저장 &amp; 커밋 &amp; 푸시 (User page라면 master branch에)</li>
+</ol>
+
+<p><a href="https://help.github.com/articles/adding-a-cname-file-to-your-repository/">Adding a cname file to your repository</a>.<br />
+<a href="https://help.github.com/articles/tips-for-configuring-a-cname-record-with-your-dns-provider/">Tips for congiguring a CNAME record with your DNS provider</a>.<br />
+<a href="https://help.github.com/articles/about-custom-domains-for-github-pages-sites/#subdomains">About custom domains for Github Pages sites</a>.</p>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "leehackgithubio";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "leehackgithubio";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="http://blog.leehack.com/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+  var _gaq=[['_setAccount','UA-70407585-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+
