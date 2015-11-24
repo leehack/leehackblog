@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>데이터베이스 on leehack&#39;s blog</title>
+    <link>http://blog.leehack.com/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/</link>
+    <description>Recent content in 데이터베이스 on leehack&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Dec 2011 02:44:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.leehack.com/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>PostgreSQL 9.1.1 &#43; phpPgAdmin 설치</title>
+      <link>http://blog.leehack.com/blog/2011/12/04/postgresql-9.1.1--phppgadmin-%EC%84%A4%EC%B9%98/</link>
+      <pubDate>Sun, 04 Dec 2011 02:44:00 +0000</pubDate>
+      
+      <guid>http://blog.leehack.com/blog/2011/12/04/postgresql-9.1.1--phppgadmin-%EC%84%A4%EC%B9%98/</guid>
+      <description>&lt;p&gt;&lt;span style=&#34;font-size: large;&#34;&gt;&lt;b&gt;Ubuntu 11.10에서&amp;nbsp;PostgreSQL 9.1.1 + phpPgAdmin 설치하기&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;b&gt;1. apt-get을 이용하여 Install하면 9.1.1이 자동으로 설치된다.&lt;/b&gt;&lt;br /&gt;$sudo apt-get install postgresql&lt;br /&gt;&lt;br /&gt;&lt;b&gt;2. apt-get을 이용하여 phpPgAdmin 설치&lt;/b&gt;&lt;br /&gt;$sudo apt-get install phpPgAdmin&lt;br /&gt;&lt;br /&gt;&lt;b&gt;3. 기본적으로 postgreSQL은 인증방식이 peer로 잡혀있다. password base로 접속하기 위해서는 trust로 변경을 해야한다.&lt;/b&gt;&lt;br /&gt;$sudo vim /etc/postgresql/9.1/main/pg_hba.conf&lt;br /&gt;&lt;br /&gt;가장 아랫쪽에 인증방식 설정하는 곳을 찾아 아래처럼 변경한다.&lt;br /&gt;local &amp;nbsp; &amp;nbsp;all &amp;nbsp; &amp;nbsp;all &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;trust&lt;br /&gt;host &amp;nbsp; &amp;nbsp;all &amp;nbsp; &amp;nbsp;all &amp;nbsp; &amp;nbsp;0.0.0.0/0 &amp;nbsp; &amp;nbsp;trust&lt;br /&gt;&lt;br /&gt;&lt;em&gt;참고로 host의 address를 0.0.0.0/0 으로 설정한 것은 원격지에서 접속이 가능하도록 하기위해서다.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;4. 원격지에서 접속 가능하도록 설정&lt;/b&gt;&lt;br /&gt;$sudo vim /etc/postgresql/9.1/main/postgresql.conf&lt;br /&gt;&lt;br /&gt;listen_addresses을 찾아 주석을 제거하고&lt;br /&gt;listen_addresses = &amp;lsquo;&lt;/em&gt;&amp;rsquo; 로 수정한다.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;5. PostgreSQL 재시작&lt;/b&gt;&lt;br /&gt;$sudo /etc/init.d/postgresql restart&lt;br /&gt;&lt;br /&gt;&lt;b&gt;6. User 추가하기&lt;/b&gt;&lt;br /&gt;$sudo -u postgres createuser -P &amp;lsquo;account name&amp;rsquo;&lt;br /&gt;&lt;br /&gt;* -P 옵션은 계정을 추가하면서 password를 지정할 것이라는 옵션.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;7. phpPgAdmin 원격접속 허용&lt;/b&gt;&lt;br /&gt;$sudo vim /etc/phppgadmin/apache.conf&lt;br /&gt;&lt;br /&gt;아래 두라인을 주석처리&lt;br /&gt;deny from all&lt;br /&gt;allow from 127.0.0.0/255.0.0.0 ::&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;28&lt;/sub&gt;&lt;br /&gt;&lt;br /&gt;allow from all 추가&lt;br /&gt;&lt;br /&gt;&lt;b&gt;8. Apache 재시작&lt;/b&gt;&lt;br /&gt;$sudo /etc/init.d/apache2 restart&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;여기까지 하면 세팅 완료. 6번에서 User추가시 super user를 추가했다면 앞으로는 &lt;a href=&#34;http://localhost/phppgadmin&#34;&gt;http://localhost/phppgadmin&lt;/a&gt; 에서 user및 db 추가가 가능함.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

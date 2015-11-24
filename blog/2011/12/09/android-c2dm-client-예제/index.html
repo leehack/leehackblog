@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Android C2DM client 예제 &middot; Jhinseok Lee</title>
+
+  
+  <link rel="stylesheet" href="http://blog.leehack.com/css/poole.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/hyde.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/hyde-x.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/highlight/monokai.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://blog.leehack.com/touch-icon-144-precomposed.png">
+  <link href="http://blog.leehack.com/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+        <img src="https://www.gravatar.com/avatar/0c3f880ef06e403dbe25dd7b7e9c5a3b?s=200"
+             alt="gravatar" title="Jhinseok Lee">
+      
+      <h1>Jhinseok Lee</h1>
+      
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://blog.leehack.com/">Home</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/leehack"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/leehack"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://plus.google.com/u/0/&#43;JhinseokLEE"><i class="fa fa-google-plus-square fa-3x"></i></a>
+      <a href="https://www.facebook.com/jhinseok.lee"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      <a href="http://blog.leehack.com/index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+    <p><script id='flattr'>
+      (function(id){
+        var s = document.getElementById(id);
+        var f = document.createElement('iframe');
+        f.src = '//api.flattr.com/button/view/?uid=leehack&button=compact&url=http:\/\/blog.leehack.com\/&title=leehack\x27s blog';
+        f.title = 'Flattr';
+        f.height = 20;
+        f.width = 110;
+        f.style.borderWidth = 0;
+        s.parentNode.insertBefore(f, s);
+      })('flattr');
+    </script></p>
+    
+
+    <p>Copyright &copy; 2015 <a href="http://blog.leehack.com/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>Android C2DM client 예제</h1>
+    <span class="post-date">Dec 9, 2011 &middot; 2 minute read &middot; <a href="http://blog.leehack.com/blog/2011/12/09/android-c2dm-client-%EC%98%88%EC%A0%9C/#disqus_thread">Comments</a>
+    </span>
+    <p><br />준비물 :&nbsp;c2dm account(<a href="http://blog.leehack.com/2011/12/test.html">파이썬으로 c2dm서버 만들기</a>&nbsp;포스팅 참조)<br /><br /><div class="separator" style="clear: both; text-align: center;"></div>만들 예제의 패키지 구조<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-f9hw88JM4MU/TuHeizYCzYI/AAAAAAAADnE/_8JG2D4Tc50/s1600/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-09+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+7.10.00.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://4.bp.blogspot.com/-f9hw88JM4MU/TuHeizYCzYI/AAAAAAAADnE/_8JG2D4Tc50/s320/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-09+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+7.10.00.png" width="246" /></a></div><br />우선 Manifest file의 Code<br /><br /><pre class="prettyprint lang-xml"><manifest android:versioncode="1" android:versionname="1.0" package="com.leehack.c2dmtest" xmlns:android="http://schemas.android.com/apk/res/android"><br /><br />    <uses-sdk android:minsdkversion="14"><br /><br />    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name"><br />        <activity android:label="@string/app_name" android:name=".C2DM_TESTActivity"><br />            <intent-filter><br />                <action android:name="android.intent.action.MAIN"><br /><br />                <category android:name="android.intent.category.LAUNCHER"><br />            </category></action></intent-filter><br />        </activity><br />        <br />        <!-- Only C2DM servers can send messages for the app. If permission is <br />   not set - any other app can generate it --><br />  <receiver android:name=".push.C2DMReceiver" android:permission="com.google.android.c2dm.permission.SEND"><br />   <!-- Receive the actual message --><br />   <intent-filter><br />    <action android:name="com.google.android.c2dm.intent.RECEIVE"><br />    <category android:name="com.leehack.c2dmtest"><br />   </category></action></intent-filter><br />   <!-- Receive the registration id --><br />   <intent-filter><br />    <action android:name="com.google.android.c2dm.intent.REGISTRATION"><br />    <category android:name="com.leehack.c2dmtest"><br />   </category></action></intent-filter><br />  </receiver><br />  <br />    </application><br /> <!-- Only this application can receive the messages and registration result --><br /> <permission android:name="com.leehack.c2dmtest.permission.C2D_MESSAGE" android:protectionlevel="signature"><br /> <uses-permission android:name="com.leehack.c2dmtest.permission.C2D_MESSAGE"><br /><br /> <!-- This app has permission to register and receive message --><br /> <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"><br /></uses-permission></uses-permission></permission></uses-sdk></manifest><br /><br /></pre><br />중요한 부분:<br />15~ 28 line &lt;-com.leehack.c2dmtest.push.C2DMReceiver 등록<br />31~36 line &lt;- C2DM을 사용할 수 있도록 어플에 permission부여<br /><br />C2DMReceiver.java: 리시버 작성<br /><br /><pre class="prettyprint lang-java">package com.leehack.c2dmtest.push;<br /><br />import android.app.Activity;<br />import android.content.BroadcastReceiver;<br />import android.content.Context;<br />import android.content.Intent;<br />import android.content.SharedPreferences;<br />import android.util.Log;<br />import android.view.Gravity;<br />import android.widget.Toast;<br /><br />public class C2DMReceiver extends BroadcastReceiver {<br /> static String registration_id = null;<br /> private Context mContext;<br /> @Override<br /> public void onReceive(Context context, Intent intent) {<br />  if (intent.getAction().equals(<br />    &ldquo;com.google.android.c2dm.intent.REGISTRATION&rdquo;)) {<br />   handleRegistration(context, intent);<br />  } else if (intent.getAction().equals(<br />    &ldquo;com.google.android.c2dm.intent.RECEIVE&rdquo;)) {<br />   handleMessage(context, intent);<br />  }<br /> }<br /> //서버에 등록이 되면 Registration_id를 C2DM서버에서 보내준다. 받은 이 ID를 별도로 구성한 서버에 보내야 한다.<br /> private void handleRegistration(Context context, Intent intent) {<br />  String registration = intent.getStringExtra(&ldquo;registration_id&rdquo;);<br />  if (intent.getStringExtra(&ldquo;error&rdquo;) != null) {<br />   // Registration failed, should try again later.<br />  } else if (intent.getStringExtra(&ldquo;unregistered&rdquo;) != null) {<br />   registration = null;<br />  } else if (registration != null) {<br />   registration_id = registration;<br />   mContext = context;<br />   SharedPreferences sp  = mContext.getSharedPreferences(&ldquo;com.leehack.c2dmtest&rdquo;, Activity.MODE_PRIVATE);<br />   SharedPreferences.Editor ed = sp.edit();<br />   ed.putString(&ldquo;registration_id&rdquo;, registration_id);<br />   ed.commit();<br />   Toast toast = Toast.makeText(context, &ldquo;Registration Id\n&rdquo; + registration_id,<br />     Toast.LENGTH_LONG);<br />   toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 150);<br />   toast.show();<br />   Log.d(&ldquo;C2DMReceiver&rdquo;, &ldquo;c2dm registered&rdquo;);<br />  }<br /> }<br /> //메세지가 도착하면 토스트로 도착한 메세지를 보여줌<br /> private void handleMessage(Context context, Intent intent) {<br /><br />  String c2dm_msg = intent.getExtras().getString(&ldquo;msg&rdquo;);<br /><br />  System.out.println(&ldquo;c2dm_msg======&gt;&rdquo; + c2dm_msg);<br />  Toast toast = Toast.makeText(context, &ldquo;c2dmMessage\n&rdquo; + c2dm_msg,<br />    Toast.LENGTH_LONG);<br />  toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 150);<br />  toast.show();<br /><br /> }<br />}<br /></pre><br />PushHelper.java: c2dm 서버에 Register/Unregister 메소드 작성<br /><br /><pre class="prettyprint lang-java">package com.leehack.c2dmtest.push;<br /><br />import android.app.Activity;<br />import android.app.PendingIntent;<br />import android.content.Context;<br />import android.content.Intent;<br />import android.content.SharedPreferences;<br /><br />public class PushHelper {<br /><br /> final static String c2dmDevId = &ldquo;c2dm에 등록한 account&rdquo;;<br /> <br /> public static void c2dmRegister(Context context){<br />  SharedPreferences sp  = context.getSharedPreferences(&ldquo;com.leehack.c2dmtest&rdquo;, Activity.MODE_PRIVATE);<br />  if(sp.getString(&ldquo;registration_id&rdquo;, null) != null)<br />   return;<br />  Intent registrationIntent = new Intent(<br />    &ldquo;com.google.android.c2dm.intent.REGISTER&rdquo;);<br />  registrationIntent.putExtra(&ldquo;app&rdquo;,<br />    PendingIntent.getBroadcast(context, 0, new Intent(), 0));<br />  registrationIntent.putExtra(&ldquo;sender&rdquo;, c2dmDevId);<br />  context.startService(registrationIntent);<br /> }<br /> public static void c2dmUnregister(Context context){<br />  Intent unregIntent = new Intent(&ldquo;com.google.android.c2dm.intent.UNREGISTER&rdquo;);<br />  unregIntent.putExtra(&ldquo;app&rdquo;, PendingIntent.getBroadcast(context, 0, new Intent(), 0));<br />  context.startService(unregIntent);<br /> }<br />}<br /><br /></pre><br />C2DM_TESTActivity.java: Register와 Unregister버튼의 동작을 정의<br /><br /><pre class="prettyprint lang-java">package com.leehack.c2dmtest;<br /><br />import android.app.Activity;<br />import android.os.Bundle;<br />import android.view.View;<br />import android.view.View.OnClickListener;<br /><br />import com.leehack.c2dmtest.push.PushHelper;<br /><br />public class C2DM_TESTActivity extends Activity {<br />    /** Called when the activity is first created. */<br />    @Override<br />    public void onCreate(Bundle savedInstanceState) {<br />        super.onCreate(savedInstanceState);<br />        setContentView(R.layout.main);<br />        findViewById(R.id.button1).setOnClickListener(new OnClickListener() {<br />   <br />   @Override<br />   public void onClick(View v) {<br />    // TODO Auto-generated method stub<br />    PushHelper.c2dmRegister(C2DM_TESTActivity.this);<br />   }<br />  });<br />        findViewById(R.id.button2).setOnClickListener(new OnClickListener() {<br />   <br />   @Override<br />   public void onClick(View v) {<br />    // TODO Auto-generated method stub<br />    PushHelper.c2dmUnregister(C2DM_TESTActivity.this);<br />   }<br />  });<br />    }<br />}<br /></pre><br />앞으로 해야 할일!<br />1. 구글의 C2DM과 통신한 Push Server 구성<br />2. Register를 한 후 C2DMReceiver를 통해 C2DM 서버로 부터 전달받은 Registration_ID를 구성한 Push Server로 전달하는 로직 구성<br />(<a href="http://blog.leehack.com/2011/12/test.html">파이썬으로 c2dm서버 만들기</a>&nbsp;포스팅을 참조하면 1번은 해결될 것이고 2번만 추가로 구성하면 된다)<br /><div><br /></div></p>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "leehackgithubio";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "leehackgithubio";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="http://blog.leehack.com/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+  var _gaq=[['_setAccount','UA-70407585-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

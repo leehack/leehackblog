@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>PostgreSQL 9.1.1 &#43; phpPgAdmin 설치 &middot; Jhinseok Lee</title>
+
+  
+  <link rel="stylesheet" href="http://blog.leehack.com/css/poole.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/hyde.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/hyde-x.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/highlight/monokai.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://blog.leehack.com/touch-icon-144-precomposed.png">
+  <link href="http://blog.leehack.com/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+        <img src="https://www.gravatar.com/avatar/0c3f880ef06e403dbe25dd7b7e9c5a3b?s=200"
+             alt="gravatar" title="Jhinseok Lee">
+      
+      <h1>Jhinseok Lee</h1>
+      
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://blog.leehack.com/">Home</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/leehack"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/leehack"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://plus.google.com/u/0/&#43;JhinseokLEE"><i class="fa fa-google-plus-square fa-3x"></i></a>
+      <a href="https://www.facebook.com/jhinseok.lee"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      <a href="http://blog.leehack.com/index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+    <p><script id='flattr'>
+      (function(id){
+        var s = document.getElementById(id);
+        var f = document.createElement('iframe');
+        f.src = '//api.flattr.com/button/view/?uid=leehack&button=compact&url=http:\/\/blog.leehack.com\/&title=leehack\x27s blog';
+        f.title = 'Flattr';
+        f.height = 20;
+        f.width = 110;
+        f.style.borderWidth = 0;
+        s.parentNode.insertBefore(f, s);
+      })('flattr');
+    </script></p>
+    
+
+    <p>Copyright &copy; 2015 <a href="http://blog.leehack.com/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>PostgreSQL 9.1.1 &#43; phpPgAdmin 설치</h1>
+    <span class="post-date">Dec 4, 2011 &middot; 1 minute read &middot; <a href="http://blog.leehack.com/blog/2011/12/04/postgresql-9.1.1--phppgadmin-%EC%84%A4%EC%B9%98/#disqus_thread">Comments</a>
+    </span>
+    <p><span style="font-size: large;"><b>Ubuntu 11.10에서&nbsp;PostgreSQL 9.1.1 + phpPgAdmin 설치하기</b></span><br /><br /><b>1. apt-get을 이용하여 Install하면 9.1.1이 자동으로 설치된다.</b><br />$sudo apt-get install postgresql<br /><br /><b>2. apt-get을 이용하여 phpPgAdmin 설치</b><br />$sudo apt-get install phpPgAdmin<br /><br /><b>3. 기본적으로 postgreSQL은 인증방식이 peer로 잡혀있다. password base로 접속하기 위해서는 trust로 변경을 해야한다.</b><br />$sudo vim /etc/postgresql/9.1/main/pg_hba.conf<br /><br />가장 아랫쪽에 인증방식 설정하는 곳을 찾아 아래처럼 변경한다.<br />local &nbsp; &nbsp;all &nbsp; &nbsp;all &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;trust<br />host &nbsp; &nbsp;all &nbsp; &nbsp;all &nbsp; &nbsp;0.0.0.0/0 &nbsp; &nbsp;trust<br /><br /><em>참고로 host의 address를 0.0.0.0/0 으로 설정한 것은 원격지에서 접속이 가능하도록 하기위해서다.<br /><br /><b>4. 원격지에서 접속 가능하도록 설정</b><br />$sudo vim /etc/postgresql/9.1/main/postgresql.conf<br /><br />listen_addresses을 찾아 주석을 제거하고<br />listen_addresses = &lsquo;</em>&rsquo; 로 수정한다.<br /><br /><b>5. PostgreSQL 재시작</b><br />$sudo /etc/init.d/postgresql restart<br /><br /><b>6. User 추가하기</b><br />$sudo -u postgres createuser -P &lsquo;account name&rsquo;<br /><br />* -P 옵션은 계정을 추가하면서 password를 지정할 것이라는 옵션.<br /><br /><b>7. phpPgAdmin 원격접속 허용</b><br />$sudo vim /etc/phppgadmin/apache.conf<br /><br />아래 두라인을 주석처리<br />deny from all<br />allow from 127.0.0.0/255.0.0.0 ::<sup>1</sup>&frasl;<sub>28</sub><br /><br />allow from all 추가<br /><br /><b>8. Apache 재시작</b><br />$sudo /etc/init.d/apache2 restart<br /><br /><br />여기까지 하면 세팅 완료. 6번에서 User추가시 super user를 추가했다면 앞으로는 <a href="http://localhost/phppgadmin">http://localhost/phppgadmin</a> 에서 user및 db 추가가 가능함.<br /><br /></p>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "leehackgithubio";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "leehackgithubio";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="http://blog.leehack.com/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+  var _gaq=[['_setAccount','UA-70407585-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+
