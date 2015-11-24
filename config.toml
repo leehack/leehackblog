@@ -45,7 +45,7 @@ disqusShortname = "leehackgithubio"
     home = "Home"
 
     # Metadata used to drive integrations.
-    #googleAuthorship = "Your Google+ profile ID"
+    googleAuthorship = "+JhinseokLEE"
     googleAnalytics = "UA-70407585-1"
     gravatarHash = "0c3f880ef06e403dbe25dd7b7e9c5a3b"
 
