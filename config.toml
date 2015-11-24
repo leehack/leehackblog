@@ -9,6 +9,11 @@ disqusShortname = "leehackgithubio"
 [author]
     name = "Jhinseok Lee"
 
+[[menu.main]]
+    name = "Android"
+    identifier = "android"
+    url = "/categories/Android"
+    
 [permalinks]
     # Optional. Change the permalink format for the 'post' content type.
     # The format shown here is the same one Jekyll/Octopress uses by default.
@@ -30,7 +35,7 @@ disqusShortname = "leehackgithubio"
     # Changes sidebar background and link/accent colours.
     # See below for more colour options.
     # This also works: "theme-base-08 layout-reverse", or just "layout-reverse".
-    #theme = "theme-base-08"
+    theme = "layout-reverse"
 
     # Select a syntax highight.
     # Check the static/css/highlight directory for options.
@@ -38,7 +43,7 @@ disqusShortname = "leehackgithubio"
 
     # Displays under the author name in the sidebar, keep it short.
     # You can use markdown here.
-    #tagline = "Your favourite quote or soundbite."
+    tagline = "Korean Android System developer in Montreal"
 
     # Text for the top menu link, which goes the root URL for the site.
     # Default (if omitted) is "Blog".
