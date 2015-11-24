@@ -2,7 +2,7 @@
 title = "MAC에서 SSH Key 생성"
 date = 2011-12-05T02:10:00Z
 updated = 2011-12-05T04:04:48Z
-tags = ["Github", "Git", "SSH"]
+categories = ["Github", "Git", "SSH"]
 blogimport = true 
 [author]
 	name = "Jhinseok LEE"

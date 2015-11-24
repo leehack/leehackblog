@@ -2,7 +2,7 @@
 title = "Node.js debug on Eclipse"
 date = 2012-02-13T19:24:00Z
 updated = 2012-02-13T19:24:52Z
-tags = ["웹개발", "node.js", "Eclipse"]
+categories = ["웹개발", "node.js", "Eclipse"]
 blogimport = true 
 [author]
 	name = "Jhinseok LEE"

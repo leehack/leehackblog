@@ -2,7 +2,7 @@
 title = "Pydev에서 Library 인식 안될 때"
 date = 2011-12-08T00:11:00Z
 updated = 2011-12-08T00:20:19Z
-tags = ["Python", "Eclipse", "Pydev"]
+categories = ["Python", "Eclipse", "Pydev"]
 blogimport = true 
 [author]
 	name = "Jhinseok LEE"

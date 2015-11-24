@@ -2,7 +2,7 @@
 title = "Get gmail data on Android"
 date = 2010-04-06T21:39:00Z
 updated = 2010-05-05T21:12:41Z
-tags = ["Android"]
+categories = ["Android"]
 blogimport = true 
 [author]
 	name = "Jhinseok LEE"

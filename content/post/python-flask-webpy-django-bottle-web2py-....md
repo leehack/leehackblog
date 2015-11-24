@@ -2,7 +2,7 @@
 title = "Python:: flask, webpy, Django, Bottle, web2py ..."
 date = 2011-12-07T22:18:00Z
 updated = 2011-12-08T00:09:15Z
-tags = ["Python", "Flask", "웹개발", "Django"]
+categories = ["Python", "Flask", "웹개발", "Django"]
 blogimport = true 
 [author]
 	name = "Jhinseok LEE"

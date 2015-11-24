@@ -2,7 +2,7 @@
 title = "Android ODEX Reverse Engineering(DE-ODEX)"
 date = 2010-06-09T05:20:00Z
 updated = 2010-06-09T05:20:46Z
-tags = ["Android"]
+categories = ["Android"]
 blogimport = true 
 [author]
 	name = "Jhinseok LEE"

@@ -2,7 +2,7 @@
 title = "How to create update.zip using your build aka system.img"
 date = 2010-03-02T23:32:00Z
 updated = 2010-05-05T21:12:41Z
-tags = ["Android"]
+categories = ["Android"]
 blogimport = true 
 [author]
 	name = "Jhinseok LEE"

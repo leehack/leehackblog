@@ -2,7 +2,7 @@
 title = "Python으로 c2dm server 만들기"
 date = 2011-12-09T04:25:00Z
 updated = 2011-12-09T04:56:20Z
-tags = ["Server", "C2DM", "Python", "Push", "Android"]
+categories = ["Server", "C2DM", "Python", "Push", "Android"]
 blogimport = true 
 [author]
 	name = "Jhinseok LEE"

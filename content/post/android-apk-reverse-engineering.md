@@ -2,7 +2,7 @@
 title = "Android APK Reverse Engineering"
 date = 2010-05-14T00:44:00Z
 updated = 2010-05-14T01:02:31Z
-tags = ["Android"]
+categories = ["Android"]
 blogimport = true 
 [author]
 	name = "Jhinseok LEE"

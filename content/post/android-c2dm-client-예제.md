@@ -2,7 +2,7 @@
 title = "Android C2DM client 예제"
 date = 2011-12-09T04:56:00Z
 updated = 2015-11-20T10:25:55Z
-tags = ["C2DM", "Push", "Android"]
+categories = ["C2DM", "Push", "Android"]
 blogimport = true 
 [author]
 	name = "Jhinseok LEE"

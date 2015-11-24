@@ -2,7 +2,7 @@
 title = "Android dips pixel 계산법"
 date = 2010-08-05T02:25:00Z
 updated = 2010-08-05T02:25:41Z
-tags = ["Android"]
+categories = ["Android"]
 blogimport = true 
 [author]
 	name = "Jhinseok LEE"

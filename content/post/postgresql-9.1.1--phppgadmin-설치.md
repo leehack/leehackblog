@@ -2,7 +2,7 @@
 title = "PostgreSQL 9.1.1 + phpPgAdmin 설치"
 date = 2011-12-04T02:44:00Z
 updated = 2011-12-04T03:08:25Z
-tags = ["웹개발", "데이터베이스"]
+categories = ["웹개발", "데이터베이스"]
 blogimport = true 
 [author]
 	name = "Jhinseok LEE"
