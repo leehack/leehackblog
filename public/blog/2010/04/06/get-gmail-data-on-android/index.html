@@ -90,6 +90,9 @@
   <div class="post">
     <h1>Get gmail data on Android</h1>
     <span class="post-date">Apr 6, 2010 &middot; 1 minute read &middot; <a href="http://blog.leehack.com/blog/2010/04/06/get-gmail-data-on-android/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="http://blog.leehack.com/categories/android">Android</a>
     </span>
     <p>ContentResolver contentResolver = getContentResolver();<br />Cursor conversations = contentResolver.query(Uri.parse(&ldquo;content://gmail-ls/conversations/&rdquo;      + &ldquo;leehack@gmail.com&rdquo;), null, null, null, null);<br />conversations.moveToFirst();<br />for (int a = 0; a &lt; conversations.getCount(); a++) {<br />    String subject = conversations.getString(8);<br />    conversations.moveToNext();<br />}</p>
 
