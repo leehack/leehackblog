@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Android APK Reverse Engineering &middot; Jhinseok Lee</title>
+
+  
+  <link rel="stylesheet" href="http://blog.leehack.com/css/poole.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/hyde.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/hyde-x.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/highlight/monokai.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://blog.leehack.com/touch-icon-144-precomposed.png">
+  <link href="http://blog.leehack.com/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+        <img src="https://www.gravatar.com/avatar/0c3f880ef06e403dbe25dd7b7e9c5a3b?s=200"
+             alt="gravatar" title="Jhinseok Lee">
+      
+      <h1>Jhinseok Lee</h1>
+      
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://blog.leehack.com/">Home</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/leehack"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/leehack"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://plus.google.com/u/0/&#43;JhinseokLEE"><i class="fa fa-google-plus-square fa-3x"></i></a>
+      <a href="https://www.facebook.com/jhinseok.lee"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      <a href="http://blog.leehack.com/index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+    <p><script id='flattr'>
+      (function(id){
+        var s = document.getElementById(id);
+        var f = document.createElement('iframe');
+        f.src = '//api.flattr.com/button/view/?uid=leehack&button=compact&url=http:\/\/blog.leehack.com\/&title=leehack\x27s blog';
+        f.title = 'Flattr';
+        f.height = 20;
+        f.width = 110;
+        f.style.borderWidth = 0;
+        s.parentNode.insertBefore(f, s);
+      })('flattr');
+    </script></p>
+    
+
+    <p>Copyright &copy; 2015 <a href="http://blog.leehack.com/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>Android APK Reverse Engineering</h1>
+    <span class="post-date">May 14, 2010 &middot; 1 minute read &middot; <a href="http://blog.leehack.com/blog/2010/05/14/android-apk-reverse-engineering/#disqus_thread">Comments</a>
+    </span>
+    <p>Android apk file을 reverse해서 Resource나 Src를 수정하는 방법이 있다.<br /><a href="http://code.google.com/p/android-apktool/">http://code.google.com/p/android-apktool/</a>&nbsp;에 open source project가 진행중이며, apk를 풀고 다시 빌드하는 것이 가능하다.<br /><br />1. 해당 사이트에서 apktool을 다운로드하고 기재된 install방법으로 설치한다.<br />2. apk 디코딩<br />&gt;apktool d -d name.apk out<br />3. out 폴더에 있는 source file(dalvik bytecode)과 resource file을 수정한다.<br />4. apk 빌드<br />&gt;apktool b -d out<br />5. 위까지 수행하게 되면 out/dist/out.apk 가 생성되며 이 out.apk를 sign해주면 완료.<br /><br />Sign방법은&nbsp;<a href="http://developer.android.com/guide/publishing/app-signing.html">http://developer.android.com/guide/publishing/app-signing.html</a>&nbsp;를 참고하면 된다.<br /><br />참고:<br />1. leehack이 사용한 Sign관련 command.<br />C:\Sun\SDK\jdk\bin\jarsigner -verbose -keystore E:\Works\Android\Android_2.1_Library\debug.keystore out.apk androiddebugkey<br />password: android<br /><br />2. Dalvik Byte 코드에 관련된 문서.<br />Dalvik opcode list:&nbsp;<a href="http://pallergabor.uw.hu/androidblog/dalvik_opcodes.html">http://pallergabor.uw.hu/androidblog/dalvik_opcodes.html</a><br />Dalvik bytecode?:&nbsp;<a href="http://pallergabor.uw.hu/common/understandingdalvikbytecode.pdf">http://pallergabor.uw.hu/common/understandingdalvikbytecode.pdf</a><br /><div><br /></div></p>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "leehackgithubio";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "leehackgithubio";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="http://blog.leehack.com/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+  var _gaq=[['_setAccount','UA-70407585-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+

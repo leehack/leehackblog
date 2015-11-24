@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Python으로 c2dm server 만들기 &middot; Jhinseok Lee</title>
+
+  
+  <link rel="stylesheet" href="http://blog.leehack.com/css/poole.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/hyde.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/poole-overrides.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/hyde-overrides.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/hyde-x.css">
+  <link rel="stylesheet" href="http://blog.leehack.com/css/highlight/monokai.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://blog.leehack.com/touch-icon-144-precomposed.png">
+  <link href="http://blog.leehack.com/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+        <img src="https://www.gravatar.com/avatar/0c3f880ef06e403dbe25dd7b7e9c5a3b?s=200"
+             alt="gravatar" title="Jhinseok Lee">
+      
+      <h1>Jhinseok Lee</h1>
+      
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="http://blog.leehack.com/">Home</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="https://github.com/leehack"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/leehack"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      <a href="https://plus.google.com/u/0/&#43;JhinseokLEE"><i class="fa fa-google-plus-square fa-3x"></i></a>
+      <a href="https://www.facebook.com/jhinseok.lee"><i class="fa fa-facebook-square fa-3x"></i></a>
+      
+      
+      <a href="http://blog.leehack.com/index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+    <p><script id='flattr'>
+      (function(id){
+        var s = document.getElementById(id);
+        var f = document.createElement('iframe');
+        f.src = '//api.flattr.com/button/view/?uid=leehack&button=compact&url=http:\/\/blog.leehack.com\/&title=leehack\x27s blog';
+        f.title = 'Flattr';
+        f.height = 20;
+        f.width = 110;
+        f.style.borderWidth = 0;
+        s.parentNode.insertBefore(f, s);
+      })('flattr');
+    </script></p>
+    
+
+    <p>Copyright &copy; 2015 <a href="http://blog.leehack.com/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1>Python으로 c2dm server 만들기</h1>
+    <span class="post-date">Dec 9, 2011 &middot; 2 minute read &middot; <a href="http://blog.leehack.com/blog/2011/12/09/python%EC%9C%BC%EB%A1%9C-c2dm-server-%EB%A7%8C%EB%93%A4%EA%B8%B0/#disqus_thread">Comments</a>
+    </span>
+    <p>1.&nbsp;<a href="http://code.google.com/intl/ko-KR/android/c2dm/">http://code.google.com/intl/ko-KR/android/c2dm/</a> 에서 c2dm 서비스에 sign-up<br />(gmail account를 새로 만들어서 가입하는 것이 좋다. - 실제로 이 account정보를 클라이언트 및 서버에 모두 넣어야 하고 더구나 서버에는 패스워드정보도 필요하기 때문)<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-HdKsVNq8U3Y/TuHWLJiuniI/AAAAAAAADm8/cOUAaTiV7_o/s1600/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-09+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+6.33.53.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="336" src="http://4.bp.blogspot.com/-HdKsVNq8U3Y/TuHWLJiuniI/AAAAAAAADm8/cOUAaTiV7_o/s640/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-09+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+6.33.53.png" width="640" /></a></div><br />2. 가입하면 E-mail로 가입한 Account로 서비스가 Enable되었다는 내용의 메일이 옮(보통 하루안에 오고 늦어도 몇일 사이에는 오는 듯)<br /><br />여기까지 준비 완료! 아래는 실제 파이썬 코드 시작!!<br /><br /><pre class="brush:python">import urllib, urllib2<br /><br />class ClientLoginTokenFactory(): <br />    _token = None <br />    <br />    def <strong>init</strong>(self):<br />        self.url = &lsquo;<a href="https://www.google.com/accounts/ClientLogin'">https://www.google.com/accounts/ClientLogin'</a><br />        self.accountType = &lsquo;GOOGLE&rsquo;<br />        self.email = &lsquo;c2dm에 가입한 메일주소&rsquo;<br />        self.password = &lsquo;c2dm에 가입한 메일주소의 패스워드&rsquo;<br />        self.source = &lsquo;replstory-replstory-0&rsquo;<br />        self.service = &lsquo;ac2dm&rsquo;<br />    <br />    def getToken(self):    <br />        if self._token is None:<br />            <br />            # Build payload<br />            values = {&lsquo;accountType&rsquo; : self.accountType,<br />                      &lsquo;Email&rsquo; : self.email,<br />                      &lsquo;Passwd&rsquo; : self.password, <br />                      &lsquo;source&rsquo; : self.source, <br />                      &lsquo;service&rsquo; : self.service}<br />            <br />            # Build request<br />            data = urllib.urlencode(values)<br />            request = urllib2.Request(self.url, data)<br />            <br />            # Post<br />            response = urllib2.urlopen(request)<br />            responseAsString = response.read()<br />            <br />            # Format response<br />            responseAsList = responseAsString.split(&rsquo;\n&rsquo;)<br />            <br />            self._token = responseAsList[2].split(&lsquo;=&rsquo;)[1]<br />            <br />        return self._token<br />    <br />class C2DM():<br />    <br />    def <strong>init</strong>(self):<br />        self.url = &lsquo;<a href="https://android.apis.google.com/c2dm/send'">https://android.apis.google.com/c2dm/send'</a><br />        self.clientAuth = None<br />        self.registrationId = None<br />        self.collapseKey = None<br />        self.data = {}<br />        <br />    def sendMessage(self):<br />        if self.registrationId == None or self.collapseKey == None:<br />            return False<br />        <br />        clientAuthFactory = ClientLoginTokenFactory()<br />        self.clientAuth = clientAuthFactory.getToken()<br />        <br />        # Build payload<br />        values = {&lsquo;registration_id&rsquo; : self.registrationId,<br />                  &lsquo;collapse_key&rsquo; : self.collapseKey}     <br />        <br />        # Loop over any data we want to send<br />        for k, v in self.data.iteritems():            <br />            values[&lsquo;data.&rsquo; + k] = v<br />        <br />        # Build request<br />        headers = {&lsquo;Authorization&rsquo;: &lsquo;GoogleLogin auth=&rsquo; + self.clientAuth}        <br />        data = urllib.urlencode(values)<br />        request = urllib2.Request(self.url, data, headers)<br />        <br />        # Post<br />        try:<br />            response = urllib2.urlopen(request)<br />            responseAsString = response.read()<br />            <br />            return responseAsString<br />        except urllib2.HTTPError, e:<br />            print &lsquo;HTTPError &rsquo; + str(e)<br />            <br />            <br />sender = C2DM()<br />sender.registrationId = &lsquo;Android단말기에서 c2dm서버로 부터 받은 고유번호&rsquo;<br />sender.collapseKey = 1<br />sender.data = {&lsquo;msg&rsquo;:&lsquo;test&rsquo;}<br />response = sender.sendMessage()<br />print response<br /><br /></pre>9,10,79 라인의 정보만 바꾸고 실행하면 c2dm등록된 단말기로 test라는 푸시 메세지가 날아간다.<br /><a href="http://blog.boxedice.com/2010/10/07/android-push-notifications-tutorial/">http://blog.boxedice.com/2010/10/07/android-push-notifications-tutorial/</a>&nbsp;에 있는 예제코드인데 제대로 돌지 않아서 약간의 수정만 했음.<br /><br />이미 눈치 채셨겠지만 실제 사용시에는 78라인부터만 따로 가져가서 원하는 곳에 사용하면 된다. collapseKey를 1로 고정해두고 사용하면 c2dm메세지가 동일한 단말에 동일한 메세지를 계속 적으로 보낼 경우 중간중간 빼먹는 경우가 생긴다. 구글에서 중복된 메세지 전송을 방지하게 넣어둔 코드임. 중복으로 보내는 메세지라도 단말에 꼭 전송이 되어야 하는 메세지라면 collapseKey를 increase하면서 보내는 것이 상책!</p>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "leehackgithubio";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "leehackgithubio";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="http://blog.leehack.com/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+  var _gaq=[['_setAccount','UA-70407585-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
+
