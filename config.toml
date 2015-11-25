@@ -13,7 +13,12 @@ disqusShortname = "leehackgithubio"
     name = "Android"
     identifier = "android"
     url = "/categories/Android"
-    
+
+[[menu.main]]
+    name = "all"
+    identifier = "post"
+    url = "/post"
+
 [permalinks]
     # Optional. Change the permalink format for the 'post' content type.
     # The format shown here is the same one Jekyll/Octopress uses by default.
