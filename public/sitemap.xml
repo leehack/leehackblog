@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://blog.leehack.com/</loc>
-    <lastmod>2015-11-24T18:56:44-05:00</lastmod>
+    <lastmod>2015-11-25T12:36:46-05:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/</loc>
+    <lastmod>2015-11-25T12:36:46-05:00</lastmod>
   </url>
   
   <url>

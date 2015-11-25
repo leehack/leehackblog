@@ -105,6 +105,21 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="http://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/">How to debug Golang with Visual Sutio Code</a>
+      </h1>
+      <span class="post-date">Nov 25, 2015 &middot; 2 minute read &middot; <a href="http://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="http://blog.leehack.com/categories/golang">GoLang</a><a class="label" href="http://blog.leehack.com/categories/vscode">VSCode</a><a class="label" href="http://blog.leehack.com/categories/delve">Delve</a>
+      </span>
+      
+      <p>Explain how to debug Golang easily with Visual Sutio Code</p>
+      <a href="http://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="http://blog.leehack.com/blog/2015/11/24/how-i-debugged-memory-leak-issue-for-mediaserver/">How I debugged memory leak issue for mediaserver</a>
       </h1>
       <span class="post-date">Nov 24, 2015 &middot; 1 minute read &middot; <a href="http://blog.leehack.com/blog/2015/11/24/how-i-debugged-memory-leak-issue-for-mediaserver/#disqus_thread">Comments</a>
@@ -194,13 +209,13 @@
       <h1 class="post-title">
         <a href="http://blog.leehack.com/blog/2011/12/09/android-c2dm-client-%EC%98%88%EC%A0%9C/">Android C2DM client 예제</a>
       </h1>
-      <span class="post-date">Dec 9, 2011 &middot; 2 minute read &middot; <a href="http://blog.leehack.com/blog/2011/12/09/android-c2dm-client-%EC%98%88%EC%A0%9C/#disqus_thread">Comments</a>
+      <span class="post-date">Dec 9, 2011 &middot; 3 minute read &middot; <a href="http://blog.leehack.com/blog/2011/12/09/android-c2dm-client-%EC%98%88%EC%A0%9C/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="http://blog.leehack.com/categories/c2dm">C2DM</a><a class="label" href="http://blog.leehack.com/categories/push">Push</a><a class="label" href="http://blog.leehack.com/categories/android">Android</a>
       </span>
       
-      준비물 :&nbsp;c2dm account(파이썬으로 c2dm서버 만들기&nbsp;포스팅 참조) 만들 예제의 패키지 구조 우선 Manifest file의 Code 중요한 부분: 15~ 28 line &lt;-com.leehack.c2dmtest.push.C2DMReceiver 등록 31~36 line &lt;- C2DM을 사용할 수 있도록 어플에 permission부여 C2DMReceiver.java: 리시버 작성 package com.leehack.c2dmtest.push; import android.app.Activity; import android.content.BroadcastReceiver; import android.content.Context; import android.content.Intent; import android.content.SharedPreferences; import android.util.Log; import android.view.Gravity; import android.widget.Toast; public class C2DMReceiver extends BroadcastReceiver { static String registration_id = null; private Context mContext; @Override public void onReceive(Context context, Intent intent) { if (intent.getAction().equals( &ldquo;com.google.android.c2dm.intent.REGISTRATION&rdquo;)) { handleRegistration(context, intent); } else if (intent.getAction().equals( &ldquo;com.google.android.c2dm.intent.RECEIVE&rdquo;)) { handleMessage(context, intent); } } //서버에 등록이 되면 Registration_id를 C2DM서버에서 보내준다.
+      준비물 : c2dm account(파이썬으로 c2dm서버 만들기 포스팅 참조) 만들 예제의 패키지 구조. 우선 Manifest file의 Code. &lt;manifest android:versioncode=&quot;1&quot; android:versionname=&quot;1.0&quot; package=&quot;com.leehack.c2dmtest&quot; xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt; &lt;uses-sdk android:minsdkversion=&quot;14&quot;&gt; &lt;application android:icon=&quot;@drawable/ic_launcher&quot; android:label=&quot;@string/app_name&quot;&gt; &lt;activity android:label=&quot;@string/app_name&quot; android:name=&quot;.C2DM_TESTActivity&quot;&gt; &lt;intent-filter&gt; &lt;action android:name=&quot;android.intent.action.MAIN&quot;&gt; &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot;&gt;&lt;/category&gt; &lt;/action&gt; &lt;/intent-filter&gt; &lt;/activity&gt; &lt;!-- Only C2DM servers can send messages for the app. If permission is not set - any other app can generate it --&gt; &lt;receiver android:name=&quot;.push.C2DMReceiver&quot; android:permission=&quot;com.google.android.c2dm.permission.SEND&quot;&gt; &lt;!-- Receive the actual message --&gt; &lt;intent-filter&gt; &lt;action android:name=&quot;com.google.android.c2dm.intent.RECEIVE&quot;&gt; &lt;category android:name=&quot;com.leehack.c2dmtest&quot;&gt;&lt;/category&gt; &lt;/action&gt; &lt;/intent-filter&gt; &lt;!-- Receive the registration id --&gt; &lt;intent-filter&gt; &lt;action android:name=&quot;com.google.android.c2dm.intent.REGISTRATION&quot;&gt; &lt;category android:name=&quot;com.leehack.c2dmtest&quot;&gt; &lt;/category&gt; &lt;/action&gt; &lt;/intent-filter&gt; &lt;/receiver&gt; &lt;/application&gt; &lt;!-- Only this application can receive the messages and registration result --&gt; &lt;permission android:name=&quot;com.leehack.c2dmtest.permission.C2D_MESSAGE&quot; android:protectionlevel=&quot;signature&quot;&gt; &lt;uses-permission android:name=&quot;com.leehack.c2dmtest.permission.C2D_MESSAGE&quot;&gt;&lt;/uses-permission&gt; &lt;!-- This app has permission to register and receive message --&gt; &lt;uses-permission android:name=&quot;com.google.android.c2dm.permission.RECEIVE&quot;&gt;&lt;/uses-permission&gt; &lt;/permission&gt; &lt;/uses-sdk&gt; &lt;/manifest&gt; C2DMReceiver.java: 리시버 작성.
       <a href="http://blog.leehack.com/blog/2011/12/09/android-c2dm-client-%EC%98%88%EC%A0%9C/">Read On &rarr;</a>
       
     </div>
@@ -232,21 +247,6 @@
       
       여러가지 파이썬용 웹프레임웍을 이클립스의 Pydev에서 돌려보는 중 아주 눈에 거슬리는 것을 발견!!빌드도 잘되고 Run도 잘되는데 저 빨간줄! 엑스표! 에디터상에 나타나는거 아주 짜증스럽다! 오늘은 맘먹고 고치겠다고 선언! 아무리 웹을 뒤져도 나오지 않는다! 왜일까... 결국엔 삽질 끝에 아주 간단히 해결.. eclipse-&gt;preference-&gt;interpreter -Python 위 화면에서 Auto Config click하면 이런화면이 나온다. 보통은 위에 선택되어 있는 것처럼 해놓고 사용했었는데.. (easy_install하면 젤 아래 /Library/Python/2.7/site-packages 에 들어가기 때문에..)알고보니 library로 인식이 안되고 있는 것이였다 -_-;;(이런 멍청한! 모르면 죽어야지!) Select All한 후 코드를 다시 열어보니..
       <a href="http://blog.leehack.com/blog/2011/12/08/pydev%EC%97%90%EC%84%9C-library-%EC%9D%B8%EC%8B%9D-%EC%95%88%EB%90%A0-%EB%95%8C/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://blog.leehack.com/blog/2011/12/07/python-flask-webpy-django-bottle-web2py-.../">Python:: flask, webpy, Django, Bottle, web2py ...</a>
-      </h1>
-      <span class="post-date">Dec 7, 2011 &middot; 1 minute read &middot; <a href="http://blog.leehack.com/blog/2011/12/07/python-flask-webpy-django-bottle-web2py-.../#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="http://blog.leehack.com/categories/python">Python</a><a class="label" href="http://blog.leehack.com/categories/flask">Flask</a><a class="label" href="http://blog.leehack.com/categories/%EC%9B%B9%EA%B0%9C%EB%B0%9C">웹개발</a><a class="label" href="http://blog.leehack.com/categories/django">Django</a>
-      </span>
-      
-      Python으로 Web 개발 공부를 해보는 중.. 아무런 정보도 맨토도 없이 무작정 Django책부터 하나 붙잡고 시작. 100% 끝낸건 아니지만 일단 기본적인 정보는 모두 캐냈다고 판단 후 책을 덮음. 이제부터 현실적인 문제에 봉착. Django가 짱!인줄 알았는데.. 파이썬에는 수많은 좋은 웹프레임웍들이 존재한다는 것! Bottle로 짠 Simple한 REST API예제를 보고 1차 감탄! Web2Py 깔고서 관리자 페이지에서 IDE까지 제공해주는 Detail에 2차 감탄! 마지막으로 webpy까지 보고 나니 점점 헷갈린다! Django가 잘 만들어진 녀석이긴 하지만 일단 다른 프래임웍들을 알아보다 보니 Python위에서 만들어진 기술이란 느낌 보다는 그냥 Django다!
-      <a href="http://blog.leehack.com/blog/2011/12/07/python-flask-webpy-django-bottle-web2py-.../">Read On &rarr;</a>
       
     </div>
     
