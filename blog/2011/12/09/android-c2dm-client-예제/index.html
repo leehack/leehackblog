@@ -102,12 +102,176 @@
 <div class="content container">
   <div class="post">
     <h1>Android C2DM client 예제</h1>
-    <span class="post-date">Dec 9, 2011 &middot; 2 minute read &middot; <a href="http://blog.leehack.com/blog/2011/12/09/android-c2dm-client-%EC%98%88%EC%A0%9C/#disqus_thread">Comments</a>
+    <span class="post-date">Dec 9, 2011 &middot; 3 minute read &middot; <a href="http://blog.leehack.com/blog/2011/12/09/android-c2dm-client-%EC%98%88%EC%A0%9C/#disqus_thread">Comments</a>
     
     <br/>
     <a class="label" href="http://blog.leehack.com/categories/c2dm">C2DM</a><a class="label" href="http://blog.leehack.com/categories/push">Push</a><a class="label" href="http://blog.leehack.com/categories/android">Android</a>
     </span>
-    <p><br />준비물 :&nbsp;c2dm account(<a href="http://blog.leehack.com/2011/12/test.html">파이썬으로 c2dm서버 만들기</a>&nbsp;포스팅 참조)<br /><br /><div class="separator" style="clear: both; text-align: center;"></div>만들 예제의 패키지 구조<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-f9hw88JM4MU/TuHeizYCzYI/AAAAAAAADnE/_8JG2D4Tc50/s1600/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-09+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+7.10.00.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://4.bp.blogspot.com/-f9hw88JM4MU/TuHeizYCzYI/AAAAAAAADnE/_8JG2D4Tc50/s320/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-09+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+7.10.00.png" width="246" /></a></div><br />우선 Manifest file의 Code<br /><br /><pre class="prettyprint lang-xml"><manifest android:versioncode="1" android:versionname="1.0" package="com.leehack.c2dmtest" xmlns:android="http://schemas.android.com/apk/res/android"><br /><br />    <uses-sdk android:minsdkversion="14"><br /><br />    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name"><br />        <activity android:label="@string/app_name" android:name=".C2DM_TESTActivity"><br />            <intent-filter><br />                <action android:name="android.intent.action.MAIN"><br /><br />                <category android:name="android.intent.category.LAUNCHER"><br />            </category></action></intent-filter><br />        </activity><br />        <br />        <!-- Only C2DM servers can send messages for the app. If permission is <br />   not set - any other app can generate it --><br />  <receiver android:name=".push.C2DMReceiver" android:permission="com.google.android.c2dm.permission.SEND"><br />   <!-- Receive the actual message --><br />   <intent-filter><br />    <action android:name="com.google.android.c2dm.intent.RECEIVE"><br />    <category android:name="com.leehack.c2dmtest"><br />   </category></action></intent-filter><br />   <!-- Receive the registration id --><br />   <intent-filter><br />    <action android:name="com.google.android.c2dm.intent.REGISTRATION"><br />    <category android:name="com.leehack.c2dmtest"><br />   </category></action></intent-filter><br />  </receiver><br />  <br />    </application><br /> <!-- Only this application can receive the messages and registration result --><br /> <permission android:name="com.leehack.c2dmtest.permission.C2D_MESSAGE" android:protectionlevel="signature"><br /> <uses-permission android:name="com.leehack.c2dmtest.permission.C2D_MESSAGE"><br /><br /> <!-- This app has permission to register and receive message --><br /> <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"><br /></uses-permission></uses-permission></permission></uses-sdk></manifest><br /><br /></pre><br />중요한 부분:<br />15~ 28 line &lt;-com.leehack.c2dmtest.push.C2DMReceiver 등록<br />31~36 line &lt;- C2DM을 사용할 수 있도록 어플에 permission부여<br /><br />C2DMReceiver.java: 리시버 작성<br /><br /><pre class="prettyprint lang-java">package com.leehack.c2dmtest.push;<br /><br />import android.app.Activity;<br />import android.content.BroadcastReceiver;<br />import android.content.Context;<br />import android.content.Intent;<br />import android.content.SharedPreferences;<br />import android.util.Log;<br />import android.view.Gravity;<br />import android.widget.Toast;<br /><br />public class C2DMReceiver extends BroadcastReceiver {<br /> static String registration_id = null;<br /> private Context mContext;<br /> @Override<br /> public void onReceive(Context context, Intent intent) {<br />  if (intent.getAction().equals(<br />    &ldquo;com.google.android.c2dm.intent.REGISTRATION&rdquo;)) {<br />   handleRegistration(context, intent);<br />  } else if (intent.getAction().equals(<br />    &ldquo;com.google.android.c2dm.intent.RECEIVE&rdquo;)) {<br />   handleMessage(context, intent);<br />  }<br /> }<br /> //서버에 등록이 되면 Registration_id를 C2DM서버에서 보내준다. 받은 이 ID를 별도로 구성한 서버에 보내야 한다.<br /> private void handleRegistration(Context context, Intent intent) {<br />  String registration = intent.getStringExtra(&ldquo;registration_id&rdquo;);<br />  if (intent.getStringExtra(&ldquo;error&rdquo;) != null) {<br />   // Registration failed, should try again later.<br />  } else if (intent.getStringExtra(&ldquo;unregistered&rdquo;) != null) {<br />   registration = null;<br />  } else if (registration != null) {<br />   registration_id = registration;<br />   mContext = context;<br />   SharedPreferences sp  = mContext.getSharedPreferences(&ldquo;com.leehack.c2dmtest&rdquo;, Activity.MODE_PRIVATE);<br />   SharedPreferences.Editor ed = sp.edit();<br />   ed.putString(&ldquo;registration_id&rdquo;, registration_id);<br />   ed.commit();<br />   Toast toast = Toast.makeText(context, &ldquo;Registration Id\n&rdquo; + registration_id,<br />     Toast.LENGTH_LONG);<br />   toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 150);<br />   toast.show();<br />   Log.d(&ldquo;C2DMReceiver&rdquo;, &ldquo;c2dm registered&rdquo;);<br />  }<br /> }<br /> //메세지가 도착하면 토스트로 도착한 메세지를 보여줌<br /> private void handleMessage(Context context, Intent intent) {<br /><br />  String c2dm_msg = intent.getExtras().getString(&ldquo;msg&rdquo;);<br /><br />  System.out.println(&ldquo;c2dm_msg======&gt;&rdquo; + c2dm_msg);<br />  Toast toast = Toast.makeText(context, &ldquo;c2dmMessage\n&rdquo; + c2dm_msg,<br />    Toast.LENGTH_LONG);<br />  toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 150);<br />  toast.show();<br /><br /> }<br />}<br /></pre><br />PushHelper.java: c2dm 서버에 Register/Unregister 메소드 작성<br /><br /><pre class="prettyprint lang-java">package com.leehack.c2dmtest.push;<br /><br />import android.app.Activity;<br />import android.app.PendingIntent;<br />import android.content.Context;<br />import android.content.Intent;<br />import android.content.SharedPreferences;<br /><br />public class PushHelper {<br /><br /> final static String c2dmDevId = &ldquo;c2dm에 등록한 account&rdquo;;<br /> <br /> public static void c2dmRegister(Context context){<br />  SharedPreferences sp  = context.getSharedPreferences(&ldquo;com.leehack.c2dmtest&rdquo;, Activity.MODE_PRIVATE);<br />  if(sp.getString(&ldquo;registration_id&rdquo;, null) != null)<br />   return;<br />  Intent registrationIntent = new Intent(<br />    &ldquo;com.google.android.c2dm.intent.REGISTER&rdquo;);<br />  registrationIntent.putExtra(&ldquo;app&rdquo;,<br />    PendingIntent.getBroadcast(context, 0, new Intent(), 0));<br />  registrationIntent.putExtra(&ldquo;sender&rdquo;, c2dmDevId);<br />  context.startService(registrationIntent);<br /> }<br /> public static void c2dmUnregister(Context context){<br />  Intent unregIntent = new Intent(&ldquo;com.google.android.c2dm.intent.UNREGISTER&rdquo;);<br />  unregIntent.putExtra(&ldquo;app&rdquo;, PendingIntent.getBroadcast(context, 0, new Intent(), 0));<br />  context.startService(unregIntent);<br /> }<br />}<br /><br /></pre><br />C2DM_TESTActivity.java: Register와 Unregister버튼의 동작을 정의<br /><br /><pre class="prettyprint lang-java">package com.leehack.c2dmtest;<br /><br />import android.app.Activity;<br />import android.os.Bundle;<br />import android.view.View;<br />import android.view.View.OnClickListener;<br /><br />import com.leehack.c2dmtest.push.PushHelper;<br /><br />public class C2DM_TESTActivity extends Activity {<br />    /** Called when the activity is first created. */<br />    @Override<br />    public void onCreate(Bundle savedInstanceState) {<br />        super.onCreate(savedInstanceState);<br />        setContentView(R.layout.main);<br />        findViewById(R.id.button1).setOnClickListener(new OnClickListener() {<br />   <br />   @Override<br />   public void onClick(View v) {<br />    // TODO Auto-generated method stub<br />    PushHelper.c2dmRegister(C2DM_TESTActivity.this);<br />   }<br />  });<br />        findViewById(R.id.button2).setOnClickListener(new OnClickListener() {<br />   <br />   @Override<br />   public void onClick(View v) {<br />    // TODO Auto-generated method stub<br />    PushHelper.c2dmUnregister(C2DM_TESTActivity.this);<br />   }<br />  });<br />    }<br />}<br /></pre><br />앞으로 해야 할일!<br />1. 구글의 C2DM과 통신한 Push Server 구성<br />2. Register를 한 후 C2DMReceiver를 통해 C2DM 서버로 부터 전달받은 Registration_ID를 구성한 Push Server로 전달하는 로직 구성<br />(<a href="http://blog.leehack.com/2011/12/test.html">파이썬으로 c2dm서버 만들기</a>&nbsp;포스팅을 참조하면 1번은 해결될 것이고 2번만 추가로 구성하면 된다)<br /><div><br /></div></p>
+    <p>준비물 : c2dm account(<a href="(/blog/2011/12/09/python으로-c2dm-server-만들기)">파이썬으로 c2dm서버 만들기</a> 포스팅 참조)</p>
+
+<p>만들 예제의 패키지 구조.<br />
+<img src="http://4.bp.blogspot.com/-f9hw88JM4MU/TuHeizYCzYI/AAAAAAAADnE/_8JG2D4Tc50/s320/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-09+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+7.10.00.png" alt="" /></p>
+
+<p>우선 Manifest file의 Code.</p>
+
+<pre><code>&lt;manifest android:versioncode=&quot;1&quot; android:versionname=&quot;1.0&quot; package=&quot;com.leehack.c2dmtest&quot; xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;uses-sdk android:minsdkversion=&quot;14&quot;&gt;
+        &lt;application android:icon=&quot;@drawable/ic_launcher&quot; android:label=&quot;@string/app_name&quot;&gt;
+            &lt;activity android:label=&quot;@string/app_name&quot; android:name=&quot;.C2DM_TESTActivity&quot;&gt;
+                &lt;intent-filter&gt;
+                    &lt;action android:name=&quot;android.intent.action.MAIN&quot;&gt;
+                        &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot;&gt;&lt;/category&gt;
+                    &lt;/action&gt;
+                &lt;/intent-filter&gt;
+            &lt;/activity&gt;
+            
+            &lt;!-- Only C2DM servers can send messages for the app. If permission is not set - any other app can generate it --&gt;
+            &lt;receiver android:name=&quot;.push.C2DMReceiver&quot; android:permission=&quot;com.google.android.c2dm.permission.SEND&quot;&gt;
+                &lt;!-- Receive the actual message --&gt;
+                &lt;intent-filter&gt;
+                    &lt;action android:name=&quot;com.google.android.c2dm.intent.RECEIVE&quot;&gt;
+                        &lt;category android:name=&quot;com.leehack.c2dmtest&quot;&gt;&lt;/category&gt;
+                    &lt;/action&gt;
+                &lt;/intent-filter&gt;
+                &lt;!-- Receive the registration id --&gt;
+                &lt;intent-filter&gt;
+                    &lt;action android:name=&quot;com.google.android.c2dm.intent.REGISTRATION&quot;&gt;
+                        &lt;category android:name=&quot;com.leehack.c2dmtest&quot;&gt;
+                        &lt;/category&gt;
+                    &lt;/action&gt;
+                &lt;/intent-filter&gt;
+            &lt;/receiver&gt;
+        &lt;/application&gt;
+        &lt;!-- Only this application can receive the messages and registration result --&gt;
+        &lt;permission android:name=&quot;com.leehack.c2dmtest.permission.C2D_MESSAGE&quot; android:protectionlevel=&quot;signature&quot;&gt;
+            &lt;uses-permission android:name=&quot;com.leehack.c2dmtest.permission.C2D_MESSAGE&quot;&gt;&lt;/uses-permission&gt;
+            &lt;!-- This app has permission to register and receive message --&gt;
+            &lt;uses-permission android:name=&quot;com.google.android.c2dm.permission.RECEIVE&quot;&gt;&lt;/uses-permission&gt;
+        &lt;/permission&gt;
+    &lt;/uses-sdk&gt;
+&lt;/manifest&gt;
+</code></pre>
+
+<p>C2DMReceiver.java: 리시버 작성.</p>
+
+<pre><code>package com.leehack.c2dmtest.push;
+import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.util.Log;
+import android.view.Gravity;
+import android.widget.Toast;
+public class C2DMReceiver extends BroadcastReceiver
+{
+    static String registration_id = null;
+    private Context mContext;
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        if (intent.getAction().equals(&quot;com.google.android.c2dm.intent.REGISTRATION&quot;)) {
+            handleRegistration(context, intent);
+        } else if (intent.getAction().equals(&quot;com.google.android.c2dm.intent.RECEIVE&quot;)) {
+        	//서버에 등록이 되면 Registration_id를 C2DM서버에서 보내준다. 받은 이 ID를 별도로 구성한 서버에 보내야 한다.
+            handleMessage(context, intent);
+        }
+    }
+    private void handleRegistration(Context context, Intent intent) {
+        String registration = intent.getStringExtra(&quot;registration_id&quot;);
+        if (intent.getStringExtra(&quot;error&quot;) != null) {
+        	// Registration failed, should try again later.
+        } else if (intent.getStringExtra(&quot;unregistered&quot;) != null) {
+            registration = null;
+        } else if (registration != null) {
+            registration_id = registration;
+            mContext = context;
+            SharedPreferences sp  = mContext.getSharedPreferences(&quot;com.leehack.c2dmtest&quot;, Activity.MODE_PRIVATE);
+            SharedPreferences.Editor ed = sp.edit();
+            ed.putString(&quot;registration_id&quot;, registration_id);
+            ed.commit();
+            Toast toast = Toast.makeText(context, &quot;Registration Id\n&quot; + registration_id, Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 150);
+            toast.show();
+            Log.d(&quot;C2DMReceiver&quot;, &quot;c2dm registered&quot;);
+        }
+    }
+    //메세지가 도착하면 토스트로 도착한 메세지를 보여줌
+    private void handleMessage(Context context, Intent intent) {
+        String c2dm_msg = intent.getExtras().getString(&quot;msg&quot;);
+        System.out.println(&quot;c2dm_msg======&gt;&quot; + c2dm_msg);
+        Toast toast = Toast.makeText(context, &quot;c2dmMessage\n&quot; + c2dm_msg, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 150);
+        toast.show();
+    }
+}
+</code></pre>
+
+<p>PushHelper.java: c2dm 서버에 Register/Unregister 메소드 작성.</p>
+
+<pre><code>package com.leehack.c2dmtest.push;
+import android.app.Activity;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+public class PushHelper {
+	final static String c2dmDevId = &quot;c2dm에 등록한 account&quot;;
+	public static void c2dmRegister(Context context){
+		SharedPreferences sp  = context.getSharedPreferences(&quot;com.leehack.c2dmtest&quot;, Activity.MODE_PRIVATE);
+		if(sp.getString(&quot;registration_id&quot;, null) != null)
+			return;
+		Intent registrationIntent = new Intent(
+			&quot;com.google.android.c2dm.intent.REGISTER&quot;);
+		registrationIntent.putExtra(&quot;app&quot;,
+			PendingIntent.getBroadcast(context, 0, new Intent(), 0));
+		registrationIntent.putExtra(&quot;sender&quot;, c2dmDevId);
+		context.startService(registrationIntent);
+	}
+	public static void c2dmUnregister(Context context){
+		Intent unregIntent = new Intent(&quot;com.google.android.c2dm.intent.UNREGISTER&quot;);
+		unregIntent.putExtra(&quot;app&quot;, PendingIntent.getBroadcast(context, 0, new Intent(), 0));
+		context.startService(unregIntent);
+	}
+}
+</code></pre>
+
+<p>C2DM_TESTActivity.java: Register와 Unregister버튼의 동작을 정의</p>
+
+<pre><code>package com.leehack.c2dmtest;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.leehack.c2dmtest.push.PushHelper;
+
+public class C2DM_TESTActivity extends Activity {
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
+		findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+			// TODO Auto-generated method stub
+			PushHelper.c2dmRegister(C2DM_TESTActivity.this);
+			}
+		});
+		findViewById(R.id.button2).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				PushHelper.c2dmUnregister(C2DM_TESTActivity.this);
+			}
+		});
+	}
+}
+</code></pre>
+
+<p>앞으로 해야 할일!.<br />
+1. 구글의 C2DM과 통신한 Push Server 구성.<br />
+2. Register를 한 후 C2DMReceiver를 통해 C2DM 서버로 부터 전달받은 Registration_ID를 구성한 Push Server로 전달하는 로직 구성.<br />
+    (<a href="(/blog/2011/12/09/python으로-c2dm-server-만들기)">파이썬으로 c2dm서버 만들기</a> 포스팅을 참조하면 1번은 해결될 것이고 2번만 추가로 구성하면 된다)</p>
 
   </div>
   <div id="disqus_thread"></div>

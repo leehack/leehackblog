@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Delve on leehack&#39;s blog</title>
+    <link>http://blog.leehack.com/categories/delve/</link>
+    <description>Recent content in Delve on leehack&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Nov 2015 12:36:46 -0500</lastBuildDate>
+    <atom:link href="http://blog.leehack.com/categories/delve/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to debug Golang with Visual Sutio Code</title>
+      <link>http://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/</link>
+      <pubDate>Wed, 25 Nov 2015 12:36:46 -0500</pubDate>
+      
+      <guid>http://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://i3-vso.sec.s-msft.com/dynimg/IC794090.png&#34; alt=&#34;Visual Studio Code&#34; /&gt;
+&lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt; is released by Microsoft which is cross platform Code Editor.
+It&amp;rsquo;s forked from &lt;a href=&#34;(https://atom.io/)&#34;&gt;ATOM&lt;/a&gt; and OpenSource as well if you care ;)&lt;/p&gt;
+
+&lt;p&gt;I just found out it&amp;rsquo;s quite useful for Markdown for my posting but also realized it&amp;rsquo;s quite nice for &lt;a href=&#34;(https://golang.org/)&#34;&gt;GoLang&lt;/a&gt; debugging as well.
+Even still my favorite editor is &lt;a href=&#34;http://www.sublimetext.com/&#34;&gt;SublimeText&lt;/a&gt; though..&lt;/p&gt;
+
+&lt;p&gt;Now it&amp;rsquo;s time to introduce &lt;a href=&#34;(https://github.com/derekparker/delve)&#34;&gt;Delve&lt;/a&gt;.&lt;br /&gt;
+&lt;em&gt;Delve is a debugger for the Go programming language. The goal of the project is to provide a simple, full featured debugging tool for Go. Delve should be easy to invoke and easy to use. Chances are if you&amp;rsquo;re using a debugger, most likely things aren&amp;rsquo;t going your way. With that in mind, Delve should stay out of your way as much as possible.&lt;/em&gt; - from the &lt;a href=&#34;(https://github.com/derekparker/delve)&#34;&gt;Delve&lt;/a&gt; introduction&lt;/p&gt;
+
+&lt;p&gt;As you might already noticed &lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt; uses &lt;a href=&#34;(https://github.com/derekparker/delve)&#34;&gt;Delve&lt;/a&gt; for the debugging.
+Actually the GoLang plugin for &lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt; is not from MicroSoft but you can easily install from the tool.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Install &lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt; if you don&amp;rsquo;t install yet.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Install &lt;a href=&#34;(https://marketplace.visualstudio.com/items/lukehoban.Go)&#34;&gt;Go for Visual Studio Code&lt;/a&gt; from &lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt;.&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + Shift + P&lt;/code&gt;.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Type &lt;code&gt;ext install&lt;/code&gt; &amp;amp; select &lt;code&gt;Install Extension&lt;/code&gt;.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Type &lt;code&gt;go&lt;/code&gt; and select Go plugin made by lukehoben.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Install &lt;a href=&#34;(https://github.com/derekparker/delve)&#34;&gt;Delve&lt;/a&gt;.&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$go get -u github.com/derekparker/delve/cmd/dlv&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;For Linux user, that&amp;rsquo;s it!&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;For Mac user there&amp;rsquo;s something to do. Follow instruction &lt;a href=&#34;http://blog.ralch.com/tutorial/golang-debug-with-delve/&#34;&gt;here&lt;/a&gt;.&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Open golang project.&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;File&lt;/code&gt; -&amp;gt; &lt;code&gt;Open folder&lt;/code&gt; -&amp;gt; Select your golang project folder.&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Put break point by clicking the line number like any other IDE.&lt;br /&gt;
+&lt;img src=&#34;https://lh3.googleusercontent.com/s7anL1Yh2L7QF5qOqiJA8tKmGsDM0zQiBfCe8tzAwKm2QS4okusXoJL_58AhYm3sDyQVIRb-mxkOUmK2mROIyszfxd2_qv_A6ipuV1dlAIqFYxwqYp1SsnnqLjl2WDrTOgFI1c2MBH2kR4lTxWoCh8vs6fB6bO-Z64u5aJ3xodNs7vph6MkD_3F7ykm7-eSwYCJTEyB8d6kSr6bFtG8KQHUmV-EozpeYOwu8Y1UZnhal2pW--rIjsD2v8EsqWDKajXLMUdsbtjypdVU8BlLeOQpKYWGmpf_Q-NsClL_a6gic3NN0kg5aXXsnf5E5HKzak7P-FgvjUchoVPPSJBWg7FjRmlDnTsgtzFm3NQL-g6t-JN7zH4YgQuklq8YsBRwM5gnhZI5JkfgVTmnFKlxLEGKa-h-PFcyhGk1gj47hSosTr-h6pvWC9cnacL97dCvDxhx-rdNFXg3egr7TnphXaUB9KsgegeptWqQEI7K3uLV3MLJyEOW9dWAFy6sGqm8xZE2iuzVVthWq6rDZx-igQff_miJbSYijZD6gH_mDpeGl=w821-h524-no&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;F5&lt;/code&gt; for start debugging.&lt;br /&gt;
+&lt;img src=&#34;https://lh3.googleusercontent.com/cKzUHXpP-GOAcqSlFY7hw5T4JWTWbVZfYxYqFlrydhISduIUuJyqz2-0ELUzMnihw6nBcBvch2PXk5G42cSdWOD4bcWRbKXYDsHyKsyYUKoLzbN6zazvPDfQbLrlx4pUdvxegv4dayC9Q64MNCisj7Gu93-NUHIqkNZVK80XheQRJKhSaJlX16I7hTvb_3DdjaTOqIVTZo95k0KT0W5ocaEYLXbDRVpmqPrwfoPiDvfvGs0DPxnqmMIbc2OnUtHDcDiO1VVydyiXyXXQYVXkE4TFmOXyIWTTSfJQwkUBjXYMwwjOtn6thNuOA1dfTc5HIAEguTgHL52iDVym9pPSKaf4OGXcHT4T5-7mV-ZI54nvaRhdZ7vzU4p2nA5tm2ZglAb5Z8C0CeTyeYCqWlNnnRtrTFc2xifTDGMAvkJ-fu6hbGM8VE3ssceRptOYWW1dr2JLF2cjni_55PzhtXhXQQhEi1IcbO9DO0Bb84niYI0egKa82DjFaO5GE7w2m-kU_bm-fif_stJB9_FlWVzgBC2O6cCtsACKtuOh5URkQ0wf=w1085-h598-no&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;That&amp;rsquo;s it! Very easy!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

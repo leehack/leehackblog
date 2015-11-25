@@ -6,8 +6,58 @@
     <description>Recent content in Posts on leehack&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Nov 2015 18:56:44 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2015 12:36:46 -0500</lastBuildDate>
     <atom:link href="http://blog.leehack.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to debug Golang with Visual Sutio Code</title>
+      <link>http://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/</link>
+      <pubDate>Wed, 25 Nov 2015 12:36:46 -0500</pubDate>
+      
+      <guid>http://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://i3-vso.sec.s-msft.com/dynimg/IC794090.png&#34; alt=&#34;Visual Studio Code&#34; /&gt;
+&lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt; is released by Microsoft which is cross platform Code Editor.
+It&amp;rsquo;s forked from &lt;a href=&#34;(https://atom.io/)&#34;&gt;ATOM&lt;/a&gt; and OpenSource as well if you care ;)&lt;/p&gt;
+
+&lt;p&gt;I just found out it&amp;rsquo;s quite useful for Markdown for my posting but also realized it&amp;rsquo;s quite nice for &lt;a href=&#34;(https://golang.org/)&#34;&gt;GoLang&lt;/a&gt; debugging as well.
+Even still my favorite editor is &lt;a href=&#34;http://www.sublimetext.com/&#34;&gt;SublimeText&lt;/a&gt; though..&lt;/p&gt;
+
+&lt;p&gt;Now it&amp;rsquo;s time to introduce &lt;a href=&#34;(https://github.com/derekparker/delve)&#34;&gt;Delve&lt;/a&gt;.&lt;br /&gt;
+&lt;em&gt;Delve is a debugger for the Go programming language. The goal of the project is to provide a simple, full featured debugging tool for Go. Delve should be easy to invoke and easy to use. Chances are if you&amp;rsquo;re using a debugger, most likely things aren&amp;rsquo;t going your way. With that in mind, Delve should stay out of your way as much as possible.&lt;/em&gt; - from the &lt;a href=&#34;(https://github.com/derekparker/delve)&#34;&gt;Delve&lt;/a&gt; introduction&lt;/p&gt;
+
+&lt;p&gt;As you might already noticed &lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt; uses &lt;a href=&#34;(https://github.com/derekparker/delve)&#34;&gt;Delve&lt;/a&gt; for the debugging.
+Actually the GoLang plugin for &lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt; is not from MicroSoft but you can easily install from the tool.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Install &lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt; if you don&amp;rsquo;t install yet.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Install &lt;a href=&#34;(https://marketplace.visualstudio.com/items/lukehoban.Go)&#34;&gt;Go for Visual Studio Code&lt;/a&gt; from &lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt;.&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Ctrl + Shift + P&lt;/code&gt;.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Type &lt;code&gt;ext install&lt;/code&gt; &amp;amp; select &lt;code&gt;Install Extension&lt;/code&gt;.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Type &lt;code&gt;go&lt;/code&gt; and select Go plugin made by lukehoben.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Install &lt;a href=&#34;(https://github.com/derekparker/delve)&#34;&gt;Delve&lt;/a&gt;.&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$go get -u github.com/derekparker/delve/cmd/dlv&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;For Linux user, that&amp;rsquo;s it!&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;For Mac user there&amp;rsquo;s something to do. Follow instruction &lt;a href=&#34;http://blog.ralch.com/tutorial/golang-debug-with-delve/&#34;&gt;here&lt;/a&gt;.&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Open golang project.&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;File&lt;/code&gt; -&amp;gt; &lt;code&gt;Open folder&lt;/code&gt; -&amp;gt; Select your golang project folder.&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Put break point by clicking the line number like any other IDE.&lt;br /&gt;
+&lt;img src=&#34;https://lh3.googleusercontent.com/s7anL1Yh2L7QF5qOqiJA8tKmGsDM0zQiBfCe8tzAwKm2QS4okusXoJL_58AhYm3sDyQVIRb-mxkOUmK2mROIyszfxd2_qv_A6ipuV1dlAIqFYxwqYp1SsnnqLjl2WDrTOgFI1c2MBH2kR4lTxWoCh8vs6fB6bO-Z64u5aJ3xodNs7vph6MkD_3F7ykm7-eSwYCJTEyB8d6kSr6bFtG8KQHUmV-EozpeYOwu8Y1UZnhal2pW--rIjsD2v8EsqWDKajXLMUdsbtjypdVU8BlLeOQpKYWGmpf_Q-NsClL_a6gic3NN0kg5aXXsnf5E5HKzak7P-FgvjUchoVPPSJBWg7FjRmlDnTsgtzFm3NQL-g6t-JN7zH4YgQuklq8YsBRwM5gnhZI5JkfgVTmnFKlxLEGKa-h-PFcyhGk1gj47hSosTr-h6pvWC9cnacL97dCvDxhx-rdNFXg3egr7TnphXaUB9KsgegeptWqQEI7K3uLV3MLJyEOW9dWAFy6sGqm8xZE2iuzVVthWq6rDZx-igQff_miJbSYijZD6gH_mDpeGl=w821-h524-no&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;F5&lt;/code&gt; for start debugging.&lt;br /&gt;
+&lt;img src=&#34;https://lh3.googleusercontent.com/cKzUHXpP-GOAcqSlFY7hw5T4JWTWbVZfYxYqFlrydhISduIUuJyqz2-0ELUzMnihw6nBcBvch2PXk5G42cSdWOD4bcWRbKXYDsHyKsyYUKoLzbN6zazvPDfQbLrlx4pUdvxegv4dayC9Q64MNCisj7Gu93-NUHIqkNZVK80XheQRJKhSaJlX16I7hTvb_3DdjaTOqIVTZo95k0KT0W5ocaEYLXbDRVpmqPrwfoPiDvfvGs0DPxnqmMIbc2OnUtHDcDiO1VVydyiXyXXQYVXkE4TFmOXyIWTTSfJQwkUBjXYMwwjOtn6thNuOA1dfTc5HIAEguTgHL52iDVym9pPSKaf4OGXcHT4T5-7mV-ZI54nvaRhdZ7vzU4p2nA5tm2ZglAb5Z8C0CeTyeYCqWlNnnRtrTFc2xifTDGMAvkJ-fu6hbGM8VE3ssceRptOYWW1dr2JLF2cjni_55PzhtXhXQQhEi1IcbO9DO0Bb84niYI0egKa82DjFaO5GE7w2m-kU_bm-fif_stJB9_FlWVzgBC2O6cCtsACKtuOh5URkQ0wf=w1085-h598-no&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;That&amp;rsquo;s it! Very easy!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>How I debugged memory leak issue for mediaserver</title>
@@ -298,7 +348,171 @@ dependencies {
       <pubDate>Fri, 09 Dec 2011 04:56:00 +0000</pubDate>
       
       <guid>http://blog.leehack.com/blog/2011/12/09/android-c2dm-client-%EC%98%88%EC%A0%9C/</guid>
-      <description>&lt;p&gt;&lt;br /&gt;준비물 :&amp;nbsp;c2dm account(&lt;a href=&#34;http://blog.leehack.com/2011/12/test.html&#34;&gt;파이썬으로 c2dm서버 만들기&lt;/a&gt;&amp;nbsp;포스팅 참조)&lt;br /&gt;&lt;br /&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;/div&gt;만들 예제의 패키지 구조&lt;br /&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;a href=&#34;http://4.bp.blogspot.com/-f9hw88JM4MU/TuHeizYCzYI/AAAAAAAADnE/_8JG2D4Tc50/s1600/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-09+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+7.10.00.png&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; height=&#34;320&#34; src=&#34;http://4.bp.blogspot.com/-f9hw88JM4MU/TuHeizYCzYI/AAAAAAAADnE/_8JG2D4Tc50/s320/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-09+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+7.10.00.png&#34; width=&#34;246&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;우선 Manifest file의 Code&lt;br /&gt;&lt;br /&gt;&lt;pre class=&#34;prettyprint lang-xml&#34;&gt;&lt;manifest android:versioncode=&#34;1&#34; android:versionname=&#34;1.0&#34; package=&#34;com.leehack.c2dmtest&#34; xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34;&gt;&lt;br /&gt;&lt;br /&gt;    &lt;uses-sdk android:minsdkversion=&#34;14&#34;&gt;&lt;br /&gt;&lt;br /&gt;    &lt;application android:icon=&#34;@drawable/ic_launcher&#34; android:label=&#34;@string/app_name&#34;&gt;&lt;br /&gt;        &lt;activity android:label=&#34;@string/app_name&#34; android:name=&#34;.C2DM_TESTActivity&#34;&gt;&lt;br /&gt;            &lt;intent-filter&gt;&lt;br /&gt;                &lt;action android:name=&#34;android.intent.action.MAIN&#34;&gt;&lt;br /&gt;&lt;br /&gt;                &lt;category android:name=&#34;android.intent.category.LAUNCHER&#34;&gt;&lt;br /&gt;            &lt;/category&gt;&lt;/action&gt;&lt;/intent-filter&gt;&lt;br /&gt;        &lt;/activity&gt;&lt;br /&gt;        &lt;br /&gt;        &lt;!-- Only C2DM servers can send messages for the app. If permission is &lt;br /&gt;   not set - any other app can generate it --&gt;&lt;br /&gt;  &lt;receiver android:name=&#34;.push.C2DMReceiver&#34; android:permission=&#34;com.google.android.c2dm.permission.SEND&#34;&gt;&lt;br /&gt;   &lt;!-- Receive the actual message --&gt;&lt;br /&gt;   &lt;intent-filter&gt;&lt;br /&gt;    &lt;action android:name=&#34;com.google.android.c2dm.intent.RECEIVE&#34;&gt;&lt;br /&gt;    &lt;category android:name=&#34;com.leehack.c2dmtest&#34;&gt;&lt;br /&gt;   &lt;/category&gt;&lt;/action&gt;&lt;/intent-filter&gt;&lt;br /&gt;   &lt;!-- Receive the registration id --&gt;&lt;br /&gt;   &lt;intent-filter&gt;&lt;br /&gt;    &lt;action android:name=&#34;com.google.android.c2dm.intent.REGISTRATION&#34;&gt;&lt;br /&gt;    &lt;category android:name=&#34;com.leehack.c2dmtest&#34;&gt;&lt;br /&gt;   &lt;/category&gt;&lt;/action&gt;&lt;/intent-filter&gt;&lt;br /&gt;  &lt;/receiver&gt;&lt;br /&gt;  &lt;br /&gt;    &lt;/application&gt;&lt;br /&gt; &lt;!-- Only this application can receive the messages and registration result --&gt;&lt;br /&gt; &lt;permission android:name=&#34;com.leehack.c2dmtest.permission.C2D_MESSAGE&#34; android:protectionlevel=&#34;signature&#34;&gt;&lt;br /&gt; &lt;uses-permission android:name=&#34;com.leehack.c2dmtest.permission.C2D_MESSAGE&#34;&gt;&lt;br /&gt;&lt;br /&gt; &lt;!-- This app has permission to register and receive message --&gt;&lt;br /&gt; &lt;uses-permission android:name=&#34;com.google.android.c2dm.permission.RECEIVE&#34;&gt;&lt;br /&gt;&lt;/uses-permission&gt;&lt;/uses-permission&gt;&lt;/permission&gt;&lt;/uses-sdk&gt;&lt;/manifest&gt;&lt;br /&gt;&lt;br /&gt;&lt;/pre&gt;&lt;br /&gt;중요한 부분:&lt;br /&gt;15~ 28 line &amp;lt;-com.leehack.c2dmtest.push.C2DMReceiver 등록&lt;br /&gt;31~36 line &amp;lt;- C2DM을 사용할 수 있도록 어플에 permission부여&lt;br /&gt;&lt;br /&gt;C2DMReceiver.java: 리시버 작성&lt;br /&gt;&lt;br /&gt;&lt;pre class=&#34;prettyprint lang-java&#34;&gt;package com.leehack.c2dmtest.push;&lt;br /&gt;&lt;br /&gt;import android.app.Activity;&lt;br /&gt;import android.content.BroadcastReceiver;&lt;br /&gt;import android.content.Context;&lt;br /&gt;import android.content.Intent;&lt;br /&gt;import android.content.SharedPreferences;&lt;br /&gt;import android.util.Log;&lt;br /&gt;import android.view.Gravity;&lt;br /&gt;import android.widget.Toast;&lt;br /&gt;&lt;br /&gt;public class C2DMReceiver extends BroadcastReceiver {&lt;br /&gt; static String registration_id = null;&lt;br /&gt; private Context mContext;&lt;br /&gt; @Override&lt;br /&gt; public void onReceive(Context context, Intent intent) {&lt;br /&gt;  if (intent.getAction().equals(&lt;br /&gt;    &amp;ldquo;com.google.android.c2dm.intent.REGISTRATION&amp;rdquo;)) {&lt;br /&gt;   handleRegistration(context, intent);&lt;br /&gt;  } else if (intent.getAction().equals(&lt;br /&gt;    &amp;ldquo;com.google.android.c2dm.intent.RECEIVE&amp;rdquo;)) {&lt;br /&gt;   handleMessage(context, intent);&lt;br /&gt;  }&lt;br /&gt; }&lt;br /&gt; //서버에 등록이 되면 Registration_id를 C2DM서버에서 보내준다. 받은 이 ID를 별도로 구성한 서버에 보내야 한다.&lt;br /&gt; private void handleRegistration(Context context, Intent intent) {&lt;br /&gt;  String registration = intent.getStringExtra(&amp;ldquo;registration_id&amp;rdquo;);&lt;br /&gt;  if (intent.getStringExtra(&amp;ldquo;error&amp;rdquo;) != null) {&lt;br /&gt;   // Registration failed, should try again later.&lt;br /&gt;  } else if (intent.getStringExtra(&amp;ldquo;unregistered&amp;rdquo;) != null) {&lt;br /&gt;   registration = null;&lt;br /&gt;  } else if (registration != null) {&lt;br /&gt;   registration_id = registration;&lt;br /&gt;   mContext = context;&lt;br /&gt;   SharedPreferences sp  = mContext.getSharedPreferences(&amp;ldquo;com.leehack.c2dmtest&amp;rdquo;, Activity.MODE_PRIVATE);&lt;br /&gt;   SharedPreferences.Editor ed = sp.edit();&lt;br /&gt;   ed.putString(&amp;ldquo;registration_id&amp;rdquo;, registration_id);&lt;br /&gt;   ed.commit();&lt;br /&gt;   Toast toast = Toast.makeText(context, &amp;ldquo;Registration Id\n&amp;rdquo; + registration_id,&lt;br /&gt;     Toast.LENGTH_LONG);&lt;br /&gt;   toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 150);&lt;br /&gt;   toast.show();&lt;br /&gt;   Log.d(&amp;ldquo;C2DMReceiver&amp;rdquo;, &amp;ldquo;c2dm registered&amp;rdquo;);&lt;br /&gt;  }&lt;br /&gt; }&lt;br /&gt; //메세지가 도착하면 토스트로 도착한 메세지를 보여줌&lt;br /&gt; private void handleMessage(Context context, Intent intent) {&lt;br /&gt;&lt;br /&gt;  String c2dm_msg = intent.getExtras().getString(&amp;ldquo;msg&amp;rdquo;);&lt;br /&gt;&lt;br /&gt;  System.out.println(&amp;ldquo;c2dm_msg======&amp;gt;&amp;rdquo; + c2dm_msg);&lt;br /&gt;  Toast toast = Toast.makeText(context, &amp;ldquo;c2dmMessage\n&amp;rdquo; + c2dm_msg,&lt;br /&gt;    Toast.LENGTH_LONG);&lt;br /&gt;  toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 150);&lt;br /&gt;  toast.show();&lt;br /&gt;&lt;br /&gt; }&lt;br /&gt;}&lt;br /&gt;&lt;/pre&gt;&lt;br /&gt;PushHelper.java: c2dm 서버에 Register/Unregister 메소드 작성&lt;br /&gt;&lt;br /&gt;&lt;pre class=&#34;prettyprint lang-java&#34;&gt;package com.leehack.c2dmtest.push;&lt;br /&gt;&lt;br /&gt;import android.app.Activity;&lt;br /&gt;import android.app.PendingIntent;&lt;br /&gt;import android.content.Context;&lt;br /&gt;import android.content.Intent;&lt;br /&gt;import android.content.SharedPreferences;&lt;br /&gt;&lt;br /&gt;public class PushHelper {&lt;br /&gt;&lt;br /&gt; final static String c2dmDevId = &amp;ldquo;c2dm에 등록한 account&amp;rdquo;;&lt;br /&gt; &lt;br /&gt; public static void c2dmRegister(Context context){&lt;br /&gt;  SharedPreferences sp  = context.getSharedPreferences(&amp;ldquo;com.leehack.c2dmtest&amp;rdquo;, Activity.MODE_PRIVATE);&lt;br /&gt;  if(sp.getString(&amp;ldquo;registration_id&amp;rdquo;, null) != null)&lt;br /&gt;   return;&lt;br /&gt;  Intent registrationIntent = new Intent(&lt;br /&gt;    &amp;ldquo;com.google.android.c2dm.intent.REGISTER&amp;rdquo;);&lt;br /&gt;  registrationIntent.putExtra(&amp;ldquo;app&amp;rdquo;,&lt;br /&gt;    PendingIntent.getBroadcast(context, 0, new Intent(), 0));&lt;br /&gt;  registrationIntent.putExtra(&amp;ldquo;sender&amp;rdquo;, c2dmDevId);&lt;br /&gt;  context.startService(registrationIntent);&lt;br /&gt; }&lt;br /&gt; public static void c2dmUnregister(Context context){&lt;br /&gt;  Intent unregIntent = new Intent(&amp;ldquo;com.google.android.c2dm.intent.UNREGISTER&amp;rdquo;);&lt;br /&gt;  unregIntent.putExtra(&amp;ldquo;app&amp;rdquo;, PendingIntent.getBroadcast(context, 0, new Intent(), 0));&lt;br /&gt;  context.startService(unregIntent);&lt;br /&gt; }&lt;br /&gt;}&lt;br /&gt;&lt;br /&gt;&lt;/pre&gt;&lt;br /&gt;C2DM_TESTActivity.java: Register와 Unregister버튼의 동작을 정의&lt;br /&gt;&lt;br /&gt;&lt;pre class=&#34;prettyprint lang-java&#34;&gt;package com.leehack.c2dmtest;&lt;br /&gt;&lt;br /&gt;import android.app.Activity;&lt;br /&gt;import android.os.Bundle;&lt;br /&gt;import android.view.View;&lt;br /&gt;import android.view.View.OnClickListener;&lt;br /&gt;&lt;br /&gt;import com.leehack.c2dmtest.push.PushHelper;&lt;br /&gt;&lt;br /&gt;public class C2DM_TESTActivity extends Activity {&lt;br /&gt;    /** Called when the activity is first created. */&lt;br /&gt;    @Override&lt;br /&gt;    public void onCreate(Bundle savedInstanceState) {&lt;br /&gt;        super.onCreate(savedInstanceState);&lt;br /&gt;        setContentView(R.layout.main);&lt;br /&gt;        findViewById(R.id.button1).setOnClickListener(new OnClickListener() {&lt;br /&gt;   &lt;br /&gt;   @Override&lt;br /&gt;   public void onClick(View v) {&lt;br /&gt;    // TODO Auto-generated method stub&lt;br /&gt;    PushHelper.c2dmRegister(C2DM_TESTActivity.this);&lt;br /&gt;   }&lt;br /&gt;  });&lt;br /&gt;        findViewById(R.id.button2).setOnClickListener(new OnClickListener() {&lt;br /&gt;   &lt;br /&gt;   @Override&lt;br /&gt;   public void onClick(View v) {&lt;br /&gt;    // TODO Auto-generated method stub&lt;br /&gt;    PushHelper.c2dmUnregister(C2DM_TESTActivity.this);&lt;br /&gt;   }&lt;br /&gt;  });&lt;br /&gt;    }&lt;br /&gt;}&lt;br /&gt;&lt;/pre&gt;&lt;br /&gt;앞으로 해야 할일!&lt;br /&gt;1. 구글의 C2DM과 통신한 Push Server 구성&lt;br /&gt;2. Register를 한 후 C2DMReceiver를 통해 C2DM 서버로 부터 전달받은 Registration_ID를 구성한 Push Server로 전달하는 로직 구성&lt;br /&gt;(&lt;a href=&#34;http://blog.leehack.com/2011/12/test.html&#34;&gt;파이썬으로 c2dm서버 만들기&lt;/a&gt;&amp;nbsp;포스팅을 참조하면 1번은 해결될 것이고 2번만 추가로 구성하면 된다)&lt;br /&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;&lt;/p&gt;
+      <description>&lt;p&gt;준비물 : c2dm account(&lt;a href=&#34;(/blog/2011/12/09/python으로-c2dm-server-만들기)&#34;&gt;파이썬으로 c2dm서버 만들기&lt;/a&gt; 포스팅 참조)&lt;/p&gt;
+
+&lt;p&gt;만들 예제의 패키지 구조.&lt;br /&gt;
+&lt;img src=&#34;http://4.bp.blogspot.com/-f9hw88JM4MU/TuHeizYCzYI/AAAAAAAADnE/_8JG2D4Tc50/s320/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-09+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+7.10.00.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;우선 Manifest file의 Code.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;manifest android:versioncode=&amp;quot;1&amp;quot; android:versionname=&amp;quot;1.0&amp;quot; package=&amp;quot;com.leehack.c2dmtest&amp;quot; xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;&amp;gt;
+    &amp;lt;uses-sdk android:minsdkversion=&amp;quot;14&amp;quot;&amp;gt;
+        &amp;lt;application android:icon=&amp;quot;@drawable/ic_launcher&amp;quot; android:label=&amp;quot;@string/app_name&amp;quot;&amp;gt;
+            &amp;lt;activity android:label=&amp;quot;@string/app_name&amp;quot; android:name=&amp;quot;.C2DM_TESTActivity&amp;quot;&amp;gt;
+                &amp;lt;intent-filter&amp;gt;
+                    &amp;lt;action android:name=&amp;quot;android.intent.action.MAIN&amp;quot;&amp;gt;
+                        &amp;lt;category android:name=&amp;quot;android.intent.category.LAUNCHER&amp;quot;&amp;gt;&amp;lt;/category&amp;gt;
+                    &amp;lt;/action&amp;gt;
+                &amp;lt;/intent-filter&amp;gt;
+            &amp;lt;/activity&amp;gt;
+            
+            &amp;lt;!-- Only C2DM servers can send messages for the app. If permission is not set - any other app can generate it --&amp;gt;
+            &amp;lt;receiver android:name=&amp;quot;.push.C2DMReceiver&amp;quot; android:permission=&amp;quot;com.google.android.c2dm.permission.SEND&amp;quot;&amp;gt;
+                &amp;lt;!-- Receive the actual message --&amp;gt;
+                &amp;lt;intent-filter&amp;gt;
+                    &amp;lt;action android:name=&amp;quot;com.google.android.c2dm.intent.RECEIVE&amp;quot;&amp;gt;
+                        &amp;lt;category android:name=&amp;quot;com.leehack.c2dmtest&amp;quot;&amp;gt;&amp;lt;/category&amp;gt;
+                    &amp;lt;/action&amp;gt;
+                &amp;lt;/intent-filter&amp;gt;
+                &amp;lt;!-- Receive the registration id --&amp;gt;
+                &amp;lt;intent-filter&amp;gt;
+                    &amp;lt;action android:name=&amp;quot;com.google.android.c2dm.intent.REGISTRATION&amp;quot;&amp;gt;
+                        &amp;lt;category android:name=&amp;quot;com.leehack.c2dmtest&amp;quot;&amp;gt;
+                        &amp;lt;/category&amp;gt;
+                    &amp;lt;/action&amp;gt;
+                &amp;lt;/intent-filter&amp;gt;
+            &amp;lt;/receiver&amp;gt;
+        &amp;lt;/application&amp;gt;
+        &amp;lt;!-- Only this application can receive the messages and registration result --&amp;gt;
+        &amp;lt;permission android:name=&amp;quot;com.leehack.c2dmtest.permission.C2D_MESSAGE&amp;quot; android:protectionlevel=&amp;quot;signature&amp;quot;&amp;gt;
+            &amp;lt;uses-permission android:name=&amp;quot;com.leehack.c2dmtest.permission.C2D_MESSAGE&amp;quot;&amp;gt;&amp;lt;/uses-permission&amp;gt;
+            &amp;lt;!-- This app has permission to register and receive message --&amp;gt;
+            &amp;lt;uses-permission android:name=&amp;quot;com.google.android.c2dm.permission.RECEIVE&amp;quot;&amp;gt;&amp;lt;/uses-permission&amp;gt;
+        &amp;lt;/permission&amp;gt;
+    &amp;lt;/uses-sdk&amp;gt;
+&amp;lt;/manifest&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;C2DMReceiver.java: 리시버 작성.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package com.leehack.c2dmtest.push;
+import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.util.Log;
+import android.view.Gravity;
+import android.widget.Toast;
+public class C2DMReceiver extends BroadcastReceiver
+{
+    static String registration_id = null;
+    private Context mContext;
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        if (intent.getAction().equals(&amp;quot;com.google.android.c2dm.intent.REGISTRATION&amp;quot;)) {
+            handleRegistration(context, intent);
+        } else if (intent.getAction().equals(&amp;quot;com.google.android.c2dm.intent.RECEIVE&amp;quot;)) {
+        	//서버에 등록이 되면 Registration_id를 C2DM서버에서 보내준다. 받은 이 ID를 별도로 구성한 서버에 보내야 한다.
+            handleMessage(context, intent);
+        }
+    }
+    private void handleRegistration(Context context, Intent intent) {
+        String registration = intent.getStringExtra(&amp;quot;registration_id&amp;quot;);
+        if (intent.getStringExtra(&amp;quot;error&amp;quot;) != null) {
+        	// Registration failed, should try again later.
+        } else if (intent.getStringExtra(&amp;quot;unregistered&amp;quot;) != null) {
+            registration = null;
+        } else if (registration != null) {
+            registration_id = registration;
+            mContext = context;
+            SharedPreferences sp  = mContext.getSharedPreferences(&amp;quot;com.leehack.c2dmtest&amp;quot;, Activity.MODE_PRIVATE);
+            SharedPreferences.Editor ed = sp.edit();
+            ed.putString(&amp;quot;registration_id&amp;quot;, registration_id);
+            ed.commit();
+            Toast toast = Toast.makeText(context, &amp;quot;Registration Id\n&amp;quot; + registration_id, Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 150);
+            toast.show();
+            Log.d(&amp;quot;C2DMReceiver&amp;quot;, &amp;quot;c2dm registered&amp;quot;);
+        }
+    }
+    //메세지가 도착하면 토스트로 도착한 메세지를 보여줌
+    private void handleMessage(Context context, Intent intent) {
+        String c2dm_msg = intent.getExtras().getString(&amp;quot;msg&amp;quot;);
+        System.out.println(&amp;quot;c2dm_msg======&amp;gt;&amp;quot; + c2dm_msg);
+        Toast toast = Toast.makeText(context, &amp;quot;c2dmMessage\n&amp;quot; + c2dm_msg, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 150);
+        toast.show();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;PushHelper.java: c2dm 서버에 Register/Unregister 메소드 작성.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package com.leehack.c2dmtest.push;
+import android.app.Activity;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+public class PushHelper {
+	final static String c2dmDevId = &amp;quot;c2dm에 등록한 account&amp;quot;;
+	public static void c2dmRegister(Context context){
+		SharedPreferences sp  = context.getSharedPreferences(&amp;quot;com.leehack.c2dmtest&amp;quot;, Activity.MODE_PRIVATE);
+		if(sp.getString(&amp;quot;registration_id&amp;quot;, null) != null)
+			return;
+		Intent registrationIntent = new Intent(
+			&amp;quot;com.google.android.c2dm.intent.REGISTER&amp;quot;);
+		registrationIntent.putExtra(&amp;quot;app&amp;quot;,
+			PendingIntent.getBroadcast(context, 0, new Intent(), 0));
+		registrationIntent.putExtra(&amp;quot;sender&amp;quot;, c2dmDevId);
+		context.startService(registrationIntent);
+	}
+	public static void c2dmUnregister(Context context){
+		Intent unregIntent = new Intent(&amp;quot;com.google.android.c2dm.intent.UNREGISTER&amp;quot;);
+		unregIntent.putExtra(&amp;quot;app&amp;quot;, PendingIntent.getBroadcast(context, 0, new Intent(), 0));
+		context.startService(unregIntent);
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;C2DM_TESTActivity.java: Register와 Unregister버튼의 동작을 정의&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package com.leehack.c2dmtest;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.leehack.c2dmtest.push.PushHelper;
+
+public class C2DM_TESTActivity extends Activity {
+	/** Called when the activity is first created. */
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
+		findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+			// TODO Auto-generated method stub
+			PushHelper.c2dmRegister(C2DM_TESTActivity.this);
+			}
+		});
+		findViewById(R.id.button2).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				PushHelper.c2dmUnregister(C2DM_TESTActivity.this);
+			}
+		});
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;앞으로 해야 할일!.&lt;br /&gt;
+1. 구글의 C2DM과 통신한 Push Server 구성.&lt;br /&gt;
+2. Register를 한 후 C2DMReceiver를 통해 C2DM 서버로 부터 전달받은 Registration_ID를 구성한 Push Server로 전달하는 로직 구성.&lt;br /&gt;
+    (&lt;a href=&#34;(/blog/2011/12/09/python으로-c2dm-server-만들기)&#34;&gt;파이썬으로 c2dm서버 만들기&lt;/a&gt; 포스팅을 참조하면 1번은 해결될 것이고 2번만 추가로 구성하면 된다)&lt;/p&gt;
 </description>
     </item>
     
@@ -328,7 +542,7 @@ dependencies {
       <pubDate>Wed, 07 Dec 2011 22:18:00 +0000</pubDate>
       
       <guid>http://blog.leehack.com/blog/2011/12/07/python-flask-webpy-django-bottle-web2py-.../</guid>
-      <description>&lt;p&gt;Python으로 Web 개발 공부를 해보는 중.. 아무런 정보도 맨토도 없이 무작정 Django책부터 하나 붙잡고 시작. 100% 끝낸건 아니지만 일단 기본적인 정보는 모두 캐냈다고 판단 후 책을 덮음.&lt;br /&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;a href=&#34;http://media.djangoproject.com/img/logos/django-logo-negative.png&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; height=&#34;145&#34; src=&#34;http://media.djangoproject.com/img/logos/django-logo-negative.png&#34; width=&#34;320&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;이제부터 현실적인 문제에 봉착. Django가 짱!인줄 알았는데.. 파이썬에는 수많은 좋은 웹프레임웍들이 존재한다는 것!&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;http://bottlepy.org/docs/dev/&#34;&gt;Bottle&lt;/a&gt;로 짠 Simple한 &lt;a href=&#34;http://fi.am/entry/building-a-website-api-with-django-part-1-api-func/&#34;&gt;REST API예제&lt;/a&gt;를 보고 1차 감탄!&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;http://web2py.com/&#34;&gt;Web2Py&lt;/a&gt; 깔고서 관리자 페이지에서 IDE까지 제공해주는 Detail에 2차 감탄!&lt;br /&gt;&lt;br /&gt;마지막으로 &lt;a href=&#34;http://webpy.org/&#34;&gt;webpy&lt;/a&gt;까지 보고 나니 점점 헷갈린다!&lt;br /&gt;&lt;br /&gt;Django가 잘 만들어진 녀석이긴 하지만 일단 다른 프래임웍들을 알아보다 보니 Python위에서 만들어진 기술이란 느낌 보다는 그냥 Django다! 라는 생각이 들었다.&lt;br /&gt;&lt;br /&gt;Web2Py는 정말 제공해주는 것도 많고 편리하지만.. 어쩌면 개발자보다는 관리자 프랜들리한 느낌이 들어 좀 끄적여 보다가 패스!&lt;br /&gt;&lt;br /&gt;webpy는 뭔가 내가 원하는 대로 자유롭게 사용할 수 있으면서도 심플하고 편리함을 모두 가지고 있어 맘에 들었고 이제 이것으로 결정! 하는 순간 &lt;a href=&#34;http://flask.pocoo.org/&#34;&gt;Flask&lt;/a&gt;&amp;nbsp;라는 녀석이 눈에 들어왔다.&lt;br /&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;a href=&#34;http://4.bp.blogspot.com/-beqQ0zkQbc8/TuBGb6cNDZI/AAAAAAAADmU/XAqcoH0bCxE/s1600/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-08+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+2.08.42.png&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; height=&#34;129&#34; src=&#34;http://4.bp.blogspot.com/-beqQ0zkQbc8/TuBGb6cNDZI/AAAAAAAADmU/XAqcoH0bCxE/s320/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-08+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+2.08.42.png&#34; width=&#34;320&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;아직 자세히는 보지 못했지만..&lt;br /&gt;Bottle스러운 심플함과 Django스러운 template engine(동일한 엔진을 plugin으로 붙여쓰는 듯..)을 가지고 있을 뿐만 아니라 webpy스러운 자유로움을 모두 가지고 있는 것 같다.&lt;br /&gt;&lt;br /&gt;Flask라는 녀석이 마지막 방황이 되길 바라며..&lt;/p&gt;
+      <description>&lt;p&gt;Python으로 Web 개발 공부를 해보는 중.. 아무런 정보도 맨토도 없이 무작정 Django책부터 하나 붙잡고 시작. 100% 끝낸건 아니지만 일단 기본적인 정보는 모두 캐냈다고 판단 후 책을 덮음.&lt;br /&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;a href=&#34;https://www.djangoproject.com/s/img/logos/django-logo-negative.png&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; height=&#34;145&#34; src=&#34;https://www.djangoproject.com/s/img/logos/django-logo-negative.png&#34; width=&#34;320&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;이제부터 현실적인 문제에 봉착. Django가 짱!인줄 알았는데.. 파이썬에는 수많은 좋은 웹프레임웍들이 존재한다는 것!&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;http://bottlepy.org/docs/dev/&#34;&gt;Bottle&lt;/a&gt;로 짠 Simple한 &lt;a href=&#34;http://fi.am/entry/building-a-website-api-with-django-part-1-api-func/&#34;&gt;REST API예제&lt;/a&gt;를 보고 1차 감탄!&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;http://web2py.com/&#34;&gt;Web2Py&lt;/a&gt; 깔고서 관리자 페이지에서 IDE까지 제공해주는 Detail에 2차 감탄!&lt;br /&gt;&lt;br /&gt;마지막으로 &lt;a href=&#34;http://webpy.org/&#34;&gt;webpy&lt;/a&gt;까지 보고 나니 점점 헷갈린다!&lt;br /&gt;&lt;br /&gt;Django가 잘 만들어진 녀석이긴 하지만 일단 다른 프래임웍들을 알아보다 보니 Python위에서 만들어진 기술이란 느낌 보다는 그냥 Django다! 라는 생각이 들었다.&lt;br /&gt;&lt;br /&gt;Web2Py는 정말 제공해주는 것도 많고 편리하지만.. 어쩌면 개발자보다는 관리자 프랜들리한 느낌이 들어 좀 끄적여 보다가 패스!&lt;br /&gt;&lt;br /&gt;webpy는 뭔가 내가 원하는 대로 자유롭게 사용할 수 있으면서도 심플하고 편리함을 모두 가지고 있어 맘에 들었고 이제 이것으로 결정! 하는 순간 &lt;a href=&#34;http://flask.pocoo.org/&#34;&gt;Flask&lt;/a&gt;&amp;nbsp;라는 녀석이 눈에 들어왔다.&lt;br /&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;a href=&#34;http://4.bp.blogspot.com/-beqQ0zkQbc8/TuBGb6cNDZI/AAAAAAAADmU/XAqcoH0bCxE/s1600/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-08+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+2.08.42.png&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; height=&#34;129&#34; src=&#34;http://4.bp.blogspot.com/-beqQ0zkQbc8/TuBGb6cNDZI/AAAAAAAADmU/XAqcoH0bCxE/s320/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-08+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+2.08.42.png&#34; width=&#34;320&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;아직 자세히는 보지 못했지만..&lt;br /&gt;Bottle스러운 심플함과 Django스러운 template engine(동일한 엔진을 plugin으로 붙여쓰는 듯..)을 가지고 있을 뿐만 아니라 webpy스러운 자유로움을 모두 가지고 있는 것 같다.&lt;br /&gt;&lt;br /&gt;Flask라는 녀석이 마지막 방황이 되길 바라며..&lt;/p&gt;
 </description>
     </item>
     
@@ -369,18 +583,6 @@ dependencies {
       
       <guid>http://blog.leehack.com/blog/2011/12/04/postgresql-9.1.1--phppgadmin-%EC%84%A4%EC%B9%98/</guid>
       <description>&lt;p&gt;&lt;span style=&#34;font-size: large;&#34;&gt;&lt;b&gt;Ubuntu 11.10에서&amp;nbsp;PostgreSQL 9.1.1 + phpPgAdmin 설치하기&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;b&gt;1. apt-get을 이용하여 Install하면 9.1.1이 자동으로 설치된다.&lt;/b&gt;&lt;br /&gt;$sudo apt-get install postgresql&lt;br /&gt;&lt;br /&gt;&lt;b&gt;2. apt-get을 이용하여 phpPgAdmin 설치&lt;/b&gt;&lt;br /&gt;$sudo apt-get install phpPgAdmin&lt;br /&gt;&lt;br /&gt;&lt;b&gt;3. 기본적으로 postgreSQL은 인증방식이 peer로 잡혀있다. password base로 접속하기 위해서는 trust로 변경을 해야한다.&lt;/b&gt;&lt;br /&gt;$sudo vim /etc/postgresql/9.1/main/pg_hba.conf&lt;br /&gt;&lt;br /&gt;가장 아랫쪽에 인증방식 설정하는 곳을 찾아 아래처럼 변경한다.&lt;br /&gt;local &amp;nbsp; &amp;nbsp;all &amp;nbsp; &amp;nbsp;all &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;trust&lt;br /&gt;host &amp;nbsp; &amp;nbsp;all &amp;nbsp; &amp;nbsp;all &amp;nbsp; &amp;nbsp;0.0.0.0/0 &amp;nbsp; &amp;nbsp;trust&lt;br /&gt;&lt;br /&gt;&lt;em&gt;참고로 host의 address를 0.0.0.0/0 으로 설정한 것은 원격지에서 접속이 가능하도록 하기위해서다.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;4. 원격지에서 접속 가능하도록 설정&lt;/b&gt;&lt;br /&gt;$sudo vim /etc/postgresql/9.1/main/postgresql.conf&lt;br /&gt;&lt;br /&gt;listen_addresses을 찾아 주석을 제거하고&lt;br /&gt;listen_addresses = &amp;lsquo;&lt;/em&gt;&amp;rsquo; 로 수정한다.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;5. PostgreSQL 재시작&lt;/b&gt;&lt;br /&gt;$sudo /etc/init.d/postgresql restart&lt;br /&gt;&lt;br /&gt;&lt;b&gt;6. User 추가하기&lt;/b&gt;&lt;br /&gt;$sudo -u postgres createuser -P &amp;lsquo;account name&amp;rsquo;&lt;br /&gt;&lt;br /&gt;* -P 옵션은 계정을 추가하면서 password를 지정할 것이라는 옵션.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;7. phpPgAdmin 원격접속 허용&lt;/b&gt;&lt;br /&gt;$sudo vim /etc/phppgadmin/apache.conf&lt;br /&gt;&lt;br /&gt;아래 두라인을 주석처리&lt;br /&gt;deny from all&lt;br /&gt;allow from 127.0.0.0/255.0.0.0 ::&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;28&lt;/sub&gt;&lt;br /&gt;&lt;br /&gt;allow from all 추가&lt;br /&gt;&lt;br /&gt;&lt;b&gt;8. Apache 재시작&lt;/b&gt;&lt;br /&gt;$sudo /etc/init.d/apache2 restart&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;여기까지 하면 세팅 완료. 6번에서 User추가시 super user를 추가했다면 앞으로는 &lt;a href=&#34;http://localhost/phppgadmin&#34;&gt;http://localhost/phppgadmin&lt;/a&gt; 에서 user및 db 추가가 가능함.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Android dips pixel 계산법</title>
-      <link>http://blog.leehack.com/blog/2010/08/05/android-dips-pixel-%EA%B3%84%EC%82%B0%EB%B2%95/</link>
-      <pubDate>Thu, 05 Aug 2010 02:25:00 +0000</pubDate>
-      
-      <guid>http://blog.leehack.com/blog/2010/08/05/android-dips-pixel-%EA%B3%84%EC%82%B0%EB%B2%95/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;스크린 사이즈&lt;br /&gt;&lt;br /&gt;QVGA(240x320), 120dpi : HTC Tatoo&lt;br /&gt;HVGA(320x480), 160dpi : 안드로원, HTC G1&lt;br /&gt;WVGA(480x800), 240dpi : 넥서스원, 갤럭시A&lt;br /&gt;FWVGA(480x854), 240dpi : 모토로이&lt;br /&gt;&lt;br /&gt;* 공식 :&amp;nbsp;&lt;span class=&#34;Apple-style-span&#34; style=&#34;color: #007000; font-family: monospace;&#34;&gt;pixels = dips * (density / 160)&lt;/span&gt;&lt;br /&gt;&lt;span class=&#34;Apple-style-span&#34; style=&#34;color: #007000; font-family: monospace;&#34;&gt;&lt;br /&gt;&lt;/span&gt;&lt;br /&gt;&lt;span class=&#34;Apple-style-span&#34; style=&#34;color: #007000; font-family: monospace;&#34;&gt;&lt;span class=&#34;Apple-style-span&#34; style=&#34;color: black; font-family: Gulim;&#34;&gt;* 참고 :&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;a href=&#34;http://developer.android.com/guide/practices/screens_support.html&#34;&gt;http://developer.android.com/guide/practices/screens_support.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     
