@@ -132,6 +132,11 @@ $adb shell dumpsys media.player -m &gt; dump1
 $adb shell dumpsys media.player -m &gt; dump2
 </code></pre></li>
 
+<li><p>make <code>diff</code> between <code>dump1</code> and <code>dump2</code>.</p>
+
+<pre><code>$diff dump1 dump2 &gt; diff
+</code></pre></li>
+
 <li><p>Save memory allocation trace into <code>mem_trace</code> file.</p>
 
 <pre><code>$./addr2func.py --root-dir=&lt;AOSP_dir&gt; --maps-file=maps --product=&lt;product_name_of_your_build&gt; diff &gt; mem_trace
