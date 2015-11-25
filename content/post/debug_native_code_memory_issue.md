@@ -40,7 +40,12 @@ The tool is written by [freepine](http://freepine.blogspot.ca/2010/02/analyze-me
     $adb shell dumpsys media.player -m > dump2
     ```
 
-7. Save memory allocation trace into `mem_trace` file.  
+7. make `diff` between `dump1` and `dump2`.  
+    ```
+    $diff dump1 dump2 > diff
+    ```
+    
+8. Save memory allocation trace into `mem_trace` file.  
     ```
     $./addr2func.py --root-dir=<AOSP_dir> --maps-file=maps --product=<product_name_of_your_build> diff > mem_trace
     ```
