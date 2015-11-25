@@ -92,6 +92,21 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="http://blog.leehack.com/blog/2015/11/24/how-i-debugged-memory-leak-issue-for-mediaserver/">How I debugged memory leak issue for mediaserver</a>
+      </h1>
+      <span class="post-date">Nov 24, 2015 &middot; 1 minute read &middot; <a href="http://blog.leehack.com/blog/2015/11/24/how-i-debugged-memory-leak-issue-for-mediaserver/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="http://blog.leehack.com/categories/android">Android</a><a class="label" href="http://blog.leehack.com/categories/ndk">NDK</a><a class="label" href="http://blog.leehack.com/categories/aosp">AOSP</a>
+      </span>
+      
+      Recently I had to fix big memory leak issue in &ldquo;medieaserver&rdquo;. From the internet I found very nice tool called addr2func for fixing the issue. The tool is written by freepine and I modified for supporting latest version of AOSP bases codes(5.0) and uploaded into Github : addr2func Pre-condition - eng or userdebug build of device and android full source code Download addr2func Give excute permission. $chmod +x addr2func.py Enable memory allocation debug feature for mediaserver.
+      <a href="http://blog.leehack.com/blog/2015/11/24/how-i-debugged-memory-leak-issue-for-mediaserver/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="http://blog.leehack.com/blog/2015/11/23/github-static-website-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Github static website 만들기</a>
       </h1>
       <span class="post-date">Nov 23, 2015 &middot; 2 minute read &middot; <a href="http://blog.leehack.com/blog/2015/11/23/github-static-website-%EB%A7%8C%EB%93%A4%EA%B8%B0/#disqus_thread">Comments</a>
@@ -219,18 +234,6 @@
       
       Python으로 Web 개발 공부를 해보는 중.. 아무런 정보도 맨토도 없이 무작정 Django책부터 하나 붙잡고 시작. 100% 끝낸건 아니지만 일단 기본적인 정보는 모두 캐냈다고 판단 후 책을 덮음. 이제부터 현실적인 문제에 봉착. Django가 짱!인줄 알았는데.. 파이썬에는 수많은 좋은 웹프레임웍들이 존재한다는 것! Bottle로 짠 Simple한 REST API예제를 보고 1차 감탄! Web2Py 깔고서 관리자 페이지에서 IDE까지 제공해주는 Detail에 2차 감탄! 마지막으로 webpy까지 보고 나니 점점 헷갈린다! Django가 잘 만들어진 녀석이긴 하지만 일단 다른 프래임웍들을 알아보다 보니 Python위에서 만들어진 기술이란 느낌 보다는 그냥 Django다!
       <a href="http://blog.leehack.com/blog/2011/12/07/python-flask-webpy-django-bottle-web2py-.../">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://blog.leehack.com/blog/2011/12/05/%EC%9C%A0%EB%8F%99-ip-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EA%B0%9C%EC%9D%B8%EC%84%9C%EB%B2%84%EC%97%90-%EC%9C%A0%EB%A3%8C-%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%84%B8%ED%8C%85/">유동 IP 사용하는 개인서버에 유료 도메인 세팅</a>
-      </h1>
-      <span class="post-date">Dec 5, 2011 &middot; 1 minute read &middot; <a href="http://blog.leehack.com/blog/2011/12/05/%EC%9C%A0%EB%8F%99-ip-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EA%B0%9C%EC%9D%B8%EC%84%9C%EB%B2%84%EC%97%90-%EC%9C%A0%EB%A3%8C-%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%84%B8%ED%8C%85/#disqus_thread">Comments</a>
-      </span>
-      
-      결론부터 이야기 하자면 DNSEVER.COM 이라는 아주 고마운 서비스를 이용하면 DYNDNS.com 같은 Dynamic DNS 서비스를 개인 도메인에 붙여서 사용이 가능하다는 이야기! *간단 요약1. DNSEVER.COM 가입2. DNSEVER에 도메인 추가.3. 좌측 하단의 name server를 각 domain업체 홈페이지에서 변경(공식설명: http://kr.dnsever.com/help/wiki/wiki.php/NameServerChange)4. 다이나믹DNS 등록5. Auto Refresh 설정 아래 링크에 가면 아주 친절하세 설명해주신 포스팅이 있다.[팁]개인pc에 유료도메인 셋팅하기(포워딩) :: 네이버 블로그: 위 포스팅은 Windows base로 Refresh설명을 해주셨지만 아래 공식사이트에 가면 Linux용 설정방법도 있음.DNSEVER사용법 *주의: Name server를 변경했기 때문에 향후 도메인 관리는 모두 DNSEVER에서 해야함.
-      <a href="http://blog.leehack.com/blog/2011/12/05/%EC%9C%A0%EB%8F%99-ip-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EA%B0%9C%EC%9D%B8%EC%84%9C%EB%B2%84%EC%97%90-%EC%9C%A0%EB%A3%8C-%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%84%B8%ED%8C%85/">Read On &rarr;</a>
       
     </div>
     
