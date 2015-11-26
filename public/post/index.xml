@@ -6,8 +6,159 @@
     <description>Recent content in Posts on leehack&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Nov 2015 12:36:46 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2015 12:37:00 -0500</lastBuildDate>
     <atom:link href="http://blog.leehack.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hugo 설치하기</title>
+      <link>http://blog.leehack.com/blog/2015/11/25/hugo-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Wed, 25 Nov 2015 12:37:00 -0500</pubDate>
+      
+      <guid>http://blog.leehack.com/blog/2015/11/25/hugo-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://blog.leehack.com/blog/2015/11/23/블로그-플랫폼을-찾아서../&#34;&gt;블로그 플랫폼을 찾아서&lt;/a&gt;에서 언급한 것처럼 이 블로그는 &lt;a href=&#34;(https://gohugo.io/)&#34;&gt;Hugo&lt;/a&gt;로 만들었다.
+&lt;a href=&#34;(https://gohugo.io/)&#34;&gt;Hugo&lt;/a&gt;를 설치하기 전에 &lt;a href=&#34;https://jekyllrb.com&#34;&gt;jekyll&lt;/a&gt;이나 &lt;a href=&#34;http://octopress.org&#34;&gt;octopress&lt;/a&gt; 그리고 &lt;a href=&#34;http://haroopress.com&#34;&gt;haroopress&lt;/a&gt;를 알아봤으나 만족스럽지 못했고 빠르고 쉬운 Golang으로 만들어진 &lt;a href=&#34;(https://gohugo.io/)&#34;&gt;Hugo&lt;/a&gt;를 선택했다.&lt;/p&gt;
+
+&lt;p&gt;아직 &lt;a href=&#34;https://jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt;만큼 커뮤니티가 활성화 되어있지 않고 아주 널리 쓰이고 있지는 않기 때문에 조금 삽질을 하긴 했지만..
+한번 설치를 하고 나서는 모든게 꽤나 만족스러웠다. 전반적으로 &lt;a href=&#34;https://jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt;과 닮은 부분이 많기 때문에 기존 &lt;a href=&#34;https://jekyllrb.com&#34;&gt;jekyll&lt;/a&gt;사용자는 어렵지 않게 넘어 올 수 있을 것 같다.&lt;/p&gt;
+
+&lt;p&gt;일단 &lt;a href=&#34;(https://gohugo.io/)&#34;&gt;Hugo&lt;/a&gt;는 다른 static 기반 시스템처럼 포스팅을 파일로 관리하고 포스팅들과 테마 설정 등을 툴이 알아서 믹싱하여 html베이스의 사이트로 컨버팅 해주는 시스템이다.&lt;/p&gt;
+
+&lt;p&gt;내 경우는 이렇게 사용한다.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://ko.wikipedia.org/wiki/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4&#34;&gt;Markdown&lt;/a&gt;으로 글을 작성.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;로컬에서 작성한 글을 확인.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Git repository에 commit.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;스크립트를 이용해 Github에 Deploy.&lt;br /&gt;
+*&lt;em&gt;사실 개발자가 아니고서는 진입장벽이 조금 있는 편이다. 일반 유저라면 기존의 블로깅 시스템처럼 웹사이트에 접속해서 글을 쓰는 편이 편할 수도 있다.&lt;/em&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;설치하기:99a340e556ac96b49661880bbcdb4ef9&#34;&gt;설치하기&lt;/h2&gt;
+
+&lt;h4 id=&#34;mac-유저:99a340e556ac96b49661880bbcdb4ef9&#34;&gt;Mac 유저&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://brew.sh/&#34;&gt;HomeBrew&lt;/a&gt; 설치 (설치가 안 되어있다면).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;(https://gohugo.io/)&#34;&gt;Hugo&lt;/a&gt; 설치.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ brew install hugo
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;windows나-linux등-타-os-유저:99a340e556ac96b49661880bbcdb4ef9&#34;&gt;Windows나 Linux등 타 OS 유저&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;(https://gohugo.io/)&#34;&gt;Hugo&lt;/a&gt; 다운로드 및 설치 : &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;릴리즈 페이지&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;golang-유저-source-code:99a340e556ac96b49661880bbcdb4ef9&#34;&gt;Golang 유저(Source code)&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;pre&gt;&lt;code&gt;$ go get -u -v github.com/spf13/hugo
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;사이트-만들기:99a340e556ac96b49661880bbcdb4ef9&#34;&gt;사이트 만들기&lt;/h2&gt;
+
+&lt;p&gt;hugo 명령어를 이용해서 기본 사이트를 만든다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo new site /path/to/site
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;만들어진 사이트의 구조.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  - archetypes/
+  - content/
+  - layouts/
+  - static/
+    config.toml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;이제 사이트의 테마를 설치할 단계.&lt;br /&gt;
+*&lt;em&gt;기본적으로 아무런 테마가 설치되지 않기 때문에 html로 컨버팅을 해도 아무것도 볼 수 없다&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://themes.gohugo.io/&#34;&gt;Hugo Theme showcase&lt;/a&gt;에서 원하는 테마를 고르고 설치한다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;ex) install hyde-x theme.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd your_site_repo/
+$ mkdir themes
+$ cd themes
+$ git clone https://github.com/zyro/hyde-x
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;.git&lt;/code&gt; 관련 파일을 지운다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rm -rf hyde-x/.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;config.toml 파일을 열어서 &lt;code&gt;theme = &amp;quot;hyde-x&amp;quot;&lt;/code&gt; 을 추가한다.&lt;br /&gt;
+*&lt;em&gt;이 부분은 각 테마 마다 컨픽이 다르니 각 테마의 컨픽 방법 참고&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;새 포스팅 만들기(&lt;code&gt;content/post/first.md&lt;/code&gt;에 파일이 만들어진다)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo new post/first.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;만들어진 파일을 열어보면 상단에 아래와 같은 헤더가 먼저 보일 것이다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+++
+categories = []
+date = &amp;quot;2015-11-26T09:21:07-05:00&amp;quot;
+description = &amp;quot;&amp;quot;
+draft = true
+keywords = []
+title = &amp;quot;first&amp;quot;
+
++++
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;헤더를 수정하고 &lt;code&gt;+++&lt;/code&gt; 아래 부분에 &lt;a href=&#34;https://ko.wikipedia.org/wiki/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4&#34;&gt;Markdown&lt;/a&gt;으로 글을 작성하면 된다.&lt;/p&gt;
+
+&lt;p&gt;이제 작성한 글을 확인해 볼 단계.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo serve -w -D
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;위 명령어를 내리면 &lt;code&gt;http://127.0.0.1:1313&lt;/code&gt;에 웹서버가 열리고 브라우저로 접속하면 작성한 내용을 확인 할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-w&lt;/code&gt; 옵션을 주면 프로젝트 내에서 수정한 내용이 서버를 재시작하지 않아도 자동으로 적용된다.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-D&lt;/code&gt; 옵션을 주면 &lt;code&gt;draft = true&lt;/code&gt;인 포스팅들까지 랜더링 해준다. (각 포스팅의 헤더 참고)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;작성한 글이나 변경한 설정들이 원하는대로 된 것을 브라우저에서 확인이 되었으면 퍼블리시 단계.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;일단 Ctrl+C로 서버를 종료.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;publish를 원하는 글들의 헤더에서 &lt;code&gt;draft = true&lt;/code&gt; 라인을 제거.&lt;br /&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;public 폴더에 랜더링한 html파일들을 저장.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;public 폴더에 저장된 파일들을 원하는 웹서버에 올리면 된다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;필자의 경우엔 github static page 호스팅을 이용한다. &lt;a href=&#34;blog/2015/11/23/github-static-website-만들기/&#34;&gt;참고&lt;/a&gt;.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/tutorials/github-pages-blog/&#34;&gt;Hosting on GitHub Pages&lt;/a&gt;에 있는 deplay.sh 스크립트를 이용하면 편리하다.&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;참조:99a340e556ac96b49661880bbcdb4ef9&#34;&gt;참조&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;Hugo Quickstart guide&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>How to debug Golang with Visual Sutio Code</title>
@@ -573,16 +724,6 @@ public class C2DM_TESTActivity extends Activity {
       
       <guid>http://blog.leehack.com/blog/2011/12/04/drewgaren.com-nexus-s-beta-3-coming-soon/</guid>
       <description>&lt;p&gt;요즘 한참 쓰고 있는 DrewGaren의 Nexus S용 ICS ROM. Beta2사용중인데 Beta3가 나온다고 한다. 공식REL도 되기전에 이미 충분히 안정적이고 쓸만한 ROM을 생산해내고 있는 해커들.. 경이롭기까지 하다.&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;http://www.drewgaren.com/2011/12/nexus-s-beta-3-coming-soon.html?spref=bl&#34;&gt;DrewGaren.com: Nexus S Beta 3 Coming Soon!&lt;/a&gt;: Beta 3 Ice Cream Sandwich for Nexus S Is Coming Soon, How About A Preview&amp;hellip;  You guys have been asking for some fixes and I&amp;rsquo;m going to get &amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>PostgreSQL 9.1.1 &#43; phpPgAdmin 설치</title>
-      <link>http://blog.leehack.com/blog/2011/12/04/postgresql-9.1.1--phppgadmin-%EC%84%A4%EC%B9%98/</link>
-      <pubDate>Sun, 04 Dec 2011 02:44:00 +0000</pubDate>
-      
-      <guid>http://blog.leehack.com/blog/2011/12/04/postgresql-9.1.1--phppgadmin-%EC%84%A4%EC%B9%98/</guid>
-      <description>&lt;p&gt;&lt;span style=&#34;font-size: large;&#34;&gt;&lt;b&gt;Ubuntu 11.10에서&amp;nbsp;PostgreSQL 9.1.1 + phpPgAdmin 설치하기&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;b&gt;1. apt-get을 이용하여 Install하면 9.1.1이 자동으로 설치된다.&lt;/b&gt;&lt;br /&gt;$sudo apt-get install postgresql&lt;br /&gt;&lt;br /&gt;&lt;b&gt;2. apt-get을 이용하여 phpPgAdmin 설치&lt;/b&gt;&lt;br /&gt;$sudo apt-get install phpPgAdmin&lt;br /&gt;&lt;br /&gt;&lt;b&gt;3. 기본적으로 postgreSQL은 인증방식이 peer로 잡혀있다. password base로 접속하기 위해서는 trust로 변경을 해야한다.&lt;/b&gt;&lt;br /&gt;$sudo vim /etc/postgresql/9.1/main/pg_hba.conf&lt;br /&gt;&lt;br /&gt;가장 아랫쪽에 인증방식 설정하는 곳을 찾아 아래처럼 변경한다.&lt;br /&gt;local &amp;nbsp; &amp;nbsp;all &amp;nbsp; &amp;nbsp;all &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;trust&lt;br /&gt;host &amp;nbsp; &amp;nbsp;all &amp;nbsp; &amp;nbsp;all &amp;nbsp; &amp;nbsp;0.0.0.0/0 &amp;nbsp; &amp;nbsp;trust&lt;br /&gt;&lt;br /&gt;&lt;em&gt;참고로 host의 address를 0.0.0.0/0 으로 설정한 것은 원격지에서 접속이 가능하도록 하기위해서다.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;4. 원격지에서 접속 가능하도록 설정&lt;/b&gt;&lt;br /&gt;$sudo vim /etc/postgresql/9.1/main/postgresql.conf&lt;br /&gt;&lt;br /&gt;listen_addresses을 찾아 주석을 제거하고&lt;br /&gt;listen_addresses = &amp;lsquo;&lt;/em&gt;&amp;rsquo; 로 수정한다.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;5. PostgreSQL 재시작&lt;/b&gt;&lt;br /&gt;$sudo /etc/init.d/postgresql restart&lt;br /&gt;&lt;br /&gt;&lt;b&gt;6. User 추가하기&lt;/b&gt;&lt;br /&gt;$sudo -u postgres createuser -P &amp;lsquo;account name&amp;rsquo;&lt;br /&gt;&lt;br /&gt;* -P 옵션은 계정을 추가하면서 password를 지정할 것이라는 옵션.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;7. phpPgAdmin 원격접속 허용&lt;/b&gt;&lt;br /&gt;$sudo vim /etc/phppgadmin/apache.conf&lt;br /&gt;&lt;br /&gt;아래 두라인을 주석처리&lt;br /&gt;deny from all&lt;br /&gt;allow from 127.0.0.0/255.0.0.0 ::&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;28&lt;/sub&gt;&lt;br /&gt;&lt;br /&gt;allow from all 추가&lt;br /&gt;&lt;br /&gt;&lt;b&gt;8. Apache 재시작&lt;/b&gt;&lt;br /&gt;$sudo /etc/init.d/apache2 restart&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;여기까지 하면 세팅 완료. 6번에서 User추가시 super user를 추가했다면 앞으로는 &lt;a href=&#34;http://localhost/phppgadmin&#34;&gt;http://localhost/phppgadmin&lt;/a&gt; 에서 user및 db 추가가 가능함.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 </description>
     </item>
     

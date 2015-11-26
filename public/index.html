@@ -105,6 +105,21 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="http://blog.leehack.com/blog/2015/11/25/hugo-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/">Hugo 설치하기</a>
+      </h1>
+      <span class="post-date">Nov 25, 2015 &middot; 2 minute read &middot; <a href="http://blog.leehack.com/blog/2015/11/25/hugo-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="http://blog.leehack.com/categories/hugo">Hugo</a><a class="label" href="http://blog.leehack.com/categories/blog">Blog</a><a class="label" href="http://blog.leehack.com/categories/golang">Golang</a>
+      </span>
+      
+      <p>Go언어로 만들어진 Static blog system인 Hugo 설치 방법</p>
+      <a href="http://blog.leehack.com/blog/2015/11/25/hugo-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="http://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/">How to debug Golang with Visual Sutio Code</a>
       </h1>
       <span class="post-date">Nov 25, 2015 &middot; 2 minute read &middot; <a href="http://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/#disqus_thread">Comments</a>
@@ -232,21 +247,6 @@
       
       1.&nbsp;http://code.google.com/intl/ko-KR/android/c2dm/ 에서 c2dm 서비스에 sign-up (gmail account를 새로 만들어서 가입하는 것이 좋다. - 실제로 이 account정보를 클라이언트 및 서버에 모두 넣어야 하고 더구나 서버에는 패스워드정보도 필요하기 때문) 2. 가입하면 E-mail로 가입한 Account로 서비스가 Enable되었다는 내용의 메일이 옮(보통 하루안에 오고 늦어도 몇일 사이에는 오는 듯) 여기까지 준비 완료! 아래는 실제 파이썬 코드 시작!! import urllib, urllib2 class ClientLoginTokenFactory(): _token = None def init(self): self.url = &lsquo;https://www.google.com/accounts/ClientLogin' self.accountType = &lsquo;GOOGLE&rsquo; self.email = &lsquo;c2dm에 가입한 메일주소&rsquo; self.password = &lsquo;c2dm에 가입한 메일주소의 패스워드&rsquo; self.source = &lsquo;replstory-replstory-0&rsquo; self.service = &lsquo;ac2dm&rsquo; def getToken(self): if self._token is None: # Build payload values = {&lsquo;accountType&rsquo; : self.accountType, &lsquo;Email&rsquo; : self.email, &lsquo;Passwd&rsquo; : self.password, &lsquo;source&rsquo; : self.source, &lsquo;service&rsquo; : self.service} # Build request data = urllib.urlencode(values) request = urllib2.Request(self.url, data) # Post response = urllib2.urlopen(request) responseAsString = response.read() # Format response responseAsList = responseAsString.split(&rsquo;\n&rsquo;) self._token = responseAsList[2].split(&lsquo;=&rsquo;)[1] return self._token class C2DM(): def init(self): self.url = &lsquo;https://android.apis.google.com/c2dm/send' self.clientAuth = None self.registrationId = None self.collapseKey = None self.data = {} def sendMessage(self): if self.registrationId == None or self.collapseKey == None: return False clientAuthFactory = ClientLoginTokenFactory() self.clientAuth = clientAuthFactory.getToken() # Build payload values = {&lsquo;registration_id&rsquo; : self.registrationId, &lsquo;collapse_key&rsquo; : self.collapseKey} # Loop over any data we want to send for k, v in self.data.iteritems(): values[&lsquo;data.&rsquo; + k] = v # Build request headers = {&lsquo;Authorization&rsquo;: &lsquo;GoogleLogin auth=&rsquo; + self.clientAuth} data = urllib.urlencode(values) request = urllib2.Request(self.url, data, headers) # Post try: response = urllib2.urlopen(request) responseAsString = response.read() return responseAsString except urllib2.HTTPError, e: print &lsquo;HTTPError &rsquo; + str(e) sender = C2DM() sender.registrationId = &lsquo;Android단말기에서 c2dm서버로 부터 받은 고유번호&rsquo; sender.collapseKey = 1 sender.data = {&lsquo;msg&rsquo;:&lsquo;test&rsquo;} response = sender.sendMessage() print response 9,10,79 라인의 정보만 바꾸고 실행하면 c2dm등록된 단말기로 test라는 푸시 메세지가 날아간다.
       <a href="http://blog.leehack.com/blog/2011/12/09/python%EC%9C%BC%EB%A1%9C-c2dm-server-%EB%A7%8C%EB%93%A4%EA%B8%B0/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://blog.leehack.com/blog/2011/12/08/pydev%EC%97%90%EC%84%9C-library-%EC%9D%B8%EC%8B%9D-%EC%95%88%EB%90%A0-%EB%95%8C/">Pydev에서 Library 인식 안될 때</a>
-      </h1>
-      <span class="post-date">Dec 8, 2011 &middot; 1 minute read &middot; <a href="http://blog.leehack.com/blog/2011/12/08/pydev%EC%97%90%EC%84%9C-library-%EC%9D%B8%EC%8B%9D-%EC%95%88%EB%90%A0-%EB%95%8C/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="http://blog.leehack.com/categories/python">Python</a><a class="label" href="http://blog.leehack.com/categories/eclipse">Eclipse</a><a class="label" href="http://blog.leehack.com/categories/pydev">Pydev</a>
-      </span>
-      
-      여러가지 파이썬용 웹프레임웍을 이클립스의 Pydev에서 돌려보는 중 아주 눈에 거슬리는 것을 발견!!빌드도 잘되고 Run도 잘되는데 저 빨간줄! 엑스표! 에디터상에 나타나는거 아주 짜증스럽다! 오늘은 맘먹고 고치겠다고 선언! 아무리 웹을 뒤져도 나오지 않는다! 왜일까... 결국엔 삽질 끝에 아주 간단히 해결.. eclipse-&gt;preference-&gt;interpreter -Python 위 화면에서 Auto Config click하면 이런화면이 나온다. 보통은 위에 선택되어 있는 것처럼 해놓고 사용했었는데.. (easy_install하면 젤 아래 /Library/Python/2.7/site-packages 에 들어가기 때문에..)알고보니 library로 인식이 안되고 있는 것이였다 -_-;;(이런 멍청한! 모르면 죽어야지!) Select All한 후 코드를 다시 열어보니..
-      <a href="http://blog.leehack.com/blog/2011/12/08/pydev%EC%97%90%EC%84%9C-library-%EC%9D%B8%EC%8B%9D-%EC%95%88%EB%90%A0-%EB%95%8C/">Read On &rarr;</a>
       
     </div>
     
