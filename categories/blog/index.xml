@@ -6,8 +6,159 @@
     <description>Recent content in Blog on leehack&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Nov 2015 21:20:51 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2015 12:37:00 -0500</lastBuildDate>
     <atom:link href="http://blog.leehack.com/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hugo 설치하기</title>
+      <link>http://blog.leehack.com/blog/2015/11/25/hugo-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Wed, 25 Nov 2015 12:37:00 -0500</pubDate>
+      
+      <guid>http://blog.leehack.com/blog/2015/11/25/hugo-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://blog.leehack.com/blog/2015/11/23/블로그-플랫폼을-찾아서../&#34;&gt;블로그 플랫폼을 찾아서&lt;/a&gt;에서 언급한 것처럼 이 블로그는 &lt;a href=&#34;(https://gohugo.io/)&#34;&gt;Hugo&lt;/a&gt;로 만들었다.
+&lt;a href=&#34;(https://gohugo.io/)&#34;&gt;Hugo&lt;/a&gt;를 설치하기 전에 &lt;a href=&#34;https://jekyllrb.com&#34;&gt;jekyll&lt;/a&gt;이나 &lt;a href=&#34;http://octopress.org&#34;&gt;octopress&lt;/a&gt; 그리고 &lt;a href=&#34;http://haroopress.com&#34;&gt;haroopress&lt;/a&gt;를 알아봤으나 만족스럽지 못했고 빠르고 쉬운 Golang으로 만들어진 &lt;a href=&#34;(https://gohugo.io/)&#34;&gt;Hugo&lt;/a&gt;를 선택했다.&lt;/p&gt;
+
+&lt;p&gt;아직 &lt;a href=&#34;https://jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt;만큼 커뮤니티가 활성화 되어있지 않고 아주 널리 쓰이고 있지는 않기 때문에 조금 삽질을 하긴 했지만..
+한번 설치를 하고 나서는 모든게 꽤나 만족스러웠다. 전반적으로 &lt;a href=&#34;https://jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt;과 닮은 부분이 많기 때문에 기존 &lt;a href=&#34;https://jekyllrb.com&#34;&gt;jekyll&lt;/a&gt;사용자는 어렵지 않게 넘어 올 수 있을 것 같다.&lt;/p&gt;
+
+&lt;p&gt;일단 &lt;a href=&#34;(https://gohugo.io/)&#34;&gt;Hugo&lt;/a&gt;는 다른 static 기반 시스템처럼 포스팅을 파일로 관리하고 포스팅들과 테마 설정 등을 툴이 알아서 믹싱하여 html베이스의 사이트로 컨버팅 해주는 시스템이다.&lt;/p&gt;
+
+&lt;p&gt;내 경우는 이렇게 사용한다.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://ko.wikipedia.org/wiki/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4&#34;&gt;Markdown&lt;/a&gt;으로 글을 작성.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;로컬에서 작성한 글을 확인.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Git repository에 commit.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;스크립트를 이용해 Github에 Deploy.&lt;br /&gt;
+*&lt;em&gt;사실 개발자가 아니고서는 진입장벽이 조금 있는 편이다. 일반 유저라면 기존의 블로깅 시스템처럼 웹사이트에 접속해서 글을 쓰는 편이 편할 수도 있다.&lt;/em&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;설치하기:99a340e556ac96b49661880bbcdb4ef9&#34;&gt;설치하기&lt;/h2&gt;
+
+&lt;h4 id=&#34;mac-유저:99a340e556ac96b49661880bbcdb4ef9&#34;&gt;Mac 유저&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://brew.sh/&#34;&gt;HomeBrew&lt;/a&gt; 설치 (설치가 안 되어있다면).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;(https://gohugo.io/)&#34;&gt;Hugo&lt;/a&gt; 설치.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ brew install hugo
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;windows나-linux등-타-os-유저:99a340e556ac96b49661880bbcdb4ef9&#34;&gt;Windows나 Linux등 타 OS 유저&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;(https://gohugo.io/)&#34;&gt;Hugo&lt;/a&gt; 다운로드 및 설치 : &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;릴리즈 페이지&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;golang-유저-source-code:99a340e556ac96b49661880bbcdb4ef9&#34;&gt;Golang 유저(Source code)&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;pre&gt;&lt;code&gt;$ go get -u -v github.com/spf13/hugo
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;사이트-만들기:99a340e556ac96b49661880bbcdb4ef9&#34;&gt;사이트 만들기&lt;/h2&gt;
+
+&lt;p&gt;hugo 명령어를 이용해서 기본 사이트를 만든다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo new site /path/to/site
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;만들어진 사이트의 구조.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  - archetypes/
+  - content/
+  - layouts/
+  - static/
+    config.toml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;이제 사이트의 테마를 설치할 단계.&lt;br /&gt;
+*&lt;em&gt;기본적으로 아무런 테마가 설치되지 않기 때문에 html로 컨버팅을 해도 아무것도 볼 수 없다&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://themes.gohugo.io/&#34;&gt;Hugo Theme showcase&lt;/a&gt;에서 원하는 테마를 고르고 설치한다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;ex) install hyde-x theme.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd your_site_repo/
+$ mkdir themes
+$ cd themes
+$ git clone https://github.com/zyro/hyde-x
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;.git&lt;/code&gt; 관련 파일을 지운다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rm -rf hyde-x/.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;config.toml 파일을 열어서 &lt;code&gt;theme = &amp;quot;hyde-x&amp;quot;&lt;/code&gt; 을 추가한다.&lt;br /&gt;
+*&lt;em&gt;이 부분은 각 테마 마다 컨픽이 다르니 각 테마의 컨픽 방법 참고&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;새 포스팅 만들기(&lt;code&gt;content/post/first.md&lt;/code&gt;에 파일이 만들어진다)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo new post/first.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;만들어진 파일을 열어보면 상단에 아래와 같은 헤더가 먼저 보일 것이다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+++
+categories = []
+date = &amp;quot;2015-11-26T09:21:07-05:00&amp;quot;
+description = &amp;quot;&amp;quot;
+draft = true
+keywords = []
+title = &amp;quot;first&amp;quot;
+
++++
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;헤더를 수정하고 &lt;code&gt;+++&lt;/code&gt; 아래 부분에 &lt;a href=&#34;https://ko.wikipedia.org/wiki/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4&#34;&gt;Markdown&lt;/a&gt;으로 글을 작성하면 된다.&lt;/p&gt;
+
+&lt;p&gt;이제 작성한 글을 확인해 볼 단계.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo serve -w -D
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;위 명령어를 내리면 &lt;code&gt;http://127.0.0.1:1313&lt;/code&gt;에 웹서버가 열리고 브라우저로 접속하면 작성한 내용을 확인 할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-w&lt;/code&gt; 옵션을 주면 프로젝트 내에서 수정한 내용이 서버를 재시작하지 않아도 자동으로 적용된다.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-D&lt;/code&gt; 옵션을 주면 &lt;code&gt;draft = true&lt;/code&gt;인 포스팅들까지 랜더링 해준다. (각 포스팅의 헤더 참고)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;작성한 글이나 변경한 설정들이 원하는대로 된 것을 브라우저에서 확인이 되었으면 퍼블리시 단계.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;일단 Ctrl+C로 서버를 종료.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;publish를 원하는 글들의 헤더에서 &lt;code&gt;draft = true&lt;/code&gt; 라인을 제거.&lt;br /&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;public 폴더에 랜더링한 html파일들을 저장.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;public 폴더에 저장된 파일들을 원하는 웹서버에 올리면 된다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;필자의 경우엔 github static page 호스팅을 이용한다. &lt;a href=&#34;blog/2015/11/23/github-static-website-만들기/&#34;&gt;참고&lt;/a&gt;.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/tutorials/github-pages-blog/&#34;&gt;Hosting on GitHub Pages&lt;/a&gt;에 있는 deplay.sh 스크립트를 이용하면 편리하다.&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;참조:99a340e556ac96b49661880bbcdb4ef9&#34;&gt;참조&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;Hugo Quickstart guide&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Github static website 만들기</title>

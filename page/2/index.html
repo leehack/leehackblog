@@ -105,6 +105,21 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="http://blog.leehack.com/blog/2011/12/08/pydev%EC%97%90%EC%84%9C-library-%EC%9D%B8%EC%8B%9D-%EC%95%88%EB%90%A0-%EB%95%8C/">Pydev에서 Library 인식 안될 때</a>
+      </h1>
+      <span class="post-date">Dec 8, 2011 &middot; 1 minute read &middot; <a href="http://blog.leehack.com/blog/2011/12/08/pydev%EC%97%90%EC%84%9C-library-%EC%9D%B8%EC%8B%9D-%EC%95%88%EB%90%A0-%EB%95%8C/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="http://blog.leehack.com/categories/python">Python</a><a class="label" href="http://blog.leehack.com/categories/eclipse">Eclipse</a><a class="label" href="http://blog.leehack.com/categories/pydev">Pydev</a>
+      </span>
+      
+      여러가지 파이썬용 웹프레임웍을 이클립스의 Pydev에서 돌려보는 중 아주 눈에 거슬리는 것을 발견!!빌드도 잘되고 Run도 잘되는데 저 빨간줄! 엑스표! 에디터상에 나타나는거 아주 짜증스럽다! 오늘은 맘먹고 고치겠다고 선언! 아무리 웹을 뒤져도 나오지 않는다! 왜일까... 결국엔 삽질 끝에 아주 간단히 해결.. eclipse-&gt;preference-&gt;interpreter -Python 위 화면에서 Auto Config click하면 이런화면이 나온다. 보통은 위에 선택되어 있는 것처럼 해놓고 사용했었는데.. (easy_install하면 젤 아래 /Library/Python/2.7/site-packages 에 들어가기 때문에..)알고보니 library로 인식이 안되고 있는 것이였다 -_-;;(이런 멍청한! 모르면 죽어야지!) Select All한 후 코드를 다시 열어보니..
+      <a href="http://blog.leehack.com/blog/2011/12/08/pydev%EC%97%90%EC%84%9C-library-%EC%9D%B8%EC%8B%9D-%EC%95%88%EB%90%A0-%EB%95%8C/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="http://blog.leehack.com/blog/2011/12/07/python-flask-webpy-django-bottle-web2py-.../">Python:: flask, webpy, Django, Bottle, web2py ...</a>
       </h1>
       <span class="post-date">Dec 7, 2011 &middot; 1 minute read &middot; <a href="http://blog.leehack.com/blog/2011/12/07/python-flask-webpy-django-bottle-web2py-.../#disqus_thread">Comments</a>
@@ -229,21 +244,6 @@
       
       Android apk file을 reverse해서 Resource나 Src를 수정하는 방법이 있다. http://code.google.com/p/android-apktool/&nbsp;에 open source project가 진행중이며, apk를 풀고 다시 빌드하는 것이 가능하다. 1. 해당 사이트에서 apktool을 다운로드하고 기재된 install방법으로 설치한다. 2. apk 디코딩 &gt;apktool d -d name.apk out 3. out 폴더에 있는 source file(dalvik bytecode)과 resource file을 수정한다. 4. apk 빌드 &gt;apktool b -d out 5. 위까지 수행하게 되면 out/dist/out.apk 가 생성되며 이 out.apk를 sign해주면 완료. Sign방법은&nbsp;http://developer.android.com/guide/publishing/app-signing.html&nbsp;를 참고하면 된다. 참고: 1. leehack이 사용한 Sign관련 command.
       <a href="http://blog.leehack.com/blog/2010/05/14/android-apk-reverse-engineering/">Read On &rarr;</a>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://blog.leehack.com/blog/2010/05/11/%EB%84%A5%EC%84%9C%EC%8A%A4%EC%9B%90-%EA%B0%9C%ED%86%B5-%EA%B4%80%EB%A0%A8./">넥서스원 개통 관련.</a>
-      </h1>
-      <span class="post-date">May 11, 2010 &middot; 1 minute read &middot; <a href="http://blog.leehack.com/blog/2010/05/11/%EB%84%A5%EC%84%9C%EC%8A%A4%EC%9B%90-%EA%B0%9C%ED%86%B5-%EA%B4%80%EB%A0%A8./#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="http://blog.leehack.com/categories/etc">etc</a>
-      </span>
-      
-      처음엔 안드로이드펍(http://www.androidpub.com/phone_nexusone/319483)에 올라온 글을 보고 정말 KT에서 개통을 해주려고 하는구나 생각이 들었고 아래와 같은 폰스토어의 고객센터 Q&amp;A(http://phonestore.show.co.kr/handler/Customer-Qna)에 올라온 아래와 같은 글을 보고 이젠 개통이 되는구나! 라는 생각이 들었다. 그래서 바로 개통신청!.. 오늘 KT M&amp;S팀으로부터 전화가 왔다. &mdash;&mdash;&mdash;- 개인전파인증서 보내셨나요?아니요. 없이도 개통 된다고 Q&amp;A에 올라와있던데&hellip;구글 직원이세요?아니요.아직 개인인증 안된 단말은 개통이 안됩니다.네&hellip;&hellip;&hellip; --;;&mdash;&mdash;&mdash;- 안된다는데 따진다고 될 것도 아니고 그냥 끊었다. 근데 끊고나서 가만 생각해보니.. 그럼 구글직원은 개통이 된다는 소린가? --; Q&amp;A에 올라온건 대체 내부적으로 무슨 이야기가 오가기에 아래와 같은 답변을 한단 말인가?
-      <a href="http://blog.leehack.com/blog/2010/05/11/%EB%84%A5%EC%84%9C%EC%8A%A4%EC%9B%90-%EA%B0%9C%ED%86%B5-%EA%B4%80%EB%A0%A8./">Read On &rarr;</a>
       
     </div>
     
