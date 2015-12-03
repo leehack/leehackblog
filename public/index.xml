@@ -17,13 +17,13 @@
       <guid>http://blog.leehack.com/blog/2015/11/25/hugo-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</guid>
       <description>
 
-&lt;p&gt;&lt;a href=&#34;http://blog.leehack.com/blog/2015/11/23/블로그-플랫폼을-찾아서../&#34;&gt;블로그 플랫폼을 찾아서&lt;/a&gt;에서 언급한 것처럼 이 블로그는 &lt;a href=&#34;(https://gohugo.io/)&#34;&gt;Hugo&lt;/a&gt;로 만들었다.
-&lt;a href=&#34;(https://gohugo.io/)&#34;&gt;Hugo&lt;/a&gt;를 설치하기 전에 &lt;a href=&#34;https://jekyllrb.com&#34;&gt;jekyll&lt;/a&gt;이나 &lt;a href=&#34;http://octopress.org&#34;&gt;octopress&lt;/a&gt; 그리고 &lt;a href=&#34;http://haroopress.com&#34;&gt;haroopress&lt;/a&gt;를 알아봤으나 만족스럽지 못했고 빠르고 쉬운 Golang으로 만들어진 &lt;a href=&#34;(https://gohugo.io/)&#34;&gt;Hugo&lt;/a&gt;를 선택했다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://blog.leehack.com/blog/2015/11/23/블로그-플랫폼을-찾아서../&#34;&gt;블로그 플랫폼을 찾아서&lt;/a&gt;에서 언급한 것처럼 이 블로그는 &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;로 만들었다.
+&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;를 설치하기 전에 &lt;a href=&#34;https://jekyllrb.com&#34;&gt;jekyll&lt;/a&gt;이나 &lt;a href=&#34;http://octopress.org&#34;&gt;octopress&lt;/a&gt; 그리고 &lt;a href=&#34;http://haroopress.com&#34;&gt;haroopress&lt;/a&gt;를 알아봤으나 만족스럽지 못했고 빠르고 쉬운 Golang으로 만들어진 &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;를 선택했다.&lt;/p&gt;
 
 &lt;p&gt;아직 &lt;a href=&#34;https://jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt;만큼 커뮤니티가 활성화 되어있지 않고 아주 널리 쓰이고 있지는 않기 때문에 조금 삽질을 하긴 했지만..
 한번 설치를 하고 나서는 모든게 꽤나 만족스러웠다. 전반적으로 &lt;a href=&#34;https://jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt;과 닮은 부분이 많기 때문에 기존 &lt;a href=&#34;https://jekyllrb.com&#34;&gt;jekyll&lt;/a&gt;사용자는 어렵지 않게 넘어 올 수 있을 것 같다.&lt;/p&gt;
 
-&lt;p&gt;일단 &lt;a href=&#34;(https://gohugo.io/)&#34;&gt;Hugo&lt;/a&gt;는 다른 static 기반 시스템처럼 포스팅을 파일로 관리하고 포스팅들과 테마 설정 등을 툴이 알아서 믹싱하여 html베이스의 사이트로 컨버팅 해주는 시스템이다.&lt;/p&gt;
+&lt;p&gt;일단 &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;는 다른 static 기반 시스템처럼 포스팅을 파일로 관리하고 포스팅들과 테마 설정 등을 툴이 알아서 믹싱하여 html베이스의 사이트로 컨버팅 해주는 시스템이다.&lt;/p&gt;
 
 &lt;p&gt;내 경우는 이렇게 사용한다.&lt;/p&gt;
 
@@ -45,7 +45,7 @@
 &lt;pre&gt;&lt;code&gt;$ ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;(https://gohugo.io/)&#34;&gt;Hugo&lt;/a&gt; 설치.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; 설치.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ brew install hugo
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
@@ -54,7 +54,7 @@
 &lt;h4 id=&#34;windows나-linux등-타-os-유저:99a340e556ac96b49661880bbcdb4ef9&#34;&gt;Windows나 Linux등 타 OS 유저&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;(https://gohugo.io/)&#34;&gt;Hugo&lt;/a&gt; 다운로드 및 설치 : &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;릴리즈 페이지&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; 다운로드 및 설치 : &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;릴리즈 페이지&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&#34;golang-유저-source-code:99a340e556ac96b49661880bbcdb4ef9&#34;&gt;Golang 유저(Source code)&lt;/h4&gt;
@@ -167,28 +167,28 @@ title = &amp;quot;first&amp;quot;
       
       <guid>http://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://i3-vso.sec.s-msft.com/dynimg/IC794090.png&#34; alt=&#34;Visual Studio Code&#34; /&gt;
-&lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt; is released by Microsoft which is cross platform Code Editor.
-It&amp;rsquo;s forked from &lt;a href=&#34;(https://atom.io/)&#34;&gt;ATOM&lt;/a&gt; and OpenSource as well if you care ;)&lt;/p&gt;
+&lt;a href=&#34;https://code.visualstudio.com&#34;&gt;Visual Studio Code&lt;/a&gt; is released by Microsoft which is cross platform Code Editor.
+It&amp;rsquo;s forked from &lt;a href=&#34;https://atom.io/&#34;&gt;ATOM&lt;/a&gt; and OpenSource as well if you care ;)&lt;/p&gt;
 
-&lt;p&gt;I just found out it&amp;rsquo;s quite useful for Markdown for my posting but also realized it&amp;rsquo;s quite nice for &lt;a href=&#34;(https://golang.org/)&#34;&gt;GoLang&lt;/a&gt; debugging as well.
+&lt;p&gt;I just found out it&amp;rsquo;s quite useful for Markdown for my posting but also realized it&amp;rsquo;s quite nice for &lt;a href=&#34;https://golang.org/&#34;&gt;GoLang&lt;/a&gt; debugging as well.
 Even still my favorite editor is &lt;a href=&#34;http://www.sublimetext.com/&#34;&gt;SublimeText&lt;/a&gt; though..&lt;/p&gt;
 
-&lt;p&gt;Now it&amp;rsquo;s time to introduce &lt;a href=&#34;(https://github.com/derekparker/delve)&#34;&gt;Delve&lt;/a&gt;.&lt;br /&gt;
-&lt;em&gt;Delve is a debugger for the Go programming language. The goal of the project is to provide a simple, full featured debugging tool for Go. Delve should be easy to invoke and easy to use. Chances are if you&amp;rsquo;re using a debugger, most likely things aren&amp;rsquo;t going your way. With that in mind, Delve should stay out of your way as much as possible.&lt;/em&gt; - from the &lt;a href=&#34;(https://github.com/derekparker/delve)&#34;&gt;Delve&lt;/a&gt; introduction&lt;/p&gt;
+&lt;p&gt;Now it&amp;rsquo;s time to introduce &lt;a href=&#34;https://github.com/derekparker/delve&#34;&gt;Delve&lt;/a&gt;.&lt;br /&gt;
+&lt;em&gt;Delve is a debugger for the Go programming language. The goal of the project is to provide a simple, full featured debugging tool for Go. Delve should be easy to invoke and easy to use. Chances are if you&amp;rsquo;re using a debugger, most likely things aren&amp;rsquo;t going your way. With that in mind, Delve should stay out of your way as much as possible.&lt;/em&gt; - from the &lt;a href=&#34;https://github.com/derekparker/delve&#34;&gt;Delve&lt;/a&gt; introduction&lt;/p&gt;
 
-&lt;p&gt;As you might already noticed &lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt; uses &lt;a href=&#34;(https://github.com/derekparker/delve)&#34;&gt;Delve&lt;/a&gt; for the debugging.
-Actually the GoLang plugin for &lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt; is not from MicroSoft but you can easily install from the tool.&lt;/p&gt;
+&lt;p&gt;As you might already noticed &lt;a href=&#34;https://code.visualstudio.com&#34;&gt;Visual Studio Code&lt;/a&gt; uses &lt;a href=&#34;https://github.com/derekparker/delve&#34;&gt;Delve&lt;/a&gt; for the debugging.
+Actually the GoLang plugin for &lt;a href=&#34;https://code.visualstudio.com&#34;&gt;Visual Studio Code&lt;/a&gt; is not from MicroSoft but you can easily install from the tool.&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Install &lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt; if you don&amp;rsquo;t install yet.&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Install &lt;a href=&#34;(https://marketplace.visualstudio.com/items/lukehoban.Go)&#34;&gt;Go for Visual Studio Code&lt;/a&gt; from &lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt;.&lt;br /&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://code.visualstudio.com&#34;&gt;Visual Studio Code&lt;/a&gt; if you don&amp;rsquo;t install yet.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://marketplace.visualstudio.com/items/lukehoban.Go&#34;&gt;Go for Visual Studio Code&lt;/a&gt; from &lt;a href=&#34;https://code.visualstudio.com&#34;&gt;Visual Studio Code&lt;/a&gt;.&lt;br /&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Ctrl + Shift + P&lt;/code&gt;.&lt;br /&gt;&lt;/li&gt;
 &lt;li&gt;Type &lt;code&gt;ext install&lt;/code&gt; &amp;amp; select &lt;code&gt;Install Extension&lt;/code&gt;.&lt;br /&gt;&lt;/li&gt;
 &lt;li&gt;Type &lt;code&gt;go&lt;/code&gt; and select Go plugin made by lukehoben.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Install &lt;a href=&#34;(https://github.com/derekparker/delve)&#34;&gt;Delve&lt;/a&gt;.&lt;br /&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://github.com/derekparker/delve&#34;&gt;Delve&lt;/a&gt;.&lt;br /&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;$go get -u github.com/derekparker/delve/cmd/dlv&lt;/code&gt;.&lt;/li&gt;

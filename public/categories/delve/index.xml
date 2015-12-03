@@ -16,28 +16,28 @@
       
       <guid>http://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://i3-vso.sec.s-msft.com/dynimg/IC794090.png&#34; alt=&#34;Visual Studio Code&#34; /&gt;
-&lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt; is released by Microsoft which is cross platform Code Editor.
-It&amp;rsquo;s forked from &lt;a href=&#34;(https://atom.io/)&#34;&gt;ATOM&lt;/a&gt; and OpenSource as well if you care ;)&lt;/p&gt;
+&lt;a href=&#34;https://code.visualstudio.com&#34;&gt;Visual Studio Code&lt;/a&gt; is released by Microsoft which is cross platform Code Editor.
+It&amp;rsquo;s forked from &lt;a href=&#34;https://atom.io/&#34;&gt;ATOM&lt;/a&gt; and OpenSource as well if you care ;)&lt;/p&gt;
 
-&lt;p&gt;I just found out it&amp;rsquo;s quite useful for Markdown for my posting but also realized it&amp;rsquo;s quite nice for &lt;a href=&#34;(https://golang.org/)&#34;&gt;GoLang&lt;/a&gt; debugging as well.
+&lt;p&gt;I just found out it&amp;rsquo;s quite useful for Markdown for my posting but also realized it&amp;rsquo;s quite nice for &lt;a href=&#34;https://golang.org/&#34;&gt;GoLang&lt;/a&gt; debugging as well.
 Even still my favorite editor is &lt;a href=&#34;http://www.sublimetext.com/&#34;&gt;SublimeText&lt;/a&gt; though..&lt;/p&gt;
 
-&lt;p&gt;Now it&amp;rsquo;s time to introduce &lt;a href=&#34;(https://github.com/derekparker/delve)&#34;&gt;Delve&lt;/a&gt;.&lt;br /&gt;
-&lt;em&gt;Delve is a debugger for the Go programming language. The goal of the project is to provide a simple, full featured debugging tool for Go. Delve should be easy to invoke and easy to use. Chances are if you&amp;rsquo;re using a debugger, most likely things aren&amp;rsquo;t going your way. With that in mind, Delve should stay out of your way as much as possible.&lt;/em&gt; - from the &lt;a href=&#34;(https://github.com/derekparker/delve)&#34;&gt;Delve&lt;/a&gt; introduction&lt;/p&gt;
+&lt;p&gt;Now it&amp;rsquo;s time to introduce &lt;a href=&#34;https://github.com/derekparker/delve&#34;&gt;Delve&lt;/a&gt;.&lt;br /&gt;
+&lt;em&gt;Delve is a debugger for the Go programming language. The goal of the project is to provide a simple, full featured debugging tool for Go. Delve should be easy to invoke and easy to use. Chances are if you&amp;rsquo;re using a debugger, most likely things aren&amp;rsquo;t going your way. With that in mind, Delve should stay out of your way as much as possible.&lt;/em&gt; - from the &lt;a href=&#34;https://github.com/derekparker/delve&#34;&gt;Delve&lt;/a&gt; introduction&lt;/p&gt;
 
-&lt;p&gt;As you might already noticed &lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt; uses &lt;a href=&#34;(https://github.com/derekparker/delve)&#34;&gt;Delve&lt;/a&gt; for the debugging.
-Actually the GoLang plugin for &lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt; is not from MicroSoft but you can easily install from the tool.&lt;/p&gt;
+&lt;p&gt;As you might already noticed &lt;a href=&#34;https://code.visualstudio.com&#34;&gt;Visual Studio Code&lt;/a&gt; uses &lt;a href=&#34;https://github.com/derekparker/delve&#34;&gt;Delve&lt;/a&gt; for the debugging.
+Actually the GoLang plugin for &lt;a href=&#34;https://code.visualstudio.com&#34;&gt;Visual Studio Code&lt;/a&gt; is not from MicroSoft but you can easily install from the tool.&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Install &lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt; if you don&amp;rsquo;t install yet.&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Install &lt;a href=&#34;(https://marketplace.visualstudio.com/items/lukehoban.Go)&#34;&gt;Go for Visual Studio Code&lt;/a&gt; from &lt;a href=&#34;(https://code.visualstudio.com)&#34;&gt;Visual Studio Code&lt;/a&gt;.&lt;br /&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://code.visualstudio.com&#34;&gt;Visual Studio Code&lt;/a&gt; if you don&amp;rsquo;t install yet.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://marketplace.visualstudio.com/items/lukehoban.Go&#34;&gt;Go for Visual Studio Code&lt;/a&gt; from &lt;a href=&#34;https://code.visualstudio.com&#34;&gt;Visual Studio Code&lt;/a&gt;.&lt;br /&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Ctrl + Shift + P&lt;/code&gt;.&lt;br /&gt;&lt;/li&gt;
 &lt;li&gt;Type &lt;code&gt;ext install&lt;/code&gt; &amp;amp; select &lt;code&gt;Install Extension&lt;/code&gt;.&lt;br /&gt;&lt;/li&gt;
 &lt;li&gt;Type &lt;code&gt;go&lt;/code&gt; and select Go plugin made by lukehoben.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Install &lt;a href=&#34;(https://github.com/derekparker/delve)&#34;&gt;Delve&lt;/a&gt;.&lt;br /&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://github.com/derekparker/delve&#34;&gt;Delve&lt;/a&gt;.&lt;br /&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;$go get -u github.com/derekparker/delve/cmd/dlv&lt;/code&gt;.&lt;/li&gt;
