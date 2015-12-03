@@ -7,11 +7,11 @@ title = "How to debug Golang with Visual Sutio Code"
 
 +++
 
-[ATOM]:(https://atom.io/)
-[Visual Studio Code]:(https://code.visualstudio.com)
-[GoLang]:(https://golang.org/)
-[Delve]:(https://github.com/derekparker/delve)
-[Go for Visual Studio Code]:(https://marketplace.visualstudio.com/items/lukehoban.Go)
+[ATOM]:https://atom.io/
+[Visual Studio Code]:https://code.visualstudio.com
+[GoLang]:https://golang.org/
+[Delve]:https://github.com/derekparker/delve
+[Go for Visual Studio Code]:https://marketplace.visualstudio.com/items/lukehoban.Go
 
 ![Visual Studio Code](https://i3-vso.sec.s-msft.com/dynimg/IC794090.png)
 [Visual Studio Code] is released by Microsoft which is cross platform Code Editor.

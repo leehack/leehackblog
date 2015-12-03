@@ -6,7 +6,7 @@ keywords = ["Hugo","Blog","Golang"]
 title = "Hugo 설치하기"
 
 +++
-[Hugo]:(https://gohugo.io/)
+[Hugo]: https://gohugo.io/
 [haroopress]: http://haroopress.com
 [octopress]: http://octopress.org
 [jekyll]: https://jekyllrb.com
