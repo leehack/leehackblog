@@ -36,11 +36,6 @@ model {
         }
     }
 
-    compileOptions.with {
-        sourceCompatibility=JavaVersion.VERSION_1_7
-        targetCompatibility=JavaVersion.VERSION_1_7
-    }
-
     android.ndk {
         moduleName = "libName"
         cppFlags.add("-DANDROID_NDK")
