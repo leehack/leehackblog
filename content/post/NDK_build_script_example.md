@@ -1,7 +1,8 @@
 +++
 categories = ["Android", "NDK", "Gradle"]
 date = "2015-11-23T12:56:25-05:00"
-description = "Example for gradle build script for Android library module with native code and prebuilt .so"
+updated = "2016-06-03T13:16:00-05:00"
+description = "Example for gradle build script for Android library module with native code with prebuilt .so"
 keywords = ["Android", "NDK", "Gradle"]
 title = "Gradle NDK Build Script Example"
 
@@ -20,7 +21,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle-experimental:0.4.0'
+        classpath 'com.android.tools.build:gradle-experimental:0.7.0'
     }
 }
 
@@ -53,14 +54,20 @@ model {
         abiFilters.add("x86_64")
     }
 
+    repositories {
+        prebuilt(PrebuiltLibraries) {
+            prebuiltSharedlib {
+                binaries.withType(SharedLibraryBinary) {
+                    sharedLibraryFile = file("src/main/jniLibs/${targetPlatform.getName()}/prebuiltSharedlib.so")
+                }
+            }
+        }
+    }
     android.sources {
         main {
             jni {
                 dependencies {
-                    library file("src/main/jniLibs/armeabi/prebuiltSharedlib.so") abi "armeabi"                    library file("src/main/jniLibs/armeabi-v7a/prebuiltSharedlib.so") abi "armeabi-v7a"
-                    library file("src/main/jniLibs/arm64-v8a/prebuiltSharedlib.so") abi "arm64-v8a"
-                    library file("src/main/jniLibs/x86_64/prebuiltSharedlib.so") abi "x86_64"
-                    library file("src/main/jniLibs/x86/prebuiltSharedlib.so") abi "x86"
+                    library "prebuiltSharedlib"
                 }
             }
         }

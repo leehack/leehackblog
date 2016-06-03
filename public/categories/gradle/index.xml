@@ -27,7 +27,7 @@ Now the gradle-experimental plug-in supports dependency. The dependency part sho
         jcenter()
     }
     dependencies {
-        classpath &#39;com.android.tools.build:gradle-experimental:0.4.0&#39;
+        classpath &#39;com.android.tools.build:gradle-experimental:0.7.0&#39;
     }
 }
 
@@ -60,14 +60,20 @@ model {
         abiFilters.add(&amp;quot;x86_64&amp;quot;)
     }
 
+    repositories {
+        prebuilt(PrebuiltLibraries) {
+            prebuiltSharedlib {
+                binaries.withType(SharedLibraryBinary) {
+                    sharedLibraryFile = file(&amp;quot;src/main/jniLibs/${targetPlatform.getName()}/prebuiltSharedlib.so&amp;quot;)
+                }
+            }
+        }
+    }
     android.sources {
         main {
             jni {
                 dependencies {
-                    library file(&amp;quot;src/main/jniLibs/armeabi/prebuiltSharedlib.so&amp;quot;) abi &amp;quot;armeabi&amp;quot;                    library file(&amp;quot;src/main/jniLibs/armeabi-v7a/prebuiltSharedlib.so&amp;quot;) abi &amp;quot;armeabi-v7a&amp;quot;
-                    library file(&amp;quot;src/main/jniLibs/arm64-v8a/prebuiltSharedlib.so&amp;quot;) abi &amp;quot;arm64-v8a&amp;quot;
-                    library file(&amp;quot;src/main/jniLibs/x86_64/prebuiltSharedlib.so&amp;quot;) abi &amp;quot;x86_64&amp;quot;
-                    library file(&amp;quot;src/main/jniLibs/x86/prebuiltSharedlib.so&amp;quot;) abi &amp;quot;x86&amp;quot;
+                    library &amp;quot;prebuiltSharedlib&amp;quot;
                 }
             }
         }

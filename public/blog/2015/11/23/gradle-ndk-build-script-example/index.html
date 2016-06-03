@@ -28,7 +28,7 @@
   
   
 
-  <meta name="description" content="Example for gradle build script for Android library module with native code and prebuilt .so">
+  <meta name="description" content="Example for gradle build script for Android library module with native code with prebuilt .so">
   <meta name="keywords" content="Android,NDK,Gradle">
   <link rel="author" href="http://plus.google.com/&#43;JhinseokLEE">
   <script>
@@ -94,7 +94,7 @@
     </script></p>
     
 
-    <p>Copyright &copy; 2015 <a href="http://blog.leehack.com/license/">License</a><br/>
+    <p>Copyright &copy; 2016 <a href="http://blog.leehack.com/license/">License</a><br/>
        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
   </div>
 </div>
@@ -119,7 +119,7 @@ Now the gradle-experimental plug-in supports dependency. The dependency part sho
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle-experimental:0.4.0'
+        classpath 'com.android.tools.build:gradle-experimental:0.7.0'
     }
 }
 
@@ -152,14 +152,20 @@ model {
         abiFilters.add(&quot;x86_64&quot;)
     }
 
+    repositories {
+        prebuilt(PrebuiltLibraries) {
+            prebuiltSharedlib {
+                binaries.withType(SharedLibraryBinary) {
+                    sharedLibraryFile = file(&quot;src/main/jniLibs/${targetPlatform.getName()}/prebuiltSharedlib.so&quot;)
+                }
+            }
+        }
+    }
     android.sources {
         main {
             jni {
                 dependencies {
-                    library file(&quot;src/main/jniLibs/armeabi/prebuiltSharedlib.so&quot;) abi &quot;armeabi&quot;                    library file(&quot;src/main/jniLibs/armeabi-v7a/prebuiltSharedlib.so&quot;) abi &quot;armeabi-v7a&quot;
-                    library file(&quot;src/main/jniLibs/arm64-v8a/prebuiltSharedlib.so&quot;) abi &quot;arm64-v8a&quot;
-                    library file(&quot;src/main/jniLibs/x86_64/prebuiltSharedlib.so&quot;) abi &quot;x86_64&quot;
-                    library file(&quot;src/main/jniLibs/x86/prebuiltSharedlib.so&quot;) abi &quot;x86&quot;
+                    library &quot;prebuiltSharedlib&quot;
                 }
             }
         }
