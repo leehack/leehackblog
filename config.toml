@@ -1,4 +1,4 @@
-baseurl = "http://blog.leehack.com/"
+baseurl = "https://blog.leehack.com/"
 languageCode = "en-us"
 title = "leehack's blog"
 theme = "hyde-x"
