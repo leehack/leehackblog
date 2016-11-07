@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>leehack&#39;s blog</title>
-    <link>http://blog.leehack.com/</link>
+    <link>https://blog.leehack.com/</link>
     <description>Recent content on leehack&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 25 Nov 2015 12:37:00 -0500</lastBuildDate>
-    <atom:link href="http://blog.leehack.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.leehack.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Hugo 설치하기</title>
-      <link>http://blog.leehack.com/blog/2015/11/25/hugo-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</link>
+      <link>https://blog.leehack.com/blog/2015/11/25/hugo-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</link>
       <pubDate>Wed, 25 Nov 2015 12:37:00 -0500</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2015/11/25/hugo-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</guid>
+      <guid>https://blog.leehack.com/blog/2015/11/25/hugo-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</guid>
       <description>
 
-&lt;p&gt;&lt;a href=&#34;http://blog.leehack.com/blog/2015/11/23/블로그-플랫폼을-찾아서../&#34;&gt;블로그 플랫폼을 찾아서&lt;/a&gt;에서 언급한 것처럼 이 블로그는 &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;로 만들었다.
+&lt;p&gt;&lt;a href=&#34;https://blog.leehack.com/blog/2015/11/23/블로그-플랫폼을-찾아서../&#34;&gt;블로그 플랫폼을 찾아서&lt;/a&gt;에서 언급한 것처럼 이 블로그는 &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;로 만들었다.
 &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;를 설치하기 전에 &lt;a href=&#34;https://jekyllrb.com&#34;&gt;jekyll&lt;/a&gt;이나 &lt;a href=&#34;http://octopress.org&#34;&gt;octopress&lt;/a&gt; 그리고 &lt;a href=&#34;http://haroopress.com&#34;&gt;haroopress&lt;/a&gt;를 알아봤으나 만족스럽지 못했고 빠르고 쉬운 Golang으로 만들어진 &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;를 선택했다.&lt;/p&gt;
 
 &lt;p&gt;아직 &lt;a href=&#34;https://jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt;만큼 커뮤니티가 활성화 되어있지 않고 아주 널리 쓰이고 있지는 않기 때문에 조금 삽질을 하긴 했지만..
@@ -162,10 +162,10 @@ title = &amp;quot;first&amp;quot;
     
     <item>
       <title>How to debug Golang with Visual Sutio Code</title>
-      <link>http://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/</link>
+      <link>https://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/</link>
       <pubDate>Wed, 25 Nov 2015 12:36:46 -0500</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/</guid>
+      <guid>https://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://i3-vso.sec.s-msft.com/dynimg/IC794090.png&#34; alt=&#34;Visual Studio Code&#34; /&gt;
 &lt;a href=&#34;https://code.visualstudio.com&#34;&gt;Visual Studio Code&lt;/a&gt; is released by Microsoft which is cross platform Code Editor.
 It&amp;rsquo;s forked from &lt;a href=&#34;https://atom.io/&#34;&gt;ATOM&lt;/a&gt; and OpenSource as well if you care ;)&lt;/p&gt;
@@ -212,10 +212,10 @@ Actually the GoLang plugin for &lt;a href=&#34;https://code.visualstudio.com&#34
     
     <item>
       <title>How I debugged memory leak issue for mediaserver</title>
-      <link>http://blog.leehack.com/blog/2015/11/24/how-i-debugged-memory-leak-issue-for-mediaserver/</link>
+      <link>https://blog.leehack.com/blog/2015/11/24/how-i-debugged-memory-leak-issue-for-mediaserver/</link>
       <pubDate>Tue, 24 Nov 2015 18:56:44 -0500</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2015/11/24/how-i-debugged-memory-leak-issue-for-mediaserver/</guid>
+      <guid>https://blog.leehack.com/blog/2015/11/24/how-i-debugged-memory-leak-issue-for-mediaserver/</guid>
       <description>&lt;p&gt;Recently I had to fix big memory leak issue in &amp;ldquo;medieaserver&amp;rdquo;. From the internet I found very nice tool called &lt;code&gt;addr2func&lt;/code&gt; for fixing the issue.&lt;/p&gt;
 
 &lt;p&gt;The tool is written by &lt;a href=&#34;http://freepine.blogspot.ca/2010/02/analyze-memory-leak-of-android-native.html&#34;&gt;freepine&lt;/a&gt; and I modified for supporting latest version of AOSP bases codes(5.0) and uploaded into Github : &lt;a href=&#34;https://github.com/leehack/addr2func&#34;&gt;addr2func&lt;/a&gt;&lt;/p&gt;
@@ -269,10 +269,10 @@ $adb shell dumpsys media.player -m &amp;gt; dump2
     
     <item>
       <title>Github static website 만들기</title>
-      <link>http://blog.leehack.com/blog/2015/11/23/github-static-website-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+      <link>https://blog.leehack.com/blog/2015/11/23/github-static-website-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
       <pubDate>Mon, 23 Nov 2015 21:20:51 -0500</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2015/11/23/github-static-website-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+      <guid>https://blog.leehack.com/blog/2015/11/23/github-static-website-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
       <description>
 
 &lt;h1 id=&#34;github-page란:b47502d0fc5a05431ea07f4e2ccfb4a7&#34;&gt;Github Page란?&lt;/h1&gt;
@@ -360,19 +360,19 @@ $git push origin gh-pages
     
     <item>
       <title>license</title>
-      <link>http://blog.leehack.com/license/</link>
+      <link>https://blog.leehack.com/license/</link>
       <pubDate>Mon, 23 Nov 2015 13:39:02 -0500</pubDate>
       
-      <guid>http://blog.leehack.com/license/</guid>
+      <guid>https://blog.leehack.com/license/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gradle NDK Build Script Example</title>
-      <link>http://blog.leehack.com/blog/2015/11/23/gradle-ndk-build-script-example/</link>
+      <link>https://blog.leehack.com/blog/2015/11/23/gradle-ndk-build-script-example/</link>
       <pubDate>Mon, 23 Nov 2015 12:56:25 -0500</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2015/11/23/gradle-ndk-build-script-example/</guid>
+      <guid>https://blog.leehack.com/blog/2015/11/23/gradle-ndk-build-script-example/</guid>
       <description>&lt;p&gt;With this sample, you&amp;rsquo;ll be able to build NDK from Android Studio.
 Now the gradle-experimental plug-in supports dependency. The dependency part show you how to include prebuilt shared library.&lt;/p&gt;
 
@@ -442,10 +442,10 @@ dependencies {
     
     <item>
       <title>블로그 플랫폼을 찾아서..</title>
-      <link>http://blog.leehack.com/blog/2015/11/23/%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%94%8C%EB%9E%AB%ED%8F%BC%EC%9D%84-%EC%B0%BE%EC%95%84%EC%84%9C../</link>
+      <link>https://blog.leehack.com/blog/2015/11/23/%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%94%8C%EB%9E%AB%ED%8F%BC%EC%9D%84-%EC%B0%BE%EC%95%84%EC%84%9C../</link>
       <pubDate>Mon, 23 Nov 2015 09:30:28 -0500</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2015/11/23/%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%94%8C%EB%9E%AB%ED%8F%BC%EC%9D%84-%EC%B0%BE%EC%95%84%EC%84%9C../</guid>
+      <guid>https://blog.leehack.com/blog/2015/11/23/%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%94%8C%EB%9E%AB%ED%8F%BC%EC%9D%84-%EC%B0%BE%EC%95%84%EC%84%9C../</guid>
       <description>&lt;p&gt;블로깅을 열심히 하는 편은 아니지만 구글블로그를 만들어 놓고 가끔은 (겨우 포스팅 몇개지만..) 뭔가 남기고 싶을 때 들어가보곤 한다. 문제는 포스팅을 시도 할 때마다 견뎌내야만 하는 짜증스러운 에디터.. 가끔 관리를 하기때문에 중간에 테마라도 실수로 바꿔버리면 전에 설정해둔게 날아가버려 포스팅 글들이 엉망이 된다.. (대표적으로 코드 하이라이팅..)&lt;/p&gt;
 
 &lt;p&gt;그래서 다른 블로그 플랫폼을 찾기 시작!&lt;/p&gt;
@@ -485,30 +485,30 @@ dependencies {
     
     <item>
       <title>Node.js debug on Eclipse</title>
-      <link>http://blog.leehack.com/blog/2012/02/13/node.js-debug-on-eclipse/</link>
+      <link>https://blog.leehack.com/blog/2012/02/13/node.js-debug-on-eclipse/</link>
       <pubDate>Mon, 13 Feb 2012 19:24:00 +0000</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2012/02/13/node.js-debug-on-eclipse/</guid>
+      <guid>https://blog.leehack.com/blog/2012/02/13/node.js-debug-on-eclipse/</guid>
       <description>&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;1. Google Chrome developer tool 설치&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;Help-&amp;gt;Install new software-&amp;gt;&#34;http://chromedevtools.googlecode.com/svn/update/dev/&#34; 입력 후 아래와 같이 Google Chrome Developer tool 선택하여 설치&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;&lt;a href=&#34;http://4.bp.blogspot.com/-0gYwVb9jhuM/Tzmmvk94rEI/AAAAAAAADzM/0eBiqROipBQ/s1600/Install-1.jpg&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; height=&#34;640&#34; src=&#34;http://4.bp.blogspot.com/-0gYwVb9jhuM/Tzmmvk94rEI/AAAAAAAADzM/0eBiqROipBQ/s640/Install-1.jpg&#34; width=&#34;629&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;2. Eclipse를 실행해서 Debug perspective로 이동.&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;&lt;a href=&#34;http://2.bp.blogspot.com/-Rv9Mr8_f5Tg/Tzmk5Qf3umI/AAAAAAAADzE/1OhPHgiwGRo/s1600/Debug+-+Eclipse+SDK+-+_Users_leehack_Documents_workspace-1.jpg&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; height=&#34;271&#34; src=&#34;http://2.bp.blogspot.com/-Rv9Mr8_f5Tg/Tzmk5Qf3umI/AAAAAAAADzE/1OhPHgiwGRo/s400/Debug+-+Eclipse+SDK+-+_Users_leehack_Documents_workspace-1.jpg&#34; width=&#34;400&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;*벌래모양이 보이지 않는 경우: windows-&amp;gt;open perspective-&amp;gt;Other-&amp;gt;debug&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;3. Node.js를 debug모드로 실행: $node --debug index.js&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;&lt;a href=&#34;http://2.bp.blogspot.com/-CcuLx805LCk/TzmogzZvn7I/AAAAAAAADzk/ESqvTYXYcDc/s1600/nodejstest+%E2%80%94+leehack@leehack-MSI-Notebook-PR211_+~_Android_android4+%E2%80%94+node+%E2%80%94+80%C3%9724.jpg&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; src=&#34;http://2.bp.blogspot.com/-CcuLx805LCk/TzmogzZvn7I/AAAAAAAADzk/ESqvTYXYcDc/s1600/nodejstest+%E2%80%94+leehack@leehack-MSI-Notebook-PR211_+~_Android_android4+%E2%80%94+node+%E2%80%94+80%C3%9724.jpg&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;br /&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;4. Run-&amp;gt;Debug configuration에서 Standalone V8 VM에 커서 둔 후 new버튼 클릭&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;&lt;a href=&#34;http://1.bp.blogspot.com/-8wc1N7i8fO0/TzmnH7QLIqI/AAAAAAAADzU/cmS7ig8ksBk/s1600/Debug+Configurations-3.jpg&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; height=&#34;442&#34; src=&#34;http://1.bp.blogspot.com/-8wc1N7i8fO0/TzmnH7QLIqI/AAAAAAAADzU/cmS7ig8ksBk/s640/Debug+Configurations-3.jpg&#34; width=&#34;640&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;*Port를 5858로 지정 후 Debug버튼 클릭&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;&lt;a href=&#34;http://4.bp.blogspot.com/-yr5kszrvja0/TzmnxUvlgCI/AAAAAAAADzc/X-QFlE_fyCY/s1600/Debug+Configurations-4.jpg&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; height=&#34;437&#34; src=&#34;http://4.bp.blogspot.com/-yr5kszrvja0/TzmnxUvlgCI/AAAAAAAADzc/X-QFlE_fyCY/s640/Debug+Configurations-4.jpg&#34; width=&#34;640&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;5. 원하는 곳에 bp 찍고 debugging 시작!!&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;&lt;a href=&#34;http://2.bp.blogspot.com/-HJL_5vSSnFQ/TzmpKVGjn1I/AAAAAAAADzs/YD4WmcFvtv4/s1600/Debug+-+Node-5858_requestHandlers.js.chromium+-+Eclipse+SDK+-+_Users_leehack_Documents_workspace.jpg&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; height=&#34;409&#34; src=&#34;http://2.bp.blogspot.com/-HJL_5vSSnFQ/TzmpKVGjn1I/AAAAAAAADzs/YD4WmcFvtv4/s640/Debug+-+Node-5858_requestHandlers.js.chromium+-+Eclipse+SDK+-+_Users_leehack_Documents_workspace.jpg&#34; width=&#34;640&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: left;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&#34;text-align: left;&#34;&gt;&lt;br /&gt;&lt;/div&gt;
 </description>
     </item>
     
     <item>
       <title>DrewGaren.com: Nexus S - ICY&#43; S version 1.0</title>
-      <link>http://blog.leehack.com/blog/2011/12/13/drewgaren.com-nexus-s---icy-s-version-1.0/</link>
+      <link>https://blog.leehack.com/blog/2011/12/13/drewgaren.com-nexus-s---icy-s-version-1.0/</link>
       <pubDate>Tue, 13 Dec 2011 05:10:00 +0000</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2011/12/13/drewgaren.com-nexus-s---icy-s-version-1.0/</guid>
+      <guid>https://blog.leehack.com/blog/2011/12/13/drewgaren.com-nexus-s---icy-s-version-1.0/</guid>
       <description>&lt;p&gt;기다리던 롬! 이제 플래싱 할시간!!&lt;br /&gt;&lt;br /&gt;여러가지 롬들 사용해봤지만 Nexus S용 ICS롬은 DrewGaren ROM이 제일 맘에 든다.&lt;br /&gt;구글 지원들이 Official ICS ROM 사용중이라고 하니 공식 릴리즈 되기 전까지는 큰 문제 없으면 이 롬에 정착 할 듯. &amp;lt;&amp;ndash; 플래싱 해보니.. 너무 문제가 많다. 다시 Beta ROM으로 복원 -_-;&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;http://www.drewgaren.com/2011/12/nexus-s-icy-s-version-10.html?spref=bl&#34;&gt;DrewGaren.com: Nexus S - ICY+ S version 1.0&lt;/a&gt;: Nexus S Rom - ICY+ S version 1.0  The first stable release of Android 4.0.1 Ice Cream Sandwich from DrewGaren. Minus, fully enabled camera e&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Android C2DM client 예제</title>
-      <link>http://blog.leehack.com/blog/2011/12/09/android-c2dm-client-%EC%98%88%EC%A0%9C/</link>
+      <link>https://blog.leehack.com/blog/2011/12/09/android-c2dm-client-%EC%98%88%EC%A0%9C/</link>
       <pubDate>Fri, 09 Dec 2011 04:56:00 +0000</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2011/12/09/android-c2dm-client-%EC%98%88%EC%A0%9C/</guid>
+      <guid>https://blog.leehack.com/blog/2011/12/09/android-c2dm-client-%EC%98%88%EC%A0%9C/</guid>
       <description>&lt;p&gt;준비물 : c2dm account(&lt;a href=&#34;(/blog/2011/12/09/python으로-c2dm-server-만들기)&#34;&gt;파이썬으로 c2dm서버 만들기&lt;/a&gt; 포스팅 참조)&lt;/p&gt;
 
 &lt;p&gt;만들 예제의 패키지 구조.&lt;br /&gt;
@@ -679,50 +679,50 @@ public class C2DM_TESTActivity extends Activity {
     
     <item>
       <title>Python으로 c2dm server 만들기</title>
-      <link>http://blog.leehack.com/blog/2011/12/09/python%EC%9C%BC%EB%A1%9C-c2dm-server-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+      <link>https://blog.leehack.com/blog/2011/12/09/python%EC%9C%BC%EB%A1%9C-c2dm-server-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
       <pubDate>Fri, 09 Dec 2011 04:25:00 +0000</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2011/12/09/python%EC%9C%BC%EB%A1%9C-c2dm-server-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+      <guid>https://blog.leehack.com/blog/2011/12/09/python%EC%9C%BC%EB%A1%9C-c2dm-server-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
       <description>&lt;p&gt;1.&amp;nbsp;&lt;a href=&#34;http://code.google.com/intl/ko-KR/android/c2dm/&#34;&gt;http://code.google.com/intl/ko-KR/android/c2dm/&lt;/a&gt; 에서 c2dm 서비스에 sign-up&lt;br /&gt;(gmail account를 새로 만들어서 가입하는 것이 좋다. - 실제로 이 account정보를 클라이언트 및 서버에 모두 넣어야 하고 더구나 서버에는 패스워드정보도 필요하기 때문)&lt;br /&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;a href=&#34;http://4.bp.blogspot.com/-HdKsVNq8U3Y/TuHWLJiuniI/AAAAAAAADm8/cOUAaTiV7_o/s1600/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-09+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+6.33.53.png&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; height=&#34;336&#34; src=&#34;http://4.bp.blogspot.com/-HdKsVNq8U3Y/TuHWLJiuniI/AAAAAAAADm8/cOUAaTiV7_o/s640/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-09+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+6.33.53.png&#34; width=&#34;640&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;2. 가입하면 E-mail로 가입한 Account로 서비스가 Enable되었다는 내용의 메일이 옮(보통 하루안에 오고 늦어도 몇일 사이에는 오는 듯)&lt;br /&gt;&lt;br /&gt;여기까지 준비 완료! 아래는 실제 파이썬 코드 시작!!&lt;br /&gt;&lt;br /&gt;&lt;pre class=&#34;brush:python&#34;&gt;import urllib, urllib2&lt;br /&gt;&lt;br /&gt;class ClientLoginTokenFactory(): &lt;br /&gt;    _token = None &lt;br /&gt;    &lt;br /&gt;    def &lt;strong&gt;init&lt;/strong&gt;(self):&lt;br /&gt;        self.url = &amp;lsquo;&lt;a href=&#34;https://www.google.com/accounts/ClientLogin&#39;&#34;&gt;https://www.google.com/accounts/ClientLogin&#39;&lt;/a&gt;&lt;br /&gt;        self.accountType = &amp;lsquo;GOOGLE&amp;rsquo;&lt;br /&gt;        self.email = &amp;lsquo;c2dm에 가입한 메일주소&amp;rsquo;&lt;br /&gt;        self.password = &amp;lsquo;c2dm에 가입한 메일주소의 패스워드&amp;rsquo;&lt;br /&gt;        self.source = &amp;lsquo;replstory-replstory-0&amp;rsquo;&lt;br /&gt;        self.service = &amp;lsquo;ac2dm&amp;rsquo;&lt;br /&gt;    &lt;br /&gt;    def getToken(self):    &lt;br /&gt;        if self._token is None:&lt;br /&gt;            &lt;br /&gt;            # Build payload&lt;br /&gt;            values = {&amp;lsquo;accountType&amp;rsquo; : self.accountType,&lt;br /&gt;                      &amp;lsquo;Email&amp;rsquo; : self.email,&lt;br /&gt;                      &amp;lsquo;Passwd&amp;rsquo; : self.password, &lt;br /&gt;                      &amp;lsquo;source&amp;rsquo; : self.source, &lt;br /&gt;                      &amp;lsquo;service&amp;rsquo; : self.service}&lt;br /&gt;            &lt;br /&gt;            # Build request&lt;br /&gt;            data = urllib.urlencode(values)&lt;br /&gt;            request = urllib2.Request(self.url, data)&lt;br /&gt;            &lt;br /&gt;            # Post&lt;br /&gt;            response = urllib2.urlopen(request)&lt;br /&gt;            responseAsString = response.read()&lt;br /&gt;            &lt;br /&gt;            # Format response&lt;br /&gt;            responseAsList = responseAsString.split(&amp;rsquo;\n&amp;rsquo;)&lt;br /&gt;            &lt;br /&gt;            self._token = responseAsList[2].split(&amp;lsquo;=&amp;rsquo;)[1]&lt;br /&gt;            &lt;br /&gt;        return self._token&lt;br /&gt;    &lt;br /&gt;class C2DM():&lt;br /&gt;    &lt;br /&gt;    def &lt;strong&gt;init&lt;/strong&gt;(self):&lt;br /&gt;        self.url = &amp;lsquo;&lt;a href=&#34;https://android.apis.google.com/c2dm/send&#39;&#34;&gt;https://android.apis.google.com/c2dm/send&#39;&lt;/a&gt;&lt;br /&gt;        self.clientAuth = None&lt;br /&gt;        self.registrationId = None&lt;br /&gt;        self.collapseKey = None&lt;br /&gt;        self.data = {}&lt;br /&gt;        &lt;br /&gt;    def sendMessage(self):&lt;br /&gt;        if self.registrationId == None or self.collapseKey == None:&lt;br /&gt;            return False&lt;br /&gt;        &lt;br /&gt;        clientAuthFactory = ClientLoginTokenFactory()&lt;br /&gt;        self.clientAuth = clientAuthFactory.getToken()&lt;br /&gt;        &lt;br /&gt;        # Build payload&lt;br /&gt;        values = {&amp;lsquo;registration_id&amp;rsquo; : self.registrationId,&lt;br /&gt;                  &amp;lsquo;collapse_key&amp;rsquo; : self.collapseKey}     &lt;br /&gt;        &lt;br /&gt;        # Loop over any data we want to send&lt;br /&gt;        for k, v in self.data.iteritems():            &lt;br /&gt;            values[&amp;lsquo;data.&amp;rsquo; + k] = v&lt;br /&gt;        &lt;br /&gt;        # Build request&lt;br /&gt;        headers = {&amp;lsquo;Authorization&amp;rsquo;: &amp;lsquo;GoogleLogin auth=&amp;rsquo; + self.clientAuth}        &lt;br /&gt;        data = urllib.urlencode(values)&lt;br /&gt;        request = urllib2.Request(self.url, data, headers)&lt;br /&gt;        &lt;br /&gt;        # Post&lt;br /&gt;        try:&lt;br /&gt;            response = urllib2.urlopen(request)&lt;br /&gt;            responseAsString = response.read()&lt;br /&gt;            &lt;br /&gt;            return responseAsString&lt;br /&gt;        except urllib2.HTTPError, e:&lt;br /&gt;            print &amp;lsquo;HTTPError &amp;rsquo; + str(e)&lt;br /&gt;            &lt;br /&gt;            &lt;br /&gt;sender = C2DM()&lt;br /&gt;sender.registrationId = &amp;lsquo;Android단말기에서 c2dm서버로 부터 받은 고유번호&amp;rsquo;&lt;br /&gt;sender.collapseKey = 1&lt;br /&gt;sender.data = {&amp;lsquo;msg&amp;rsquo;:&amp;lsquo;test&amp;rsquo;}&lt;br /&gt;response = sender.sendMessage()&lt;br /&gt;print response&lt;br /&gt;&lt;br /&gt;&lt;/pre&gt;9,10,79 라인의 정보만 바꾸고 실행하면 c2dm등록된 단말기로 test라는 푸시 메세지가 날아간다.&lt;br /&gt;&lt;a href=&#34;http://blog.boxedice.com/2010/10/07/android-push-notifications-tutorial/&#34;&gt;http://blog.boxedice.com/2010/10/07/android-push-notifications-tutorial/&lt;/a&gt;&amp;nbsp;에 있는 예제코드인데 제대로 돌지 않아서 약간의 수정만 했음.&lt;br /&gt;&lt;br /&gt;이미 눈치 채셨겠지만 실제 사용시에는 78라인부터만 따로 가져가서 원하는 곳에 사용하면 된다. collapseKey를 1로 고정해두고 사용하면 c2dm메세지가 동일한 단말에 동일한 메세지를 계속 적으로 보낼 경우 중간중간 빼먹는 경우가 생긴다. 구글에서 중복된 메세지 전송을 방지하게 넣어둔 코드임. 중복으로 보내는 메세지라도 단말에 꼭 전송이 되어야 하는 메세지라면 collapseKey를 increase하면서 보내는 것이 상책!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Pydev에서 Library 인식 안될 때</title>
-      <link>http://blog.leehack.com/blog/2011/12/08/pydev%EC%97%90%EC%84%9C-library-%EC%9D%B8%EC%8B%9D-%EC%95%88%EB%90%A0-%EB%95%8C/</link>
+      <link>https://blog.leehack.com/blog/2011/12/08/pydev%EC%97%90%EC%84%9C-library-%EC%9D%B8%EC%8B%9D-%EC%95%88%EB%90%A0-%EB%95%8C/</link>
       <pubDate>Thu, 08 Dec 2011 00:11:00 +0000</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2011/12/08/pydev%EC%97%90%EC%84%9C-library-%EC%9D%B8%EC%8B%9D-%EC%95%88%EB%90%A0-%EB%95%8C/</guid>
+      <guid>https://blog.leehack.com/blog/2011/12/08/pydev%EC%97%90%EC%84%9C-library-%EC%9D%B8%EC%8B%9D-%EC%95%88%EB%90%A0-%EB%95%8C/</guid>
       <description>&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;여러가지 파이썬용 웹프레임웍을 이클립스의 Pydev에서 돌려보는 중 아주 눈에 거슬리는 것을 발견!!&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;a href=&#34;http://4.bp.blogspot.com/-Kjw6eJWF2jg/TuBHAnvNgFI/AAAAAAAADmc/tOcbO50iSPs/s1600/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-08+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+2.11.16.png&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; height=&#34;116&#34; src=&#34;http://4.bp.blogspot.com/-Kjw6eJWF2jg/TuBHAnvNgFI/AAAAAAAADmc/tOcbO50iSPs/s320/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-08+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+2.11.16.png&#34; width=&#34;320&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;빌드도 잘되고 Run도 잘되는데 저 빨간줄! 엑스표! 에디터상에 나타나는거 아주 짜증스럽다!&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;오늘은 맘먹고 고치겠다고 선언! 아무리 웹을 뒤져도 나오지 않는다! 왜일까... 결국엔 삽질 끝에 아주 간단히 해결.. eclipse-&amp;gt;preference-&amp;gt;interpreter -Python&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;a href=&#34;http://1.bp.blogspot.com/-pguZkmifMq8/TuBHslyT4yI/AAAAAAAADmk/PqCAHRBjujY/s1600/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-08+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+2.14.11.png&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; height=&#34;404&#34; src=&#34;http://1.bp.blogspot.com/-pguZkmifMq8/TuBHslyT4yI/AAAAAAAADmk/PqCAHRBjujY/s640/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-08+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+2.14.11.png&#34; width=&#34;640&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;위 화면에서 Auto Config click하면 이런화면이 나온다.&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;a href=&#34;http://1.bp.blogspot.com/-iyg6LNy26oE/TuBIDHHPyvI/AAAAAAAADms/QIXg-WeflHA/s1600/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-08+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+2.15.32.png&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; height=&#34;608&#34; src=&#34;http://1.bp.blogspot.com/-iyg6LNy26oE/TuBIDHHPyvI/AAAAAAAADms/QIXg-WeflHA/s640/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-08+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+2.15.32.png&#34; width=&#34;640&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;보통은 위에 선택되어 있는 것처럼 해놓고 사용했었는데.. (easy_install하면 젤 아래 /Library/Python/2.7/site-packages 에 들어가기 때문에..)&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;알고보니 library로 인식이 안되고 있는 것이였다 -_-;;(이런 멍청한! 모르면 죽어야지!)&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;Select All한 후 코드를 다시 열어보니.. 깔끔하게 보인다.&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;a href=&#34;http://3.bp.blogspot.com/-D5DtWl3LbRo/TuBIrSwbwvI/AAAAAAAADm0/MNG13KWe_qI/s1600/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-08+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+2.18.21.png&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; src=&#34;http://3.bp.blogspot.com/-D5DtWl3LbRo/TuBIrSwbwvI/AAAAAAAADm0/MNG13KWe_qI/s1600/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-08+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+2.18.21.png&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;짠!&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;끝!!!&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;br /&gt;&lt;/div&gt;
 </description>
     </item>
     
     <item>
       <title>Python:: flask, webpy, Django, Bottle, web2py ...</title>
-      <link>http://blog.leehack.com/blog/2011/12/07/python-flask-webpy-django-bottle-web2py-.../</link>
+      <link>https://blog.leehack.com/blog/2011/12/07/python-flask-webpy-django-bottle-web2py-.../</link>
       <pubDate>Wed, 07 Dec 2011 22:18:00 +0000</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2011/12/07/python-flask-webpy-django-bottle-web2py-.../</guid>
+      <guid>https://blog.leehack.com/blog/2011/12/07/python-flask-webpy-django-bottle-web2py-.../</guid>
       <description>&lt;p&gt;Python으로 Web 개발 공부를 해보는 중.. 아무런 정보도 맨토도 없이 무작정 Django책부터 하나 붙잡고 시작. 100% 끝낸건 아니지만 일단 기본적인 정보는 모두 캐냈다고 판단 후 책을 덮음.&lt;br /&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;a href=&#34;https://www.djangoproject.com/s/img/logos/django-logo-negative.png&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; height=&#34;145&#34; src=&#34;https://www.djangoproject.com/s/img/logos/django-logo-negative.png&#34; width=&#34;320&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;이제부터 현실적인 문제에 봉착. Django가 짱!인줄 알았는데.. 파이썬에는 수많은 좋은 웹프레임웍들이 존재한다는 것!&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;http://bottlepy.org/docs/dev/&#34;&gt;Bottle&lt;/a&gt;로 짠 Simple한 &lt;a href=&#34;http://fi.am/entry/building-a-website-api-with-django-part-1-api-func/&#34;&gt;REST API예제&lt;/a&gt;를 보고 1차 감탄!&lt;br /&gt;&lt;br /&gt;&lt;a href=&#34;http://web2py.com/&#34;&gt;Web2Py&lt;/a&gt; 깔고서 관리자 페이지에서 IDE까지 제공해주는 Detail에 2차 감탄!&lt;br /&gt;&lt;br /&gt;마지막으로 &lt;a href=&#34;http://webpy.org/&#34;&gt;webpy&lt;/a&gt;까지 보고 나니 점점 헷갈린다!&lt;br /&gt;&lt;br /&gt;Django가 잘 만들어진 녀석이긴 하지만 일단 다른 프래임웍들을 알아보다 보니 Python위에서 만들어진 기술이란 느낌 보다는 그냥 Django다! 라는 생각이 들었다.&lt;br /&gt;&lt;br /&gt;Web2Py는 정말 제공해주는 것도 많고 편리하지만.. 어쩌면 개발자보다는 관리자 프랜들리한 느낌이 들어 좀 끄적여 보다가 패스!&lt;br /&gt;&lt;br /&gt;webpy는 뭔가 내가 원하는 대로 자유롭게 사용할 수 있으면서도 심플하고 편리함을 모두 가지고 있어 맘에 들었고 이제 이것으로 결정! 하는 순간 &lt;a href=&#34;http://flask.pocoo.org/&#34;&gt;Flask&lt;/a&gt;&amp;nbsp;라는 녀석이 눈에 들어왔다.&lt;br /&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;/div&gt;&lt;div class=&#34;separator&#34; style=&#34;clear: both; text-align: center;&#34;&gt;&lt;a href=&#34;http://4.bp.blogspot.com/-beqQ0zkQbc8/TuBGb6cNDZI/AAAAAAAADmU/XAqcoH0bCxE/s1600/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-08+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+2.08.42.png&#34; imageanchor=&#34;1&#34; style=&#34;margin-left: 1em; margin-right: 1em;&#34;&gt;&lt;img border=&#34;0&#34; height=&#34;129&#34; src=&#34;http://4.bp.blogspot.com/-beqQ0zkQbc8/TuBGb6cNDZI/AAAAAAAADmU/XAqcoH0bCxE/s320/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA+2011-12-08+%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE+2.08.42.png&#34; width=&#34;320&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;아직 자세히는 보지 못했지만..&lt;br /&gt;Bottle스러운 심플함과 Django스러운 template engine(동일한 엔진을 plugin으로 붙여쓰는 듯..)을 가지고 있을 뿐만 아니라 webpy스러운 자유로움을 모두 가지고 있는 것 같다.&lt;br /&gt;&lt;br /&gt;Flask라는 녀석이 마지막 방황이 되길 바라며..&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>유동 IP 사용하는 개인서버에 유료 도메인 세팅</title>
-      <link>http://blog.leehack.com/blog/2011/12/05/%EC%9C%A0%EB%8F%99-ip-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EA%B0%9C%EC%9D%B8%EC%84%9C%EB%B2%84%EC%97%90-%EC%9C%A0%EB%A3%8C-%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%84%B8%ED%8C%85/</link>
+      <link>https://blog.leehack.com/blog/2011/12/05/%EC%9C%A0%EB%8F%99-ip-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EA%B0%9C%EC%9D%B8%EC%84%9C%EB%B2%84%EC%97%90-%EC%9C%A0%EB%A3%8C-%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%84%B8%ED%8C%85/</link>
       <pubDate>Mon, 05 Dec 2011 03:49:00 +0000</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2011/12/05/%EC%9C%A0%EB%8F%99-ip-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EA%B0%9C%EC%9D%B8%EC%84%9C%EB%B2%84%EC%97%90-%EC%9C%A0%EB%A3%8C-%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%84%B8%ED%8C%85/</guid>
+      <guid>https://blog.leehack.com/blog/2011/12/05/%EC%9C%A0%EB%8F%99-ip-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EA%B0%9C%EC%9D%B8%EC%84%9C%EB%B2%84%EC%97%90-%EC%9C%A0%EB%A3%8C-%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%84%B8%ED%8C%85/</guid>
       <description>&lt;div style=&#34;text-align: center;&#34;&gt;결론부터 이야기 하자면 DNSEVER.COM 이라는 아주 고마운 서비스를 이용하면 DYNDNS.com 같은 Dynamic DNS 서비스를 개인 도메인에 붙여서 사용이 가능하다는 이야기!&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;*간단 요약&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;1. DNSEVER.COM 가입&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;2. DNSEVER에 도메인 추가.&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;3. 좌측 하단의 name server를 각 domain업체 홈페이지에서 변경&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;(공식설명: &lt;a href=&#34;http://kr.dnsever.com/help/wiki/wiki.php/NameServerChange&#34;&gt;http://kr.dnsever.com/help/wiki/wiki.php/NameServerChange&lt;/a&gt;)&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;4. 다이나믹DNS 등록&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;5. Auto Refresh 설정&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;아래 링크에 가면 아주 친절하세 설명해주신 포스팅이 있다.&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;&lt;a href=&#34;http://blog.naver.com/PostView.nhn?blogId=h_ranissa&amp;amp;logNo=100142960483&#34;&gt;[팁]개인pc에 유료도메인 셋팅하기(포워딩) :: 네이버 블로그&lt;/a&gt;:&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;위 포스팅은 Windows base로 Refresh설명을 해주셨지만 아래 공식사이트에 가면 Linux용 설정방법도 있음.&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;&lt;a href=&#34;http://kr.dnsever.com/start.html?user_domain=leehack.com&amp;amp;selected_menu=aboutddns&amp;amp;skey=leehack:8045eb284afb29fd65e10eeba0d4a77f&#34;&gt;DNSEVER사용법&lt;/a&gt;&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style=&#34;text-align: center;&#34;&gt;*주의: Name server를 변경했기 때문에 향후 도메인 관리는 모두 DNSEVER에서 해야함. 유료화 계획이 없는 무료서비스임에도 불구하고 꽤 오래된 서비스이며 안정성도 어느정도 보장이 되어있으나 역시나 무료서비스에 Name Server를 맡기는 만큼 신중을 기해야 하는 것도 사실.&lt;/div&gt;
 </description>
     </item>
     
     <item>
       <title>MAC에서 SSH Key 생성</title>
-      <link>http://blog.leehack.com/blog/2011/12/05/mac%EC%97%90%EC%84%9C-ssh-key-%EC%83%9D%EC%84%B1/</link>
+      <link>https://blog.leehack.com/blog/2011/12/05/mac%EC%97%90%EC%84%9C-ssh-key-%EC%83%9D%EC%84%B1/</link>
       <pubDate>Mon, 05 Dec 2011 02:10:00 +0000</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2011/12/05/mac%EC%97%90%EC%84%9C-ssh-key-%EC%83%9D%EC%84%B1/</guid>
+      <guid>https://blog.leehack.com/blog/2011/12/05/mac%EC%97%90%EC%84%9C-ssh-key-%EC%83%9D%EC%84%B1/</guid>
       <description>&lt;p&gt;&lt;br /&gt;1. SSH key가 있는지 확인&lt;br /&gt;$cd ~/.ssh&lt;br /&gt;&lt;br /&gt;2. 기존키 백업&lt;br /&gt;$mkdir key_backup&lt;br /&gt;$cp id_rsa* keybackup&lt;br /&gt;$rm id_rsa*&lt;br /&gt;&lt;br /&gt;3. ssh key 생성하기&lt;br /&gt;$ssh-keygen -t rsa -C &amp;ldquo;이메일 주소&amp;rdquo;&lt;br /&gt;Generating public/private rsa key pair.&lt;br /&gt;Enter file in which to save the key&lt;br /&gt;(/Users/사용자폴더/.ssh/id_rsa):엔터!&lt;br /&gt;Enter passphrase (empty for no passphrase:패스워드!&lt;br /&gt;Enter same passphrase again: 한번더!&lt;br /&gt;&lt;br /&gt;*GitHub 사용법에서 퍼옴&lt;br /&gt;&lt;a href=&#34;http://help.github.com/mac-set-up-git/&#34;&gt;http://help.github.com/mac-set-up-git/&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>

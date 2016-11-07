@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on leehack&#39;s blog</title>
-    <link>http://blog.leehack.com/categories/blog/</link>
+    <link>https://blog.leehack.com/categories/blog/</link>
     <description>Recent content in Blog on leehack&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 25 Nov 2015 12:37:00 -0500</lastBuildDate>
-    <atom:link href="http://blog.leehack.com/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.leehack.com/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Hugo 설치하기</title>
-      <link>http://blog.leehack.com/blog/2015/11/25/hugo-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</link>
+      <link>https://blog.leehack.com/blog/2015/11/25/hugo-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</link>
       <pubDate>Wed, 25 Nov 2015 12:37:00 -0500</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2015/11/25/hugo-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</guid>
+      <guid>https://blog.leehack.com/blog/2015/11/25/hugo-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</guid>
       <description>
 
-&lt;p&gt;&lt;a href=&#34;http://blog.leehack.com/blog/2015/11/23/블로그-플랫폼을-찾아서../&#34;&gt;블로그 플랫폼을 찾아서&lt;/a&gt;에서 언급한 것처럼 이 블로그는 &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;로 만들었다.
+&lt;p&gt;&lt;a href=&#34;https://blog.leehack.com/blog/2015/11/23/블로그-플랫폼을-찾아서../&#34;&gt;블로그 플랫폼을 찾아서&lt;/a&gt;에서 언급한 것처럼 이 블로그는 &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;로 만들었다.
 &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;를 설치하기 전에 &lt;a href=&#34;https://jekyllrb.com&#34;&gt;jekyll&lt;/a&gt;이나 &lt;a href=&#34;http://octopress.org&#34;&gt;octopress&lt;/a&gt; 그리고 &lt;a href=&#34;http://haroopress.com&#34;&gt;haroopress&lt;/a&gt;를 알아봤으나 만족스럽지 못했고 빠르고 쉬운 Golang으로 만들어진 &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;를 선택했다.&lt;/p&gt;
 
 &lt;p&gt;아직 &lt;a href=&#34;https://jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt;만큼 커뮤니티가 활성화 되어있지 않고 아주 널리 쓰이고 있지는 않기 때문에 조금 삽질을 하긴 했지만..
@@ -162,10 +162,10 @@ title = &amp;quot;first&amp;quot;
     
     <item>
       <title>Github static website 만들기</title>
-      <link>http://blog.leehack.com/blog/2015/11/23/github-static-website-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+      <link>https://blog.leehack.com/blog/2015/11/23/github-static-website-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
       <pubDate>Mon, 23 Nov 2015 21:20:51 -0500</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2015/11/23/github-static-website-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+      <guid>https://blog.leehack.com/blog/2015/11/23/github-static-website-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
       <description>
 
 &lt;h1 id=&#34;github-page란:b47502d0fc5a05431ea07f4e2ccfb4a7&#34;&gt;Github Page란?&lt;/h1&gt;
@@ -253,10 +253,10 @@ $git push origin gh-pages
     
     <item>
       <title>블로그 플랫폼을 찾아서..</title>
-      <link>http://blog.leehack.com/blog/2015/11/23/%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%94%8C%EB%9E%AB%ED%8F%BC%EC%9D%84-%EC%B0%BE%EC%95%84%EC%84%9C../</link>
+      <link>https://blog.leehack.com/blog/2015/11/23/%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%94%8C%EB%9E%AB%ED%8F%BC%EC%9D%84-%EC%B0%BE%EC%95%84%EC%84%9C../</link>
       <pubDate>Mon, 23 Nov 2015 09:30:28 -0500</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2015/11/23/%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%94%8C%EB%9E%AB%ED%8F%BC%EC%9D%84-%EC%B0%BE%EC%95%84%EC%84%9C../</guid>
+      <guid>https://blog.leehack.com/blog/2015/11/23/%EB%B8%94%EB%A1%9C%EA%B7%B8-%ED%94%8C%EB%9E%AB%ED%8F%BC%EC%9D%84-%EC%B0%BE%EC%95%84%EC%84%9C../</guid>
       <description>&lt;p&gt;블로깅을 열심히 하는 편은 아니지만 구글블로그를 만들어 놓고 가끔은 (겨우 포스팅 몇개지만..) 뭔가 남기고 싶을 때 들어가보곤 한다. 문제는 포스팅을 시도 할 때마다 견뎌내야만 하는 짜증스러운 에디터.. 가끔 관리를 하기때문에 중간에 테마라도 실수로 바꿔버리면 전에 설정해둔게 날아가버려 포스팅 글들이 엉망이 된다.. (대표적으로 코드 하이라이팅..)&lt;/p&gt;
 
 &lt;p&gt;그래서 다른 블로그 플랫폼을 찾기 시작!&lt;/p&gt;

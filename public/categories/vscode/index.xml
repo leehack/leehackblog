@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vscode on leehack&#39;s blog</title>
-    <link>http://blog.leehack.com/categories/vscode/</link>
+    <link>https://blog.leehack.com/categories/vscode/</link>
     <description>Recent content in Vscode on leehack&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 25 Nov 2015 12:36:46 -0500</lastBuildDate>
-    <atom:link href="http://blog.leehack.com/categories/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.leehack.com/categories/vscode/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How to debug Golang with Visual Sutio Code</title>
-      <link>http://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/</link>
+      <link>https://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/</link>
       <pubDate>Wed, 25 Nov 2015 12:36:46 -0500</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/</guid>
+      <guid>https://blog.leehack.com/blog/2015/11/25/how-to-debug-golang-with-visual-sutio-code/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;https://i3-vso.sec.s-msft.com/dynimg/IC794090.png&#34; alt=&#34;Visual Studio Code&#34; /&gt;
 &lt;a href=&#34;https://code.visualstudio.com&#34;&gt;Visual Studio Code&lt;/a&gt; is released by Microsoft which is cross platform Code Editor.
 It&amp;rsquo;s forked from &lt;a href=&#34;https://atom.io/&#34;&gt;ATOM&lt;/a&gt; and OpenSource as well if you care ;)&lt;/p&gt;

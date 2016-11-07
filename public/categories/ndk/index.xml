@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ndk on leehack&#39;s blog</title>
-    <link>http://blog.leehack.com/categories/ndk/</link>
+    <link>https://blog.leehack.com/categories/ndk/</link>
     <description>Recent content in Ndk on leehack&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 24 Nov 2015 18:56:44 -0500</lastBuildDate>
-    <atom:link href="http://blog.leehack.com/categories/ndk/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.leehack.com/categories/ndk/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How I debugged memory leak issue for mediaserver</title>
-      <link>http://blog.leehack.com/blog/2015/11/24/how-i-debugged-memory-leak-issue-for-mediaserver/</link>
+      <link>https://blog.leehack.com/blog/2015/11/24/how-i-debugged-memory-leak-issue-for-mediaserver/</link>
       <pubDate>Tue, 24 Nov 2015 18:56:44 -0500</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2015/11/24/how-i-debugged-memory-leak-issue-for-mediaserver/</guid>
+      <guid>https://blog.leehack.com/blog/2015/11/24/how-i-debugged-memory-leak-issue-for-mediaserver/</guid>
       <description>&lt;p&gt;Recently I had to fix big memory leak issue in &amp;ldquo;medieaserver&amp;rdquo;. From the internet I found very nice tool called &lt;code&gt;addr2func&lt;/code&gt; for fixing the issue.&lt;/p&gt;
 
 &lt;p&gt;The tool is written by &lt;a href=&#34;http://freepine.blogspot.ca/2010/02/analyze-memory-leak-of-android-native.html&#34;&gt;freepine&lt;/a&gt; and I modified for supporting latest version of AOSP bases codes(5.0) and uploaded into Github : &lt;a href=&#34;https://github.com/leehack/addr2func&#34;&gt;addr2func&lt;/a&gt;&lt;/p&gt;
@@ -68,10 +68,10 @@ $adb shell dumpsys media.player -m &amp;gt; dump2
     
     <item>
       <title>Gradle NDK Build Script Example</title>
-      <link>http://blog.leehack.com/blog/2015/11/23/gradle-ndk-build-script-example/</link>
+      <link>https://blog.leehack.com/blog/2015/11/23/gradle-ndk-build-script-example/</link>
       <pubDate>Mon, 23 Nov 2015 12:56:25 -0500</pubDate>
       
-      <guid>http://blog.leehack.com/blog/2015/11/23/gradle-ndk-build-script-example/</guid>
+      <guid>https://blog.leehack.com/blog/2015/11/23/gradle-ndk-build-script-example/</guid>
       <description>&lt;p&gt;With this sample, you&amp;rsquo;ll be able to build NDK from Android Studio.
 Now the gradle-experimental plug-in supports dependency. The dependency part show you how to include prebuilt shared library.&lt;/p&gt;
 
